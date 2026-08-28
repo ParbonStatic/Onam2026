@@ -1,0 +1,2609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Onam Tribute — Celebrating Harmony, Prosperity & Culture</title>
+  <meta name="description" content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Gayathri:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet" />
+
+  <!-- Canvas Confetti for Flower Shower -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+
+  <style>
+    /* ==========================================================================
+       CSS Variables & Design Tokens (Kerala Kasavu, Gold, Maroon & Leaf Palette)
+       ========================================================================== */
+    :root {
+      --gold-primary: #D4AF37;
+      --gold-light: #F7E7A9;
+      --gold-dark: #A27B13;
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      
+      --cream-bg: #FAF9F5;
+      --cream-surface: #FFFDF9;
+      --cream-card: #FFFFFF;
+      --cream-border: #EFE8DA;
+
+      --maroon-deep: #701018;
+      --maroon-rich: #8B1A24;
+      --maroon-light: #A32834;
+      --maroon-glow: rgba(139, 26, 36, 0.25);
+
+      --leaf-green: #206E34;
+      --leaf-green-dark: #144922;
+      --leaf-green-light: #2E8B47;
+      --leaf-bg: #EDF7EE;
+
+      --charcoal-dark: #1E1A16;
+      --text-muted: #5C5449;
+      --text-soft: #8A7E6F;
+
+      --shadow-sm: 0 4px 12px rgba(44, 24, 16, 0.05);
+      --shadow-md: 0 8px 24px rgba(44, 24, 16, 0.08);
+      --shadow-lg: 0 16px 40px rgba(44, 24, 16, 0.12);
+      --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.22);
+      
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --radius-full: 9999px;
+
+      --font-display: 'Rozha One', 'Cinzel', serif;
+      --font-heading: 'Cinzel', serif;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-malayalam: 'Gayathri', 'Cinzel', serif;
+
+      --kasavu-pattern: repeating-linear-gradient(
+        45deg,
+        #D4AF37,
+        #D4AF37 4px,
+        #E5C558 4px,
+        #E5C558 8px
+      );
+    }
+
+    /* ==========================================================================
+       Reset & Base Styles
+       ========================================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background-color: var(--cream-bg);
+      color: var(--charcoal-dark);
+      font-family: var(--font-sans);
+      line-height: 1.65;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle Kasavu Texture Overlay */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(var(--gold-light) 0.75px, transparent 0.75px);
+      background-size: 28px 28px;
+      opacity: 0.35;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.25s ease;
+    }
+
+    button {
+      font-family: inherit;
+      cursor: pointer;
+      border: none;
+      background: none;
+      outline: none;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1240px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ==========================================================================
+       Festive Typography & Decorative Accents
+       ========================================================================== */
+    .section-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 26, 36, 0.08));
+      color: var(--maroon-deep);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      padding: 0.4rem 1.1rem;
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .section-tag svg {
+      color: var(--gold-primary);
+    }
+
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4vw, 2.85rem);
+      color: var(--maroon-deep);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+
+    .section-title span {
+      background: linear-gradient(135deg, var(--maroon-deep), var(--gold-dark));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .section-subtitle {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 3rem auto;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    /* Kasavu Gold Decorative Ribbon Divider */
+    .kasavu-divider {
+      height: 6px;
+      width: 100%;
+      max-width: 180px;
+      margin: 0.75rem auto 1.5rem;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), #FFE272, var(--gold-primary), transparent);
+      position: relative;
+      border-radius: var(--radius-full);
+    }
+
+    .kasavu-divider::after {
+      content: '✦';
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background: var(--cream-bg);
+      padding: 0 6px;
+      color: var(--gold-primary);
+      font-size: 0.9rem;
+    }
+
+    /* Golden CTA Buttons */
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: linear-gradient(135deg, #ECC856 0%, #D4AF37 50%, #B88E1D 100%);
+      color: #3B2405;
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-full);
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.5);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: 0.5s;
+    }
+
+    .btn-gold:hover::before {
+      left: 100%;
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(212, 175, 55, 0.5);
+      color: #261601;
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(8px);
+      color: var(--maroon-deep);
+      border: 1.5px solid var(--maroon-deep);
+      font-weight: 700;
+      padding: 0.9rem 2rem;
+      border-radius: var(--radius-full);
+      transition: all 0.3s ease;
+    }
+
+    .btn-outline:hover {
+      background: var(--maroon-deep);
+      color: #FFF;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(112, 16, 24, 0.25);
+    }
+
+    /* ==========================================================================
+       Header & Navigation
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 249, 245, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 2px solid var(--gold-light);
+      transition: all 0.3s ease;
+    }
+
+    .site-header.scrolled {
+      background: rgba(255, 253, 249, 0.98);
+      box-shadow: var(--shadow-sm);
+      border-bottom: 2px solid var(--gold-primary);
+    }
+
+    .nav-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 78px;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+    }
+
+    .brand-emblem {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #ECC856 0%, #D4AF37 70%, #A27B13 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(212, 175, 55, 0.4);
+      color: #FFF;
+      font-weight: 800;
+      border: 2px solid #FFF;
+      position: relative;
+    }
+
+    .brand-emblem::after {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border: 1px dashed var(--gold-primary);
+      border-radius: 50%;
+      animation: rotateSlow 25s linear infinite;
+    }
+
+    @keyframes rotateSlow {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .brand-text h1 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      color: var(--maroon-deep);
+      line-height: 1.1;
+    }
+
+    .brand-text span {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--leaf-green);
+      display: block;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      list-style: none;
+    }
+
+    .nav-link {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--charcoal-dark);
+      position: relative;
+      padding: 0.4rem 0;
+    }
+
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold-primary);
+      transition: width 0.25s ease;
+      border-radius: 2px;
+    }
+
+    .nav-link:hover {
+      color: var(--maroon-deep);
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .audio-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid var(--gold-primary);
+      color: var(--maroon-deep);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s;
+    }
+
+    .audio-btn:hover {
+      background: var(--gold-primary);
+      color: #FFF;
+      transform: scale(1.05);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      font-size: 1.6rem;
+      color: var(--maroon-deep);
+      padding: 0.5rem;
+    }
+
+    /* Mobile Drawer */
+    .mobile-drawer {
+      display: none;
+      position: fixed;
+      top: 78px;
+      left: 0;
+      right: 0;
+      background: var(--cream-surface);
+      border-bottom: 3px solid var(--gold-primary);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 99;
+    }
+
+    .mobile-drawer.active {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .mobile-drawer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+
+    .mobile-drawer-links a {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--maroon-deep);
+      display: block;
+      border-bottom: 1px solid var(--cream-border);
+      padding-bottom: 0.6rem;
+    }
+
+    /* ==========================================================================
+       Hero Section — Grand Royal Welcome
+       ========================================================================== */
+    .hero-section {
+      position: relative;
+      padding: 5.5rem 0 7rem;
+      overflow: hidden;
+      background: radial-gradient(circle at 50% 30%, #FFF9E6 0%, #FAF9F5 70%);
+      border-bottom: 1px solid var(--cream-border);
+    }
+
+    /* Festive Kasavu Golden Borders on Hero */
+    .hero-kasavu-strip {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 8px;
+      background: var(--kasavu-pattern);
+      box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
+    }
+    .hero-kasavu-top { top: 0; }
+    .hero-kasavu-bottom { bottom: 0; }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      align-items: center;
+      gap: 3.5rem;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.45rem 1.25rem;
+      background: #FFF;
+      border: 1.5px solid var(--gold-primary);
+      border-radius: var(--radius-full);
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.18);
+      margin-bottom: 1.5rem;
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--maroon-deep);
+    }
+
+    .hero-badge .malayalam {
+      font-family: var(--font-malayalam);
+      color: var(--leaf-green);
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.4rem, 5.2vw, 3.8rem);
+      line-height: 1.15;
+      color: var(--maroon-deep);
+      margin-bottom: 1.35rem;
+      font-weight: 800;
+    }
+
+    .hero-title .highlight {
+      background: linear-gradient(135deg, #8B1A24 0%, #D4AF37 70%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      position: relative;
+    }
+
+    .hero-desc {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      line-height: 1.75;
+      margin-bottom: 2.2rem;
+      max-width: 580px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--cream-border);
+    }
+
+    .stat-card {
+      text-align: left;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--maroon-deep);
+      line-height: 1;
+      margin-bottom: 0.35rem;
+    }
+
+    .stat-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-soft);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Pookkalam Centerpiece Graphic */
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .pookkalam-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 440px;
+      aspect-ratio: 1 / 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .pookkalam-svg {
+      width: 100%;
+      height: 100%;
+      filter: drop-shadow(0 18px 36px rgba(112, 16, 24, 0.18));
+      animation: rotateArt 60s linear infinite;
+    }
+
+    @keyframes rotateArt {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .lamp-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 110px;
+      height: 110px;
+      background: radial-gradient(circle, #FFE484 0%, #D4AF37 50%, rgba(212, 175, 55, 0) 70%);
+      border-radius: 50%;
+      animation: lampFlicker 3s ease-in-out infinite alternate;
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .center-lamp {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3;
+      filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.25));
+    }
+
+    @keyframes lampFlicker {
+      0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.7; }
+      100% { transform: translate(-50%, -50%) scale(1.18); opacity: 1; }
+    }
+
+    .floating-pill {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 0.7rem 1.2rem;
+      border-radius: var(--radius-full);
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--charcoal-dark);
+      z-index: 5;
+      animation: floatSmooth 4s ease-in-out infinite alternate;
+    }
+
+    .pill-1 { top: 8%; left: -5%; }
+    .pill-2 { bottom: 10%; right: -2%; animation-delay: 2s; }
+
+    @keyframes floatSmooth {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-12px); }
+    }
+
+    /* ==========================================================================
+       The Legend of King Mahabali & Vamana
+       ========================================================================== */
+    .section-legend {
+      padding: 6.5rem 0;
+      background-color: var(--cream-surface);
+      position: relative;
+    }
+
+    .legend-card {
+      background: #FFF;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--cream-border);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .legend-visual-col {
+      background: linear-gradient(135deg, #5C0B12 0%, #8B1A24 60%, #B88E1D 100%);
+      padding: 3.5rem 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      color: #FFF;
+      position: relative;
+    }
+
+    .legend-visual-col::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+      background-size: 20px 20px;
+      pointer-events: none;
+    }
+
+    .legend-folk-quote {
+      font-family: var(--font-malayalam);
+      font-size: 1.4rem;
+      line-height: 1.7;
+      color: var(--gold-light);
+      background: rgba(0, 0, 0, 0.2);
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border-left: 4px solid var(--gold-primary);
+      backdrop-filter: blur(6px);
+      margin-bottom: 2rem;
+    }
+
+    .quote-translation {
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: #FFF;
+      margin-top: 0.8rem;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .legend-content-col {
+      padding: 3.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .legend-timeline-items {
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      margin-top: 1.5rem;
+    }
+
+    .legend-step {
+      display: flex;
+      gap: 1.25rem;
+    }
+
+    .legend-step-num {
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      background: var(--gold-light);
+      color: var(--maroon-deep);
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      border: 1px solid var(--gold-primary);
+    }
+
+    .legend-step h4 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--maroon-deep);
+      margin-bottom: 0.3rem;
+    }
+
+    .legend-step p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       Key Traditions & Cultural Icons (Grid Layout)
+       ========================================================================== */
+    .section-traditions {
+      padding: 6.5rem 0;
+      background: var(--cream-bg);
+    }
+
+    .traditions-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .tradition-card {
+      background: #FFF;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--cream-border);
+      padding: 2.2rem 1.8rem;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .tradition-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--gold-primary), var(--maroon-deep));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.35s ease;
+    }
+
+    .tradition-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--gold-primary);
+    }
+
+    .tradition-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    .tradition-icon-box {
+      width: 64px;
+      height: 64px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      background: var(--cream-bg);
+      border: 1.5px solid var(--gold-light);
+      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.04);
+    }
+
+    .tradition-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--maroon-deep);
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+    }
+
+    .tradition-tagline {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--leaf-green);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.8rem;
+      display: block;
+    }
+
+    .tradition-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      margin-bottom: 1.2rem;
+      flex-grow: 1;
+    }
+
+    .tradition-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--gold-dark);
+      background: rgba(212, 175, 55, 0.12);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-sm);
+      width: fit-content;
+    }
+
+    /* ==========================================================================
+       Interactive Feature: Onasadya Grand Feast Explorer
+       ========================================================================== */
+    .section-sadya {
+      padding: 6rem 0;
+      background: linear-gradient(180deg, var(--leaf-bg) 0%, #FFFFFF 100%);
+      border-top: 1px solid #D7EAD8;
+      border-bottom: 1px solid #D7EAD8;
+    }
+
+    .sadya-interactive-box {
+      background: #FFFFFF;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-lg);
+      border: 2px solid #C2E3C6;
+      padding: 2.5rem;
+      margin-top: 2rem;
+    }
+
+    .banana-leaf-container {
+      background: linear-gradient(135deg, #2A793D 0%, #1E5E2E 100%);
+      border-radius: 40px 10px 40px 10px;
+      padding: 2rem;
+      color: #FFF;
+      box-shadow: 0 12px 30px rgba(20, 73, 34, 0.25), inset 0 2px 10px rgba(255, 255, 255, 0.2);
+      position: relative;
+      overflow: hidden;
+      border: 3px solid #144922;
+    }
+
+    /* Leaf Veins Decor */
+    .banana-leaf-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translateX(-50%);
+    }
+
+    .dishes-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 1rem;
+      position: relative;
+      z-index: 2;
+    }
+
+    .dish-pill {
+      background: rgba(255, 255, 255, 0.95);
+      color: #144922;
+      border-radius: var(--radius-md);
+      padding: 0.75rem 0.6rem;
+      text-align: center;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+      transition: all 0.25s ease;
+      border: 1.5px solid transparent;
+    }
+
+    .dish-pill:hover, .dish-pill.active {
+      transform: translateY(-4px) scale(1.04);
+      background: #FFFDF0;
+      border-color: var(--gold-primary);
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .dish-pill .dish-icon {
+      font-size: 1.4rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .dish-pill .dish-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      display: block;
+    }
+
+    .sadya-info-panel {
+      margin-top: 1.8rem;
+      background: var(--cream-surface);
+      border: 1px solid var(--gold-light);
+      border-radius: var(--radius-md);
+      padding: 1.5rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    .sadya-info-text h4 {
+      font-family: var(--font-heading);
+      color: var(--maroon-deep);
+      font-size: 1.25rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .sadya-info-text p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    /* ==========================================================================
+       The 10 Days Timeline (Atham to Thiruvonam)
+       ========================================================================== */
+    .section-timeline {
+      padding: 6.5rem 0;
+      background: var(--cream-surface);
+    }
+
+    .timeline-container {
+      position: relative;
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 2rem 0;
+    }
+
+    /* Center line */
+    .timeline-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      width: 4px;
+      background: linear-gradient(180deg, var(--gold-primary), var(--maroon-deep), var(--leaf-green), var(--gold-primary));
+      transform: translateX(-50%);
+      border-radius: 4px;
+    }
+
+    .timeline-item {
+      position: relative;
+      width: 50%;
+      padding: 1.2rem 2.5rem;
+      margin-bottom: 1.5rem;
+      box-sizing: border-box;
+    }
+
+    .timeline-item:nth-child(odd) {
+      left: 0;
+      text-align: right;
+    }
+
+    .timeline-item:nth-child(even) {
+      left: 50%;
+      text-align: left;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      top: 2rem;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: #FFF;
+      border: 4px solid var(--gold-primary);
+      box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.25);
+      z-index: 5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .timeline-item:nth-child(odd) .timeline-dot {
+      right: -14px;
+    }
+
+    .timeline-item:nth-child(even) .timeline-dot {
+      left: -14px;
+    }
+
+    .timeline-card {
+      background: #FFF;
+      padding: 1.5rem 1.75rem;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--cream-border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .timeline-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--gold-primary);
+    }
+
+    .day-tag {
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--maroon-deep);
+      background: var(--gold-light);
+      padding: 0.25rem 0.75rem;
+      border-radius: var(--radius-full);
+      display: inline-block;
+      margin-bottom: 0.5rem;
+    }
+
+    .timeline-card h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--charcoal-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-card .malayalam-sub {
+      font-family: var(--font-malayalam);
+      color: var(--leaf-green);
+      font-size: 1.05rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-card p {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+    }
+
+    /* Highlight Day 10 Thiruvonam */
+    .timeline-item.highlight-day .timeline-card {
+      background: linear-gradient(135deg, #FFFDF5 0%, #FFF3D6 100%);
+      border: 2px solid var(--gold-primary);
+      box-shadow: var(--shadow-gold);
+    }
+
+    .timeline-item.highlight-day .timeline-dot {
+      border-color: var(--maroon-deep);
+      background: var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       Interactive Feature: Festive Onam Greeting Generator
+       ========================================================================== */
+    .section-wishes {
+      padding: 6.5rem 0;
+      background: radial-gradient(circle at 50% 50%, #FFFDF8 0%, #FAF6ED 100%);
+      position: relative;
+    }
+
+    .wishes-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr;
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .generator-form-card {
+      background: #FFF;
+      border-radius: var(--radius-lg);
+      border: 1.5px solid var(--gold-light);
+      box-shadow: var(--shadow-lg);
+      padding: 2.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1.4rem;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--charcoal-dark);
+      margin-bottom: 0.5rem;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius-sm);
+      border: 1.5px solid var(--cream-border);
+      background: #FAF9F5;
+      font-family: var(--font-sans);
+      font-size: 0.95rem;
+      color: var(--charcoal-dark);
+      transition: all 0.25s ease;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--gold-primary);
+      background: #FFF;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
+    }
+
+    .theme-selector {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    .theme-btn {
+      padding: 0.6rem;
+      border-radius: var(--radius-sm);
+      border: 2px solid transparent;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .theme-btn.active {
+      border-color: var(--maroon-deep);
+      transform: scale(1.04);
+    }
+
+    .theme-kasavu { background: #FFFDF0; color: #735308; border-color: #D4AF37; }
+    .theme-maroon { background: #701018; color: #FFF; }
+    .theme-leaf { background: #144922; color: #FFF; }
+    .theme-sunset { background: linear-gradient(135deg, #E65100, #FBC02D); color: #FFF; }
+
+    /* Live Card Preview Box */
+    .greeting-card-preview-wrapper {
+      position: sticky;
+      top: 100px;
+    }
+
+    .festive-card-canvas-box {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      border-radius: var(--radius-lg);
+      padding: 2.5rem;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transition: all 0.35s ease;
+    }
+
+    /* Kasavu Card Theme */
+    .festive-card-canvas-box.theme-kasavu-style {
+      background: #FFFDF7;
+      color: var(--charcoal-dark);
+      border: 8px solid #EFE4BF;
+      outline: 2px solid var(--gold-primary);
+    }
+
+    /* Maroon Card Theme */
+    .festive-card-canvas-box.theme-maroon-style {
+      background: linear-gradient(135deg, #5C0B12 0%, #8B1A24 100%);
+      color: #FFF;
+      border: 8px solid #3A070B;
+      outline: 2px solid var(--gold-primary);
+    }
+    .festive-card-canvas-box.theme-maroon-style .card-blessing { color: #FCEFD2; }
+
+    /* Leaf Card Theme */
+    .festive-card-canvas-box.theme-leaf-style {
+      background: linear-gradient(135deg, #144922 0%, #206E34 100%);
+      color: #FFF;
+      border: 8px solid #0B2C14;
+      outline: 2px solid #A2E0AE;
+    }
+    .festive-card-canvas-box.theme-leaf-style .card-blessing { color: #E8F7EA; }
+
+    /* Sunset Card Theme */
+    .festive-card-canvas-box.theme-sunset-style {
+      background: linear-gradient(135deg, #B73D00 0%, #E65100 50%, #F57F17 100%);
+      color: #FFF;
+      border: 8px solid #7E2A00;
+      outline: 2px solid #FFE082;
+    }
+
+    .card-corner-decor {
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      color: var(--gold-primary);
+    }
+    .card-top-left { top: 12px; left: 12px; }
+    .card-top-right { top: 12px; right: 12px; transform: rotate(90deg); }
+    .card-bottom-left { bottom: 12px; left: 12px; transform: rotate(-90deg); }
+    .card-bottom-right { bottom: 12px; right: 12px; transform: rotate(180deg); }
+
+    .card-header-badge {
+      font-family: var(--font-malayalam);
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: var(--gold-dark);
+      text-align: center;
+    }
+    .festive-card-canvas-box.theme-maroon-style .card-header-badge,
+    .festive-card-canvas-box.theme-leaf-style .card-header-badge,
+    .festive-card-canvas-box.theme-sunset-style .card-header-badge {
+      color: #FFE680;
+    }
+
+    .card-main-wish {
+      text-align: center;
+      margin: 1.5rem 0;
+    }
+
+    .card-recipient-name {
+      font-family: var(--font-heading);
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+    }
+
+    .card-blessing {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: var(--text-muted);
+    }
+
+    .card-sender-signature {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px dashed rgba(212, 175, 55, 0.4);
+      padding-top: 0.8rem;
+      font-size: 0.9rem;
+    }
+
+    .card-sender-signature span strong {
+      font-family: var(--font-heading);
+    }
+
+    .card-action-bar {
+      margin-top: 1.2rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .card-action-bar button {
+      flex: 1;
+    }
+
+    /* ==========================================================================
+       Photo/Art Gallery Section
+       ========================================================================== */
+    .section-gallery {
+      padding: 6.5rem 0;
+      background: var(--cream-surface);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      aspect-ratio: 4 / 3;
+      background: #2C1810;
+      box-shadow: var(--shadow-md);
+      cursor: pointer;
+      group: hover;
+    }
+
+    .gallery-svg-art {
+      width: 100%;
+      height: 100%;
+      transition: transform 0.5s ease;
+    }
+
+    .gallery-item:hover .gallery-svg-art {
+      transform: scale(1.08);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(0deg, rgba(30, 10, 15, 0.9) 0%, rgba(30, 10, 15, 0.2) 60%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 1.5rem;
+      color: #FFF;
+      transition: all 0.3s;
+    }
+
+    .gallery-overlay h4 {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      margin-bottom: 0.2rem;
+      color: var(--gold-light);
+    }
+
+    .gallery-overlay p {
+      font-size: 0.85rem;
+      color: #E2DDD5;
+    }
+
+    /* ==========================================================================
+       Footer Section
+       ========================================================================== */
+    .site-footer {
+      background: #18110D;
+      color: #D3CABA;
+      padding: 5rem 0 2rem;
+      position: relative;
+      border-top: 5px solid var(--gold-primary);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 3.5rem;
+      margin-bottom: 3.5rem;
+    }
+
+    .footer-brand h3 {
+      font-family: var(--font-display);
+      color: var(--gold-primary);
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: #AFA595;
+      max-width: 420px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      color: #FFF;
+      font-size: 1.1rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .footer-col h4::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 32px;
+      height: 2px;
+      background: var(--gold-primary);
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+
+    .footer-links a {
+      color: #AFA595;
+      font-size: 0.92rem;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold-primary);
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+      padding-top: 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      font-size: 0.85rem;
+      color: #83786A;
+    }
+
+    .footer-bottom span {
+      color: var(--gold-primary);
+    }
+
+    /* ==========================================================================
+       Responsive Media Queries
+       ========================================================================== */
+    @media (max-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 3rem;
+      }
+      .hero-desc { margin: 0 auto 2rem auto; }
+      .hero-actions { justify-content: center; }
+      .hero-stats { max-width: 500px; margin: 0 auto; }
+      
+      .legend-card { grid-template-columns: 1fr; }
+      .legend-content-col { padding: 2.5rem; }
+
+      .wishes-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .greeting-card-preview-wrapper {
+        position: static;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .mobile-drawer { display: block; }
+
+      .timeline-container::before { left: 24px; }
+      .timeline-item { width: 100%; padding-left: 60px; padding-right: 0; text-align: left !important; }
+      .timeline-item:nth-child(odd) { left: 0; }
+      .timeline-item:nth-child(even) { left: 0; }
+      .timeline-item:nth-child(odd) .timeline-dot,
+      .timeline-item:nth-child(even) .timeline-dot { left: 10px; right: auto; }
+
+      .sadya-info-panel { flex-direction: column; text-align: center; }
+      .sadya-interactive-box { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header / Navigation Bar
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <!-- Brand Logo -->
+      <a href="#hero" class="brand-logo" aria-label="Onam Tribute Homepage">
+        <div class="brand-emblem">
+          <span>ഓ</span>
+        </div>
+        <div class="brand-text">
+          <h1>Onam Tribute</h1>
+          <span>കേരളോത്സവം</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <ul class="nav-links">
+        <li><a href="#hero" class="nav-link">Home</a></li>
+        <li><a href="#legend" class="nav-link">The Legend</a></li>
+        <li><a href="#traditions" class="nav-link">Traditions</a></li>
+        <li><a href="#sadya" class="nav-link">Onasadya</a></li>
+        <li><a href="#timeline" class="nav-link">10 Days</a></li>
+        <li><a href="#gallery" class="nav-link">Art Gallery</a></li>
+        <li><a href="#wishes" class="nav-link">Send Wishes</a></li>
+      </ul>
+
+      <!-- Actions: Audio Chime & Mobile Toggle -->
+      <div class="nav-actions">
+        <button id="audioToggleBtn" class="audio-btn" title="Play Traditional Chime" aria-label="Play Festive Chime">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </button>
+        <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div id="mobileDrawer" class="mobile-drawer">
+      <ul class="mobile-drawer-links">
+        <li><a href="#hero" class="mobile-nav-item">Home</a></li>
+        <li><a href="#legend" class="mobile-nav-item">The Legend</a></li>
+        <li><a href="#traditions" class="mobile-nav-item">Traditions</a></li>
+        <li><a href="#sadya" class="mobile-nav-item">Onasadya Feast</a></li>
+        <li><a href="#timeline" class="mobile-nav-item">10 Days of Onam</a></li>
+        <li><a href="#gallery" class="mobile-nav-item">Art Gallery</a></li>
+        <li><a href="#wishes" class="mobile-nav-item">Festive Wishes Generator</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Hero Section
+       ========================================================================== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-kasavu-strip hero-kasavu-top"></div>
+    
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="malayalam">പൊന്നോണം</span>
+          <span>• Kerala's Greatest Harvest Festival</span>
+        </div>
+
+        <h1 class="hero-title">
+          Celebrating <span class="highlight">Harmony, Prosperity</span> & Kerala’s Heritage
+        </h1>
+
+        <p class="hero-desc">
+          Welcoming the legendary, benevolent King Mahabali back to God's Own Country. A timeless ten-day celebration of floral carpets, regal boat races, mouth-watering feasts, and eternal goodwill.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#traditions" class="btn-gold">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polygon points="10 8 16 12 10 16 10 8"></polygon>
+            </svg>
+            Explore Traditions
+          </a>
+          <button id="heroFlowerShowerBtn" class="btn-outline">
+            <span>🌸</span> Celebrate with Flowers
+          </button>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-card">
+            <div class="stat-number">10</div>
+            <div class="stat-label">Sacred Days</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">26+</div>
+            <div class="stat-label">Sadya Dishes</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">∞</div>
+            <div class="stat-label">Joy & Unity</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual: Geometric Pookkalam & Nilavilakku SVG -->
+      <div class="hero-visual">
+        <div class="pookkalam-wrapper">
+          <!-- Animated Pookkalam SVG -->
+          <svg class="pookkalam-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <!-- Outer Gold Kasavu Ring -->
+            <circle cx="200" cy="200" r="190" stroke="#D4AF37" stroke-width="6" stroke-dasharray="12 6" opacity="0.85"/>
+            <circle cx="200" cy="200" r="175" fill="#8B1A24" opacity="0.9"/>
+            <circle cx="200" cy="200" r="160" fill="#E65100"/>
+            <circle cx="200" cy="200" r="140" fill="#FBC02D"/>
+            <circle cx="200" cy="200" r="115" fill="#206E34"/>
+            <circle cx="200" cy="200" r="90" fill="#FAF9F5"/>
+            
+            <!-- Radiating Petals Layer 1 -->
+            <g transform="translate(200, 200)">
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(30)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(60)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(90)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(120)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(150)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(180)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(210)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(240)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(270)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(300)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(330)"/>
+            </g>
+            
+            <!-- Inner Red Floral Star -->
+            <g transform="translate(200, 200)">
+              <polygon points="0,-75 22,-22 75,0 22,22 0,75 -22,22 -75,0 -22,-22" fill="#D32F2F"/>
+              <polygon points="0,-75 22,-22 75,0 22,22 0,75 -22,22 -75,0 -22,-22" fill="#FFA000" transform="rotate(45)"/>
+            </g>
+
+            <!-- Center Core -->
+            <circle cx="200" cy="200" r="36" fill="#D4AF37"/>
+            <circle cx="200" cy="200" r="28" fill="#FAF9F5"/>
+          </svg>
+
+          <!-- Golden Nilavilakku (Traditional Brass Lamp) Center -->
+          <div class="lamp-glow"></div>
+          <div class="center-lamp">
+            <svg width="68" height="68" viewBox="0 0 24 24" fill="none">
+              <!-- Flame -->
+              <path d="M12 2C10 5 9 7 9 9C9 10.66 10.34 12 12 12C13.66 12 15 10.66 15 9C15 7 14 5 12 2Z" fill="#FFA000"/>
+              <path d="M12 4C11 6 10.5 7.5 10.5 8.5C10.5 9.33 11.17 10 12 10C12.83 10 13.5 9.33 13.5 8.5C13.5 7.5 13 6 12 4Z" fill="#FFF59D"/>
+              <!-- Lamp Top Bowl -->
+              <ellipse cx="12" cy="13" rx="7" ry="2.5" fill="#D4AF37"/>
+              <ellipse cx="12" cy="12.5" rx="6" ry="1.8" fill="#F7E7A9"/>
+              <!-- Stem -->
+              <path d="M11 14H13V18H11Z" fill="#B88E1D"/>
+              <circle cx="12" cy="16" r="2" fill="#D4AF37"/>
+              <!-- Base -->
+              <path d="M7 21C7 19.5 9 18 12 18C15 18 17 19.5 17 21H7Z" fill="#D4AF37"/>
+              <rect x="6" y="21" width="12" height="2" rx="1" fill="#A27B13"/>
+            </svg>
+          </div>
+
+          <!-- Floating Badges -->
+          <div class="floating-pill pill-1">
+            <span>✨</span> <strong>King Mahabali's Era</strong>
+          </div>
+          <div class="floating-pill pill-2">
+            <span>🌼</span> <strong>10 Days of Pookkalam</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-kasavu-strip hero-kasavu-bottom"></div>
+  </section>
+
+  <!-- ==========================================================================
+       The Legend of Mahabali & Vamana
+       ========================================================================== -->
+  <section class="section-legend" id="legend">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+          </svg>
+          Ancient Folklore
+        </div>
+        <h2 class="section-title">The Legend of <span>King Mahabali</span></h2>
+        <div class="kasavu-divider"></div>
+        <p class="section-subtitle">
+          An inspiring tale of equality, unshakeable devotion, humility, and the immortal love between a benevolent monarch and his devoted subjects.
+        </p>
+      </div>
+
+      <div class="legend-card">
+        <!-- Visual Story Column -->
+        <div class="legend-visual-col">
+          <div>
+            <div class="legend-folk-quote">
+              "മാവേലി നാടു വാണീടും കാലം<br/>
+              മാനുഷരെല്ലാരും ഒന്നുപോലെ..."
+              <div class="quote-translation">
+                "When Maveli ruled the land, all human beings lived as equals, free from falsehood, greed, and suffering."
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h3 style="font-family: var(--font-heading); font-size: 1.4rem; color: #FFF; margin-bottom: 0.5rem;">
+              The Golden Reign (സുവർണ്ണ കാലഘട്ടം)
+            </h3>
+            <p style="font-size: 0.95rem; color: #F7E7A9; line-height: 1.6;">
+              Under Mahabali's kingdom, truth reigned supreme. There was neither poverty nor sorrow, setting the golden standard of governance in Kerala's collective memory.
+            </p>
+          </div>
+        </div>
+
+        <!-- Narrative Timeline Column -->
+        <div class="legend-content-col">
+          <div class="legend-timeline-items">
+            <div class="legend-step">
+              <div class="legend-step-num">1</div>
+              <div>
+                <h4>The Asura King’s Golden Kingdom</h4>
+                <p>King Mahabali was renowned for righteousness and boundless generosity. Under his rule, people prospered without discrimination or deceit.</p>
+              </div>
+            </div>
+
+            <div class="legend-step">
+              <div class="legend-step-num">2</div>
+              <div>
+                <h4>The Arrival of Vamana</h4>
+                <p>Lord Vishnu took the form of Vamana, a modest dwarf Brahmin, asking the generous King for just three paces of land measured by his feet.</p>
+              </div>
+            </div>
+
+            <div class="legend-step">
+              <div class="legend-step-num">3</div>
+              <div>
+                <h4>The Cosmic Measurement & Sacrifice</h4>
+                <p>Vamana grew into the cosmic Trivikrama—measuring the earth in one step and the heavens in the second. With no land left for the third step, Mahabali humbly offered his own head.</p>
+              </div>
+            </div>
+
+            <div class="legend-step">
+              <div class="legend-step-num">4</div>
+              <div>
+                <h4>The Eternal Boon (തിരുവോണം)</h4>
+                <p>Impressed by his selfless sacrifice, Lord Vishnu granted Mahabali the boon to visit his beloved land and people once every year—celebrated eternally as Thiruvonam.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Key Traditions & Cultural Icons (Grid Layout)
+       ========================================================================== */
+  -->
+  <section class="section-traditions" id="traditions">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          </svg>
+          Festive Heritage
+        </div>
+        <h2 class="section-title">The Vibrant <span>Traditions of Onam</span></h2>
+        <div class="kasavu-divider"></div>
+        <p class="section-subtitle">
+          From intricate floral rangolis to roaring snake boat races on serene backwaters, discover the rituals that bring Kerala to life.
+        </p>
+      </div>
+
+      <div class="traditions-grid">
+        <!-- 1. Athapookkalam -->
+        <div class="tradition-card">
+          <div class="tradition-icon-box">🌸</div>
+          <span class="tradition-tagline">Floral Carpet Art</span>
+          <h3>Athapookkalam</h3>
+          <p>
+            Intricate floral rangolis hand-arranged with ten varieties of fresh petals like Chethi, Chembarathi, and Shankhupushpam, growing in layers each day from Atham to Thiruvonam.
+          </p>
+          <div class="tradition-badge">✦ Symbol of Welcome & Joy</div>
+        </div>
+
+        <!-- 2. Onasadya Feast -->
+        <div class="tradition-card">
+          <div class="tradition-icon-box">🍌</div>
+          <span class="tradition-tagline">The Royal Banquet</span>
+          <h3>Onasadya</h3>
+          <p>
+            A sumptuous nine-course vegetarian feast featuring up to 26 authentic delicacies served ceremoniously on a fresh plantain leaf with red matta rice and aromatic payasam.
+          </p>
+          <div class="tradition-badge">✦ "Kanam Vittum Onam Unnanum"</div>
+        </div>
+
+        <!-- 3. Vallam Kali Boat Race -->
+        <div class="tradition-card">
+          <div class="tradition-icon-box">🚣</div>
+          <span class="tradition-tagline">Snake Boat Races</span>
+          <h3>Vallam Kali</h3>
+          <p>
+            Spectacular boat pageants where hundreds of oarsmen row majestic 100-foot Chundan Vallams to the thunderous, rhythmic chants of <em>Vanchipattu</em> along the Pamba River.
+          </p>
+          <div class="tradition-badge">✦ Nehru Trophy & Aranmula</div>
+        </div>
+
+        <!-- 4. Pulikali Dance -->
+        <div class="tradition-card">
+          <div class="tradition-icon-box">🐯</div>
+          <span class="tradition-tagline">The Tiger Dance</span>
+          <h3>Pulikali</h3>
+          <p>
+            A 200-year-old folk spectacle where performers painted meticulously as ferocious tigers and hunters dance through the streets of Thrissur to the beats of <em>Chenda</em> and <em>Thakil</em>.
+          </p>
+          <div class="tradition-badge">✦ Thrissur Swaraj Round</div>
+        </div>
+
+        <!-- 5. Thiruvathira Kali -->
+        <div class="tradition-card">
+          <div class="tradition-icon-box">💃</div>
+          <span class="tradition-tagline">Graceful Folk Dance</span>
+          <h3>Thiruvathirakali</h3>
+          <p>
+            An elegant group dance performed by women draped in traditional Kasavu sarees, moving gracefully in circular formations around a brass Nilavilakku to festive folk tunes.
+          </p>
+          <div class="tradition-badge">✦ Feminine Grace & Harmony</div>
+        </div>
+
+        <!-- 6. Kasavu Attire & Onakkodi -->
+        <div class="tradition-card">
+          <div class="tradition-icon-box">✨</div>
+          <span class="tradition-tagline">Traditional Handlooms</span>
+          <h3>Onakkodi & Kasavu</h3>
+          <p>
+            Gifting brand-new clothes (<em>Onakkodi</em>) is customary. Women wear pristine off-white <em>Set Mundu</em> with golden zari borders, and men wear crisp cream <em>Mundu</em>.
+          </p>
+          <div class="tradition-badge">✦ Balaramapuram Weaves</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive Feature: Onasadya Grand Feast Explorer
+       ========================================================================== -->
+  <section class="section-sadya" id="sadya">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <circle cx="12" cy="12" r="10"></circle>
+            <path d="M12 6v6l4 2"></path>
+          </svg>
+          Gastronomic Marvel
+        </div>
+        <h2 class="section-title">The Grand <span>Onasadya Leaf</span></h2>
+        <div class="kasavu-divider"></div>
+        <p class="section-subtitle">
+          Every item in a traditional Sadya has a dedicated spot and purpose on the banana leaf. Click on any dish below to explore its flavors and cultural significance!
+        </p>
+      </div>
+
+      <div class="sadya-interactive-box">
+        <!-- The Plantain Leaf Container -->
+        <div class="banana-leaf-container">
+          <div class="dishes-grid" id="dishesGrid">
+            <div class="dish-pill active" data-dish="payasam" data-icon="🥣" data-title="Ada Pradhaman / Palada Payasam" data-desc="The crowning glory of Onasadya. A rich, creamy dessert prepared with slow-cooked rice ada, jaggery/milk, ghee, roasted cashews, and fragrant cardamom.">
+              <span class="dish-icon">🥣</span>
+              <span class="dish-name">Payasam</span>
+            </div>
+
+            <div class="dish-pill" data-dish="avial" data-icon="🥗" data-title="Avial (Mixed Vegetable & Coconut Curry)" data-desc="A thick, fragrant medley of 13 indigenous vegetables simmered with grated coconut, green chilies, cumin seeds, raw mango/curd, and drizzled with raw coconut oil and curry leaves.">
+              <span class="dish-icon">🥗</span>
+              <span class="dish-name">Avial</span>
+            </div>
+
+            <div class="dish-pill" data-dish="sambar" data-icon="🍲" data-title="Varutharacha Kerala Sambar" data-desc="A hearty lentil and vegetable stew slow-cooked with freshly roasted and ground spices, tamarind pulp, and aromatic coconut tempering.">
+              <span class="dish-icon">🍲</span>
+              <span class="dish-name">Sambar</span>
+            </div>
+
+            <div class="dish-pill" data-dish="olan" data-icon="🥥" data-title="Olan (White Pumpkin in Coconut Milk)" data-desc="A subtle, delicate dish of ash gourd and red cowpeas cooked in mild coconut milk and seasoned gently with fresh green chilies and curry leaves.">
+              <span class="dish-icon">🥥</span>
+              <span class="dish-name">Olan</span>
+            </div>
+
+            <div class="dish-pill" data-dish="injipuli" data-icon="🫚" data-title="Injipuli / Puli Inji (Ginger Tamarind Relish)" data-desc="A dark, tangy, and sweet condiment made from dark jaggery, fresh ginger, green chilies, and tamarind. It balances all 6 tastes (Shad-rasa) of the feast.">
+              <span class="dish-icon">🫚</span>
+              <span class="dish-name">Injipuli</span>
+            </div>
+
+            <div class="dish-pill" data-dish="thoran" data-icon="🥬" data-title="Cabbage / Beans Thoran" data-desc="A quick, nutritious dry stir-fry of finely chopped vegetables tossed with freshly grated coconut, shallots, mustard seeds, and curry leaves.">
+              <span class="dish-icon">🥬</span>
+              <span class="dish-name">Thoran</span>
+            </div>
+
+            <div class="dish-pill" data-dish="chips" data-icon="🍌" data-title="Upperi & Sharkara Varatti" data-desc="Crispy raw plantain chips fried golden in pure coconut oil alongside thick banana slices coated in sweet jaggery, dry ginger, and powdered cumin.">
+              <span class="dish-icon">🍌</span>
+              <span class="dish-name">Upperi Chips</span>
+            </div>
+
+            <div class="dish-pill" data-dish="pappadam" data-icon="🫓" data-title="Kerala Pappadam" data-desc="Fluffy, spherical, crispy fried lentil wafers that are crushed over rice, dal (parippu), and ghee to add the classic festive crunch.">
+              <span class="dish-icon">🫓</span>
+              <span class="dish-name">Pappadam</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Dynamic Dish Details Panel -->
+        <div class="sadya-info-panel">
+          <div class="sadya-info-text">
+            <h4 id="dishDetailTitle">Ada Pradhaman / Palada Payasam</h4>
+            <p id="dishDetailDesc">The crowning glory of Onasadya. A rich, creamy dessert prepared with slow-cooked rice ada, jaggery/milk, ghee, roasted cashews, and fragrant cardamom.</p>
+          </div>
+          <button id="sadyaCelebrateBtn" class="btn-gold" style="flex-shrink: 0;">
+            <span>😋</span> Savor the Feast
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       The 10 Days of Onam Timeline
+       ========================================================================== -->
+  <section class="section-timeline" id="timeline">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Sacred Calendar
+        </div>
+        <h2 class="section-title">The 10 Sacred <span>Days of Onam</span></h2>
+        <div class="kasavu-divider"></div>
+        <p class="section-subtitle">
+          Beginning from the Atham asterism in the Malayalam month of Chingam, each day adds a distinct floral layer and festive ritual leading to Thiruvonam.
+        </p>
+      </div>
+
+      <div class="timeline-container">
+        <!-- Day 1 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 1</span>
+            <span class="malayalam-sub">അത്തം (Atham)</span>
+            <h4>Inception of the Pookkalam</h4>
+            <p>Festivities kick off with the Athachamayam procession in Thripunithura. The first ring of yellow flowers (Thumba) is laid on the courtyard.</p>
+          </div>
+        </div>
+
+        <!-- Day 2 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 2</span>
+            <span class="malayalam-sub">ചിത്തിര (Chithira)</span>
+            <h4>Cleaning & Second Floral Ring</h4>
+            <p>Homes are cleaned and whitewashed. A second floral layer of contrasting orange and yellow petals is added to the Athapookkalam.</p>
+          </div>
+        </div>
+
+        <!-- Day 3 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 3</span>
+            <span class="malayalam-sub">ചോതി (Chodhi)</span>
+            <h4>Onakkodi Shopping Begins</h4>
+            <p>Markets flood with excitement as families begin purchasing new clothes (Onakkodi) and jewelry for friends and relatives.</p>
+          </div>
+        </div>
+
+        <!-- Day 4 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 4</span>
+            <span class="malayalam-sub">വിശാഖം (Vishakam)</span>
+            <h4>Harvest Market & Competitions</h4>
+            <p>Considered one of the most auspicious days. Preparations for the grand feast begin with harvesting fresh vegetables and rice grains.</p>
+          </div>
+        </div>
+
+        <!-- Day 5 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 5</span>
+            <span class="malayalam-sub">അനിഴം (Anizham)</span>
+            <h4>Aranmula Boat Race Day</h4>
+            <p>The legendary Aranmula Uthrattathi Vallam Kali commences on the holy Pamba River with grand rhythmic boat pageants.</p>
+          </div>
+        </div>
+
+        <!-- Day 6 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 6</span>
+            <span class="malayalam-sub">തൃക്കേട്ട (Thrikketa)</span>
+            <h4>Homecoming of Loved Ones</h4>
+            <p>Schools and offices close. Family members traveling from far and wide arrive back in their ancestral Kerala homes (Tharavadu).</p>
+          </div>
+        </div>
+
+        <!-- Day 7 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 7</span>
+            <span class="malayalam-sub">മൂലം (Moolam)</span>
+            <h4>Sadya Rehearsals & Dances</h4>
+            <p>Small traditional Sadyas are served in temples. Folk dances like Pulikali and Kaikottikali perform in village squares.</p>
+          </div>
+        </div>
+
+        <!-- Day 8 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 8</span>
+            <span class="malayalam-sub">പൂരാടം (Pooradam)</span>
+            <h4>Installation of Onathappan</h4>
+            <p>Pyramid-like clay idols representing Lord Vamana and King Mahabali (called <em>Onathappan</em>) are installed and anointed in homes.</p>
+          </div>
+        </div>
+
+        <!-- Day 9 -->
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag">Day 9</span>
+            <span class="malayalam-sub">ഉത്രാടം (Uthradam)</span>
+            <h4>First Onam (ഒന്നാം ഓണം)</h4>
+            <p>Known as Onam Eve. The culmination of bustling shopping (Uthrada Pachil). Spirits peak as Mahabali's entry is imminent.</p>
+          </div>
+        </div>
+
+        <!-- Day 10: Highlight -->
+        <div class="timeline-item highlight-day">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="day-tag" style="background: var(--gold-primary); color: #3A070B;">Grand Finale</span>
+            <span class="malayalam-sub" style="color: var(--maroon-deep); font-size: 1.25rem;">തിരുവോണം (Thiruvonam)</span>
+            <h4>The Auspicious Homecoming</h4>
+            <p>King Mahabali visits every household. Families don fresh Onakkodi, savor the 26-dish Onasadya, light brass lamps, and rejoice in supreme harmony.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Photo & Art Heritage Gallery
+       ========================================================================== -->
+  <section class="section-gallery" id="gallery">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+            <circle cx="8.5" cy="8.5" r="1.5"></circle>
+            <polyline points="21 15 16 10 5 21"></polyline>
+          </svg>
+          Visual Odyssey
+        </div>
+        <h2 class="section-title">Kerala's <span>Cultural Tapestry</span></h2>
+        <div class="kasavu-divider"></div>
+        <p class="section-subtitle">
+          Immerse yourself in artistic tributes showcasing the colors, rhythm, and timeless beauty of God's Own Country.
+        </p>
+      </div>
+
+      <div class="gallery-grid">
+        <!-- Item 1: Vallam Kali -->
+        <div class="gallery-item" onclick="triggerConfettiBurst()">
+          <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#0277BD"/>
+                <stop offset="100%" stop-color="#01579B"/>
+              </linearGradient>
+              <linearGradient id="sunsetGrad" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#FF7043"/>
+                <stop offset="100%" stop-color="#FFE082"/>
+              </linearGradient>
+            </defs>
+            <rect width="400" height="300" fill="url(#sunsetGrad)"/>
+            <!-- Sun -->
+            <circle cx="200" cy="110" r="50" fill="#FFF59D" opacity="0.9"/>
+            <!-- Water -->
+            <rect y="160" width="400" height="140" fill="url(#waterGrad)"/>
+            <!-- Coconut Trees in background -->
+            <path d="M40 160 Q60 100 90 90 Q80 120 70 160" stroke="#1B5E20" stroke-width="3" fill="none"/>
+            <path d="M350 160 Q330 90 300 80 Q310 120 320 160" stroke="#1B5E20" stroke-width="3" fill="none"/>
+            <!-- Snake Boat Silhouette -->
+            <path d="M30 200 C80 205 280 205 370 180 C365 195 280 220 50 215 Z" fill="#3E2723"/>
+            <path d="M365 180 Q380 150 385 130 Q380 145 370 175" stroke="#D4AF37" stroke-width="4" fill="none"/>
+            <!-- Oarsmen silhouettes -->
+            <circle cx="90" cy="195" r="4" fill="#FFE082"/><line x1="90" y1="199" x2="85" y2="215" stroke="#D4AF37" stroke-width="2"/>
+            <circle cx="130" cy="195" r="4" fill="#FFE082"/><line x1="130" y1="199" x2="125" y2="215" stroke="#D4AF37" stroke-width="2"/>
+            <circle cx="170" cy="195" r="4" fill="#FFE082"/><line x1="170" y1="199" x2="165" y2="215" stroke="#D4AF37" stroke-width="2"/>
+            <circle cx="210" cy="195" r="4" fill="#FFE082"/><line x1="210" y1="199" x2="205" y2="215" stroke="#D4AF37" stroke-width="2"/>
+            <circle cx="250" cy="195" r="4" fill="#FFE082"/><line x1="250" y1="199" x2="245" y2="215" stroke="#D4AF37" stroke-width="2"/>
+            <circle cx="290" cy="195" r="4" fill="#FFE082"/><line x1="290" y1="199" x2="285" y2="215" stroke="#D4AF37" stroke-width="2"/>
+          </svg>
+          <div class="gallery-overlay">
+            <h4>Chundan Vallam</h4>
+            <p>The majestic 100-ft snake boat cutting through emerald ripples.</p>
+          </div>
+        </div>
+
+        <!-- Item 2: Kathakali -->
+        <div class="gallery-item" onclick="triggerConfettiBurst()">
+          <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#1A0D08"/>
+            <!-- Kathakali Crown (Kireedam) -->
+            <path d="M160 80 L200 20 L240 80 Z" fill="#D4AF37"/>
+            <circle cx="200" cy="70" r="40" fill="#C62828" stroke="#D4AF37" stroke-width="4"/>
+            <circle cx="200" cy="70" r="30" fill="#2E7D32"/>
+            <!-- Face (Paccha Vesham) -->
+            <path d="M160 100 Q200 80 240 100 L230 180 Q200 210 170 180 Z" fill="#2E7D32"/>
+            <!-- Chutti (White frame border) -->
+            <path d="M155 105 Q200 220 245 105" stroke="#FFFFFF" stroke-width="6" fill="none"/>
+            <!-- Eyes & Makeup -->
+            <ellipse cx="180" cy="130" rx="10" ry="4" fill="#000"/>
+            <ellipse cx="220" cy="130" rx="10" ry="4" fill="#000"/>
+            <path d="M185 165 Q200 175 215 165" stroke="#C62828" stroke-width="4" fill="none"/>
+            <circle cx="200" cy="115" r="5" fill="#D4AF37"/>
+          </svg>
+          <div class="gallery-overlay">
+            <h4>Kathakali Paccha</h4>
+            <p>Classical dance drama portraying noble gods and heroic kings.</p>
+          </div>
+        </div>
+
+        <!-- Item 3: Pulikali -->
+        <div class="gallery-item" onclick="triggerConfettiBurst()">
+          <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#2E1C0C"/>
+            <!-- Tiger Mask / Body Art Motif -->
+            <circle cx="200" cy="150" r="85" fill="#FFA000" stroke="#D4AF37" stroke-width="4"/>
+            <!-- Stripes -->
+            <path d="M130 130 Q160 140 140 170" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+            <path d="M270 130 Q240 140 260 170" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+            <path d="M150 90 Q180 120 160 140" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+            <path d="M250 90 Q220 120 240 140" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+            <!-- Tiger Eyes -->
+            <circle cx="170" cy="140" r="14" fill="#FFF"/>
+            <circle cx="170" cy="140" r="7" fill="#000"/>
+            <circle cx="230" cy="140" r="14" fill="#FFF"/>
+            <circle cx="230" cy="140" r="7" fill="#000"/>
+            <!-- Snout & Fangs -->
+            <path d="M185 170 L215 170 L200 190 Z" fill="#000"/>
+            <path d="M175 195 Q200 215 225 195" stroke="#C62828" stroke-width="6" fill="none"/>
+            <polygon points="180,195 185,210 190,195" fill="#FFF"/>
+            <polygon points="210,195 215,210 220,195" fill="#FFF"/>
+          </svg>
+          <div class="gallery-overlay">
+            <h4>Pulikali Tiger Spirit</h4>
+            <p>Vibrant tiger body-paint echoing the rhythmic pulse of Chenda drums.</p>
+          </div>
+        </div>
+
+        <!-- Item 4: Nilavilakku Light -->
+        <div class="gallery-item" onclick="triggerConfettiBurst()">
+          <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="300" fill="#1C140F"/>
+            <!-- Glowing Lamp Ambiance -->
+            <circle cx="200" cy="130" r="90" fill="#FFA000" opacity="0.15"/>
+            <circle cx="200" cy="130" r="60" fill="#FFD54F" opacity="0.25"/>
+            <!-- Lamp SVG -->
+            <path d="M200 70 C190 90 185 105 185 115 C185 125 192 132 200 132 C208 132 215 125 215 115 C215 105 210 90 200 70 Z" fill="#FFF59D"/>
+            <ellipse cx="200" cy="140" rx="45" ry="12" fill="#D4AF37"/>
+            <ellipse cx="200" cy="137" rx="38" ry="9" fill="#FFF9C4"/>
+            <path d="M194 145 H206 V190 H194 Z" fill="#B88E1D"/>
+            <ellipse cx="200" cy="170" rx="14" ry="6" fill="#D4AF37"/>
+            <path d="M165 240 C165 210 185 190 200 190 C215 190 235 210 235 240 H165 Z" fill="#D4AF37"/>
+            <rect x="155" y="240" width="90" height="10" rx="3" fill="#A27B13"/>
+          </svg>
+          <div class="gallery-overlay">
+            <h4>Nilavilakku Grace</h4>
+            <p>Golden rays dispelling darkness and welcoming peace into every threshold.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive Feature: Festive Onam Greeting Card Generator
+       ========================================================================== -->
+  <section class="section-wishes" id="wishes">
+    <div class="container">
+      <div class="text-center">
+        <div class="section-tag">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+            <polyline points="22,6 12,13 2,6"></polyline>
+          </svg>
+          Share The Joy
+        </div>
+        <h2 class="section-title">Personalized <span>Onam Wish Generator</span></h2>
+        <div class="kasavu-divider"></div>
+        <p class="section-subtitle">
+          Craft an elegant, personalized festive greeting card to share warm Onam blessings with your family, friends, and colleagues worldwide.
+        </p>
+      </div>
+
+      <div class="wishes-wrapper">
+        <!-- Controls Form -->
+        <div class="generator-form-card">
+          <form id="greetingForm" onsubmit="return false;">
+            <div class="form-group">
+              <label class="form-label" for="recipientName">Recipient Name / Family</label>
+              <input type="text" id="recipientName" class="form-input" placeholder="e.g. Rahul & Ananya" value="Dear Friends & Family" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="senderName">Your Name</label>
+              <input type="text" id="senderName" class="form-input" placeholder="e.g. Vignesh & Family" value="With Love, Dev & Family" />
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="greetingTemplate">Select Wish Template</label>
+              <select id="greetingTemplate" class="form-select">
+                <option value="May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness, and good health to your home this Onam!">Traditional English Blessing</option>
+                <option value="ഐശ്വര്യവും സമൃദ്ധിയും നിറഞ്ഞ നല്ലൊരു പൊന്നോണം ആശംസിക്കുന്നു! Happy Onam to you and your loved ones!">Bilingual Malayalam & English</option>
+                <option value="May King Mahabali bless your days with supreme harmony, immense success, and joyful family gatherings. Happy Thiruvonam!">Prosperity & Harmony Theme</option>
+                <option value="Wishing you a joyous harvest season filled with laughter, grand feasts, and cherished memories. Have a splendid Onam!">Warm Harvest Celebration</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Card Theme Style</label>
+              <div class="theme-selector">
+                <button type="button" class="theme-btn theme-kasavu active" data-theme="kasavu">Kasavu</button>
+                <button type="button" class="theme-btn theme-maroon" data-theme="maroon">Maroon</button>
+                <button type="button" class="theme-btn theme-leaf" data-theme="leaf">Plantain</button>
+                <button type="button" class="theme-btn theme-sunset" data-theme="sunset">Sunset</button>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.8rem;">
+              <button type="button" id="triggerShowerCardBtn" class="btn-gold" style="width: 100%;">
+                <span>🌸</span> Send Flower Shower & Preview
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Live Visual Greeting Card Preview -->
+        <div class="greeting-card-preview-wrapper">
+          <div id="cardCanvasBox" class="festive-card-canvas-box theme-kasavu-style">
+            <!-- Corner Golden Filigrees -->
+            <svg class="card-corner-decor card-top-left" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
+            </svg>
+            <svg class="card-corner-decor card-top-right" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
+            </svg>
+            <svg class="card-corner-decor card-bottom-left" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
+            </svg>
+            <svg class="card-corner-decor card-bottom-right" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
+            </svg>
+
+            <!-- Card Header -->
+            <div class="card-header-badge">
+              <span>✦ ഹൃദയം നിറഞ്ഞ ഓണാശംസകൾ ✦</span>
+              <div style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-heading); margin-top: 2px;">
+                Happy Onam Wishes
+              </div>
+            </div>
+
+            <!-- Card Body Content -->
+            <div class="card-main-wish">
+              <h3 id="previewRecipient" class="card-recipient-name">Dear Friends & Family,</h3>
+              <p id="previewBlessing" class="card-blessing">
+                May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness, and good health to your home this Onam!
+              </p>
+            </div>
+
+            <!-- Card Signature -->
+            <div class="card-sender-signature">
+              <span id="previewSender">With Warm Regards, <strong>Dev & Family</strong></span>
+              <span style="font-size: 1.2rem;">🪔</span>
+            </div>
+          </div>
+
+          <!-- Card Action Buttons -->
+          <div class="card-action-bar">
+            <button id="copyWishBtn" class="btn-outline" style="padding: 0.8rem 1.2rem; font-size: 0.9rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+              </svg>
+              <span id="copyBtnText">Copy Wish Text</span>
+            </button>
+            <button id="shareWhatsappBtn" class="btn-gold" style="padding: 0.8rem 1.2rem; font-size: 0.9rem;">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+              </svg>
+              Share via WhatsApp
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer Section
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Onam Tribute</h3>
+          <p>
+            Dedicated to preserving and celebrating the enduring spirit of King Mahabali, unity, equality, and Kerala’s cultural heritage for generations to come.
+          </p>
+          <div style="margin-top: 1.2rem; font-size: 1.1rem; color: var(--gold-light);">
+            ഓണാശംസകൾ • Happy Onam
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Grand Welcome</a></li>
+            <li><a href="#legend">The Legend of Mahabali</a></li>
+            <li><a href="#traditions">Folk Traditions</a></li>
+            <li><a href="#sadya">Onasadya Feast</a></li>
+            <li><a href="#timeline">10 Days of Onam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Festive Highlights</h4>
+          <ul class="footer-links">
+            <li><a href="#gallery">Cultural Art Showcase</a></li>
+            <li><a href="#wishes">Personalized Greetings</a></li>
+            <li><a href="javascript:triggerConfettiBurst()">Interactive Flower Shower</a></li>
+            <li><a href="#siteHeader">Return to Top</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          Crafted with <span>💛</span> for Kerala’s Greatest Harvest Festival.
+        </div>
+        <div>
+          May prosperity, peace, and good health illuminate your home.
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Vanilla JavaScript Logic & Interactions
+       ========================================================================== -->
+  <script>
+    // --- 1. Sticky Header State ---
+    const siteHeader = document.getElementById('siteHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 40) {
+        siteHeader.classList.add('scrolled');
+      } else {
+        siteHeader.classList.remove('scrolled');
+      }
+    });
+
+    // --- 2. Mobile Menu Toggle ---
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const mobileDrawer = document.getElementById('mobileDrawer');
+    const mobileNavItems = document.querySelectorAll('.mobile-nav-item');
+
+    mobileMenuBtn.addEventListener('click', () => {
+      mobileDrawer.classList.toggle('active');
+    });
+
+    mobileNavItems.forEach(item => {
+      item.addEventListener('click', () => {
+        mobileDrawer.classList.remove('active');
+      });
+    });
+
+    // --- 3. Web Audio API: Traditional Temple Chime Generator (Self-Contained) ---
+    const audioToggleBtn = document.getElementById('audioToggleBtn');
+    let audioCtx = null;
+
+    function playFestiveChime() {
+      try {
+        if (!audioCtx) {
+          audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        // Play a serene pentatonic bell sequence (Mohanam raga notes: C, D, E, G, A)
+        const notes = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50];
+        notes.forEach((freq, index) => {
+          setTimeout(() => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+
+            // Natural chime exponential decay
+            gain.gain.setValueAtTime(0.3, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + 1.8);
+
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+
+            osc.start();
+            osc.stop(audioCtx.currentTime + 1.8);
+          }, index * 180);
+        });
+
+        // Trigger celebratory flower shower along with chime!
+        triggerConfettiBurst();
+      } catch (err) {
+        console.log('Audio Context error: ', err);
+      }
+    }
+
+    audioToggleBtn.addEventListener('click', playFestiveChime);
+
+    // --- 4. Flower Shower (Canvas Confetti with Kerala Petal Colors) ---
+    function triggerConfettiBurst() {
+      if (typeof confetti === 'function') {
+        // Gold, Maroon, Jasmine White, Saffron Orange, Leaf Green petals
+        const festiveColors = ['#D4AF37', '#8B1A24', '#FAF9F5', '#FF9800', '#2E7D32', '#FBC02D'];
+        
+        confetti({
+          particleCount: 70,
+          spread: 80,
+          origin: { y: 0.6 },
+          colors: festiveColors,
+          shapes: ['circle', 'square'],
+          scalar: 1.2,
+          ticks: 200
+        });
+
+        confetti({
+          particleCount: 35,
+          angle: 60,
+          spread: 55,
+          origin: { x: 0 },
+          colors: festiveColors
+        });
+
+        confetti({
+          particleCount: 35,
+          angle: 120,
+          spread: 55,
+          origin: { x: 1 },
+          colors: festiveColors
+        });
+      }
+    }
+
+    document.getElementById('heroFlowerShowerBtn').addEventListener('click', triggerConfettiBurst);
+
+    // --- 5. Interactive Onasadya Feast Explorer ---
+    const dishPills = document.querySelectorAll('.dish-pill');
+    const dishDetailTitle = document.getElementById('dishDetailTitle');
+    const dishDetailDesc = document.getElementById('dishDetailDesc');
+    const sadyaCelebrateBtn = document.getElementById('sadyaCelebrateBtn');
+
+    dishPills.forEach(pill => {
+      pill.addEventListener('click', () => {
+        dishPills.forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+
+        const title = pill.getAttribute('data-title');
+        const desc = pill.getAttribute('data-desc');
+
+        dishDetailTitle.textContent = title;
+        dishDetailDesc.textContent = desc;
+
+        // Subtle click feedback
+        dishDetailTitle.style.animation = 'none';
+        void dishDetailTitle.offsetWidth; // trigger reflow
+        dishDetailTitle.style.animation = 'fadeIn 0.3s ease';
+      });
+    });
+
+    sadyaCelebrateBtn.addEventListener('click', () => {
+      triggerConfettiBurst();
+      playFestiveChime();
+    });
+
+    // --- 6. Interactive Greeting Card Live Generator ---
+    const recipientInput = document.getElementById('recipientName');
+    const senderInput = document.getElementById('senderName');
+    const greetingTemplate = document.getElementById('greetingTemplate');
+    const previewRecipient = document.getElementById('previewRecipient');
+    const previewBlessing = document.getElementById('previewBlessing');
+    const previewSender = document.getElementById('previewSender');
+    const cardCanvasBox = document.getElementById('cardCanvasBox');
+    const themeButtons = document.querySelectorAll('.theme-btn');
+    const triggerShowerCardBtn = document.getElementById('triggerShowerCardBtn');
+    const copyWishBtn = document.getElementById('copyWishBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+    const shareWhatsappBtn = document.getElementById('shareWhatsappBtn');
+
+    function updateCardPreview() {
+      const recipient = recipientInput.value.trim() || 'Dear Friends & Family';
+      const sender = senderInput.value.trim() || 'With Best Wishes';
+      const blessing = greetingTemplate.value;
+
+      previewRecipient.textContent = `${recipient},`;
+      previewBlessing.textContent = blessing;
+      previewSender.innerHTML = `Warm Regards, <strong>${sender}</strong>`;
+    }
+
+    recipientInput.addEventListener('input', updateCardPreview);
+    senderInput.addEventListener('input', updateCardPreview);
+    greetingTemplate.addEventListener('change', updateCardPreview);
+
+    // Theme Switcher for Greeting Card
+    themeButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        themeButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const theme = btn.getAttribute('data-theme');
+        cardCanvasBox.className = 'festive-card-canvas-box';
+
+        if (theme === 'kasavu') cardCanvasBox.classList.add('theme-kasavu-style');
+        else if (theme === 'maroon') cardCanvasBox.classList.add('theme-maroon-style');
+        else if (theme === 'leaf') cardCanvasBox.classList.add('theme-leaf-style');
+        else if (theme === 'sunset') cardCanvasBox.classList.add('theme-sunset-style');
+      });
+    });
+
+    triggerShowerCardBtn.addEventListener('click', () => {
+      updateCardPreview();
+      triggerConfettiBurst();
+      playFestiveChime();
+    });
+
+    // Copy Wish Text
+    copyWishBtn.addEventListener('click', () => {
+      const recipient = recipientInput.value.trim() || 'Dear Friends & Family';
+      const sender = senderInput.value.trim() || 'With Warm Regards';
+      const blessing = greetingTemplate.value;
+
+      const fullMessage = `🌸 *Happy Onam Wishes* 🌸\n\n${recipient},\n${blessing}\n\nWarm Regards,\n*${sender}*\n\n✨ Wishing you harmony, prosperity & joy!`;
+
+      navigator.clipboard.writeText(fullMessage).then(() => {
+        copyBtnText.textContent = 'Copied to Clipboard! ✓';
+        setTimeout(() => {
+          copyBtnText.textContent = 'Copy Wish Text';
+        }, 2500);
+      }).catch(() => {
+        alert('Copied wish text!');
+      });
+    });
+
+    // Share via WhatsApp
+    shareWhatsappBtn.addEventListener('click', () => {
+      const recipient = recipientInput.value.trim() || 'Dear Friends & Family';
+      const sender = senderInput.value.trim() || 'With Warm Regards';
+      const blessing = greetingTemplate.value;
+
+      const fullMessage = `🌸 *Happy Onam!* 🌸\n\n${recipient},\n${blessing}\n\nWarm Regards,\n*${sender}*\n\nCelebrate Onam Tribute: ${window.location.href}`;
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullMessage)}`;
+      window.open(whatsappUrl, '_blank');
+    });
+
+    // --- 7. Smooth Scroll and Reveal on Scroll ---
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.tradition-card, .timeline-item, .gallery-item, .legend-card').forEach(el => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(24px)';
+      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      revealObserver.observe(el);
+    });
+  </script>
+</body>
+</html>
