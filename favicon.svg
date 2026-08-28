@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGrad" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#8B1A24"/>
+      <stop offset="85%" stop-color="#5B0810"/>
+      <stop offset="100%" stop-color="#3A0308"/>
+    </radialGradient>
+    
+    <!-- Gold Gradient -->
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFF5D0"/>
+      <stop offset="35%" stop-color="#ECC856"/>
+      <stop offset="70%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#996F0A"/>
+    </linearGradient>
+
+    <!-- Flame Gradient -->
+    <linearGradient id="flameGrad" x1="50%" y1="100%" x2="50%" y2="0%">
+      <stop offset="0%" stop-color="#D83010"/>
+      <stop offset="35%" stop-color="#FF7A00"/>
+      <stop offset="75%" stop-color="#FFDD00"/>
+      <stop offset="100%" stop-color="#FFFFFF"/>
+    </linearGradient>
+    
+    <!-- Leaf Green Gradient -->
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4EB86C"/>
+      <stop offset="100%" stop-color="#1B632E"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-25%" y="-25%" width="150%" height="150%">
+      <feGaussianBlur stdDeviation="1" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Outer Kasavu Golden Ring -->
+  <circle cx="32" cy="32" r="30" fill="url(#goldGrad)" stroke="#FFF8E0" stroke-width="1"/>
+  
+  <!-- Dashed Accent Ring -->
+  <circle cx="32" cy="32" r="27.5" fill="none" stroke="#680D15" stroke-width="1.2" stroke-dasharray="2.5 2.5" opacity="0.65"/>
+
+  <!-- Inner Maroon Medallion -->
+  <circle cx="32" cy="32" r="25.5" fill="url(#bgGrad)"/>
+
+  <!-- Pookkalam Petals & Floral Geometry -->
+  <g transform="translate(32, 32)">
+    <!-- 8 Green Leaf Petals -->
+    <g opacity="0.95">
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(45)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(90)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(135)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(180)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(225)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(270)"/>
+      <path d="M0 -22 C2.8 -18 2.8 -13 0 -9 C-2.8 -13 -2.8 -18 0 -22 Z" fill="url(#greenGrad)" transform="rotate(315)"/>
+    </g>
+
+    <!-- 8 Golden Radiating Petals -->
+    <g>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(22.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(67.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(112.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(157.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(202.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(247.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(292.5)"/>
+      <path d="M0 -20 C3.5 -15 3.5 -10 0 -6 C-3.5 -10 -3.5 -15 0 -20 Z" fill="url(#goldGrad)" transform="rotate(337.5)"/>
+    </g>
+
+    <!-- Traditional Nilavilakku Diya Base -->
+    <ellipse cx="0" cy="7.5" rx="12" ry="5" fill="url(#goldGrad)" stroke="#FFF5D0" stroke-width="0.75"/>
+    <ellipse cx="0" cy="6.2" rx="9.5" ry="3" fill="#5B0810"/>
+    <ellipse cx="0" cy="5.5" rx="8" ry="2.2" fill="url(#flameGrad)" opacity="0.85"/>
+    
+    <!-- Central Radiant Sacred Flame -->
+    <path d="M0 -15 C3.8 -9 6 -3.5 4.5 2 C2.8 6 -2.8 6 -4.5 2 C-6 -3.5 -3.8 -9 0 -15 Z" fill="url(#flameGrad)" filter="url(#glow)"/>
+    <!-- Inner Pure Flame Core -->
+    <path d="M0 -11 C2 -6.5 3 -2 2 1.5 C1 3.5 -1 3.5 -2 1.5 C-3 -2 -2 -6.5 0 -11 Z" fill="#FFFFFF"/>
+    
+    <!-- Glowing Aura Sparkles -->
+    <circle cx="0" cy="-17.5" r="1.2" fill="#FFF5D0" filter="url(#glow)"/>
+    <circle cx="-8.5" cy="-5" r="0.8" fill="#FFDF00"/>
+    <circle cx="8.5" cy="-5" r="0.8" fill="#FFDF00"/>
+  </g>
+</svg>
