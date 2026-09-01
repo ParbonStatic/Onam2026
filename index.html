@@ -895,13 +895,96 @@
       border-bottom: 1px solid #D7EAD8;
     }
 
+    .sadya-view-switch {
+      display: flex;
+      justify-content: center;
+      gap: 0.75rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .sadya-tab-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.6rem;
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: 0.95rem;
+      border: 1.5px solid var(--gold-primary);
+      color: var(--maroon-deep);
+      background: #FFFFFF;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .sadya-tab-btn.active, .sadya-tab-btn:hover {
+      background: linear-gradient(135deg, #ECC856 0%, #D4AF37 50%, #B88E1D 100%);
+      color: #3B2405;
+      box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
+      transform: translateY(-2px);
+    }
+
     .sadya-interactive-box {
       background: #FFFFFF;
       border-radius: var(--radius-lg);
       box-shadow: var(--shadow-lg);
       border: 2px solid #C2E3C6;
       padding: 2.5rem;
-      margin-top: 2rem;
+      margin-top: 1rem;
+    }
+
+    .sadya-photo-view {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      box-shadow: 0 14px 36px rgba(20, 73, 34, 0.25);
+      border: 3px solid var(--gold-primary);
+      background: #0E2914;
+    }
+
+    .sadya-photo-view img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: calc(var(--radius-md) - 3px);
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .sadya-photo-view:hover img {
+      transform: scale(1.02);
+    }
+
+    .sadya-photo-caption {
+      position: absolute;
+      bottom: 1.25rem;
+      left: 1.25rem;
+      right: 1.25rem;
+      background: rgba(18, 12, 8, 0.88);
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(212, 175, 55, 0.6);
+      padding: 0.9rem 1.4rem;
+      border-radius: var(--radius-md);
+      color: #FFFDF0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .sadya-photo-caption h5 {
+      font-family: var(--font-heading);
+      color: var(--gold-light);
+      font-size: 1.05rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .sadya-photo-caption p {
+      font-size: 0.85rem;
+      color: rgba(255, 255, 255, 0.85);
+      margin: 0;
     }
 
     .banana-leaf-container {
@@ -1885,52 +1968,86 @@
         <h2 class="section-title">The Grand <span>Onasadya Leaf</span></h2>
         <div class="kasavu-divider"></div>
         <p class="section-subtitle">
-          Every item in a traditional Sadya has a dedicated spot and purpose on the banana leaf. Click on any dish below to explore its flavors and cultural significance!
+          Every item in an authentic Kerala Sadya has a dedicated spot and ritual purpose on the tender plantain leaf. Experience the grand feast visual below or click through each dish to explore its heritage!
         </p>
+
+        <!-- View Mode Switcher -->
+        <div class="sadya-view-switch">
+          <button class="sadya-tab-btn active" id="tabPhotoView" type="button">
+            <span>🍃</span> Authentic Banana Leaf Feast
+          </button>
+          <button class="sadya-tab-btn" id="tabGuideView" type="button">
+            <span>🍽️</span> Interactive Dish Guide
+          </button>
+        </div>
       </div>
 
       <div class="sadya-interactive-box">
-        <!-- The Plantain Leaf Container -->
-        <div class="banana-leaf-container">
+        <!-- Tab 1: Photorealistic Banana Leaf Feast View -->
+        <div id="sadyaPhotoViewContainer" class="sadya-photo-view">
+          <img src="onasadya-leaf.jpg" alt="Authentic Kerala Onasadya served on a fresh green banana leaf" id="sadyaMainLeafImg" />
+          <div class="sadya-photo-caption">
+            <div>
+              <h5>Thalavazha Ila Onasadya</h5>
+              <p>Kerala Matta rice, Parippu & ghee, Payasam, Avial, Olan, Thoran, Pappadam, Chips & authentic condiments.</p>
+            </div>
+            <button class="btn-gold" id="sadyaFeastCelebrateBtn" type="button" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+              <span>🎉</span> Celebrate Feast
+            </button>
+          </div>
+        </div>
+
+        <!-- Tab 2: The Interactive Dish Guide Container -->
+        <div id="sadyaGuideViewContainer" class="banana-leaf-container" style="display: none;">
           <div class="dishes-grid" id="dishesGrid">
-            <div class="dish-pill active" data-dish="payasam" data-icon="🥣" data-title="Ada Pradhaman / Palada Payasam" data-desc="The crowning glory of Onasadya. A rich, creamy dessert prepared with slow-cooked rice ada, jaggery/milk, ghee, roasted cashews, and fragrant cardamom.">
+            <div class="dish-pill active" data-dish="rice" data-icon="🍚" data-title="Kerala Matta Rice & Neyy-Parippu" data-desc="The heart of the feast. Steaming, nutty indigenous Kerala red Matta rice centered on the leaf, crowned with thick cooked yellow lentils (Parippu) and pure melted golden ghee.">
+              <span class="dish-icon">🍚</span>
+              <span class="dish-name">Matta Rice & Ghee</span>
+            </div>
+
+            <div class="dish-pill" data-dish="payasam" data-icon="🥣" data-title="Ada Pradhaman & Palada Payasam" data-desc="The crowning glory of Onasadya. Slow-simmered rice ada delicacies prepared in rich jaggery, thick coconut milk, cow milk, ghee, crunchy roasted cashews, and aromatic green cardamom.">
               <span class="dish-icon">🥣</span>
               <span class="dish-name">Payasam</span>
             </div>
 
-            <div class="dish-pill" data-dish="avial" data-icon="🥗" data-title="Avial (Mixed Vegetable & Coconut Curry)" data-desc="A thick, fragrant medley of 13 indigenous vegetables simmered with grated coconut, green chilies, cumin seeds, raw mango/curd, and drizzled with raw coconut oil and curry leaves.">
+            <div class="dish-pill" data-dish="avial" data-icon="🥗" data-title="Avial (Medley of 13 Vegetables)" data-desc="A thick, fragrant blend of 13 native garden vegetables gently cooked with coarsely ground coconut, green chilies, cumin seeds, raw mango, and finished with cold-pressed coconut oil and curry leaves.">
               <span class="dish-icon">🥗</span>
               <span class="dish-name">Avial</span>
             </div>
 
-            <div class="dish-pill" data-dish="sambar" data-icon="🍲" data-title="Varutharacha Kerala Sambar" data-desc="A hearty lentil and vegetable stew slow-cooked with freshly roasted and ground spices, tamarind pulp, and aromatic coconut tempering.">
+            <div class="dish-pill" data-dish="sambar" data-icon="🍲" data-title="Varutharacha Kerala Sambar" data-desc="A rich lentil and vegetable stew slow-cooked with freshly roasted whole spices, grated coconut paste, tamarind pulp, and aromatic mustard-curry leaf tempering.">
               <span class="dish-icon">🍲</span>
               <span class="dish-name">Sambar</span>
             </div>
 
-            <div class="dish-pill" data-dish="olan" data-icon="🥥" data-title="Olan (White Pumpkin in Coconut Milk)" data-desc="A subtle, delicate dish of ash gourd and red cowpeas cooked in mild coconut milk and seasoned gently with fresh green chilies and curry leaves.">
+            <div class="dish-pill" data-dish="olan" data-icon="🥥" data-title="Olan (Ash Gourd in Coconut Milk)" data-desc="A soothing, delicate preparation of white pumpkin (Kumbalanga) and red cowpeas gently simmered in velvety coconut milk and seasoned with fresh green chilies and curry leaves.">
               <span class="dish-icon">🥥</span>
               <span class="dish-name">Olan</span>
             </div>
 
-            <div class="dish-pill" data-dish="injipuli" data-icon="🫚" data-title="Injipuli / Puli Inji (Ginger Tamarind Relish)" data-desc="A dark, tangy, and sweet condiment made from dark jaggery, fresh ginger, green chilies, and tamarind. It balances all 6 tastes (Shad-rasa) of the feast.">
+            <div class="dish-pill" data-dish="injipuli" data-icon="🫚" data-title="Injipuli / Puli Inji (Ginger Tamarind Nectar)" data-desc="A dark, tangy, and fiery condiment made from organic jaggery, crushed ginger, green chilies, and tamarind. Considered equal to a hundred curries (Nooru Karyangal) for aiding feast digestion.">
               <span class="dish-icon">🫚</span>
               <span class="dish-name">Injipuli</span>
             </div>
 
-            <div class="dish-pill" data-dish="thoran" data-icon="🥬" data-title="Cabbage / Beans Thoran" data-desc="A quick, nutritious dry stir-fry of finely chopped vegetables tossed with freshly grated coconut, shallots, mustard seeds, and curry leaves.">
+            <div class="dish-pill" data-dish="thoran" data-icon="🥬" data-title="Kerala Vegetable Thoran" data-desc="A nutritious dry stir-fry of finely chopped green vegetables tossed with freshly grated coconut, shallots, mustard seeds, and crisp curry leaves.">
               <span class="dish-icon">🥬</span>
               <span class="dish-name">Thoran</span>
             </div>
 
-            <div class="dish-pill" data-dish="chips" data-icon="🍌" data-title="Upperi & Sharkara Varatti" data-desc="Crispy raw plantain chips fried golden in pure coconut oil alongside thick banana slices coated in sweet jaggery, dry ginger, and powdered cumin.">
+            <div class="dish-pill" data-dish="chips" data-icon="🍌" data-title="Upperi & Sharkara Varatti" data-desc="Crispy raw plantain chips fried golden in pure coconut oil alongside thick banana chunks coated in sweet jaggery syrup, dried ginger (Chukku), and powdered cumin.">
               <span class="dish-icon">🍌</span>
               <span class="dish-name">Upperi Chips</span>
             </div>
 
-            <div class="dish-pill" data-dish="pappadam" data-icon="🫓" data-title="Kerala Pappadam" data-desc="Fluffy, spherical, crispy fried lentil wafers that are crushed over rice, dal (parippu), and ghee to add the classic festive crunch.">
+            <div class="dish-pill" data-dish="pappadam" data-icon="🫓" data-title="Kerala Pappadam" data-desc="Fluffy, round, crispy fried lentil wafers that are joyfully crushed over the rice, dal (Parippu), and ghee to add the signature festive crunch.">
               <span class="dish-icon">🫓</span>
               <span class="dish-name">Pappadam</span>
+            </div>
+
+            <div class="dish-pill" data-dish="pachadi" data-icon="🍍" data-title="Pineapple Pachadi & Beetroot Kichadi" data-desc="Sweet and tangy spiced yogurt-based curries made with cooked pineapple or beetroot, ground mustard seeds, and freshly grated coconut.">
+              <span class="dish-icon">🍍</span>
+              <span class="dish-name">Pachadi & Kichadi</span>
             </div>
           </div>
         </div>
@@ -1938,8 +2055,8 @@
         <!-- Dynamic Dish Details Panel -->
         <div class="sadya-info-panel">
           <div class="sadya-info-text">
-            <h4 id="dishDetailTitle">Ada Pradhaman / Palada Payasam</h4>
-            <p id="dishDetailDesc">The crowning glory of Onasadya. A rich, creamy dessert prepared with slow-cooked rice ada, jaggery/milk, ghee, roasted cashews, and fragrant cardamom.</p>
+            <h4 id="dishDetailTitle">Kerala Matta Rice & Neyy-Parippu</h4>
+            <p id="dishDetailDesc">The heart of the feast. Steaming, nutty indigenous Kerala red Matta rice centered on the leaf, crowned with thick cooked yellow lentils (Parippu) and pure melted golden ghee.</p>
           </div>
           <button id="sadyaCelebrateBtn" class="btn-gold" style="flex-shrink: 0;">
             <span>😋</span> Savor the Feast
@@ -2216,6 +2333,15 @@
           <div class="gallery-overlay">
             <h4>Nilavilakku Grace</h4>
             <p>Golden rays dispelling darkness and welcoming peace into every threshold.</p>
+          </div>
+        </div>
+
+        <!-- Item 5: Grand Onasadya Leaf -->
+        <div class="gallery-item" onclick="triggerConfettiBurst()">
+          <img src="onasadya-leaf.jpg" alt="Traditional Kerala Onasadya served on a fresh banana leaf" class="gallery-svg-art" style="object-fit: cover;" />
+          <div class="gallery-overlay">
+            <h4>Grand Onasadya Leaf</h4>
+            <p>The 26-dish harvest feast served in sacred order on a plantain leaf.</p>
           </div>
         </div>
       </div>
@@ -2503,7 +2629,36 @@
 
     document.getElementById('heroFlowerShowerBtn').addEventListener('click', triggerConfettiBurst);
 
-    // --- 5. Interactive Onasadya Feast Explorer ---
+    // --- 5. Interactive Onasadya Feast Explorer & Leaf Viewer ---
+    const tabPhotoView = document.getElementById('tabPhotoView');
+    const tabGuideView = document.getElementById('tabGuideView');
+    const sadyaPhotoViewContainer = document.getElementById('sadyaPhotoViewContainer');
+    const sadyaGuideViewContainer = document.getElementById('sadyaGuideViewContainer');
+    const sadyaFeastCelebrateBtn = document.getElementById('sadyaFeastCelebrateBtn');
+
+    if (tabPhotoView && tabGuideView) {
+      tabPhotoView.addEventListener('click', () => {
+        tabPhotoView.classList.add('active');
+        tabGuideView.classList.remove('active');
+        sadyaPhotoViewContainer.style.display = 'block';
+        sadyaGuideViewContainer.style.display = 'none';
+      });
+
+      tabGuideView.addEventListener('click', () => {
+        tabGuideView.classList.add('active');
+        tabPhotoView.classList.remove('active');
+        sadyaGuideViewContainer.style.display = 'block';
+        sadyaPhotoViewContainer.style.display = 'none';
+      });
+    }
+
+    if (sadyaFeastCelebrateBtn) {
+      sadyaFeastCelebrateBtn.addEventListener('click', () => {
+        triggerConfettiBurst();
+        playFestiveChime();
+      });
+    }
+
     const dishPills = document.querySelectorAll('.dish-pill');
     const dishDetailTitle = document.getElementById('dishDetailTitle');
     const dishDetailDesc = document.getElementById('dishDetailDesc');
@@ -2527,10 +2682,12 @@
       });
     });
 
-    sadyaCelebrateBtn.addEventListener('click', () => {
-      triggerConfettiBurst();
-      playFestiveChime();
-    });
+    if (sadyaCelebrateBtn) {
+      sadyaCelebrateBtn.addEventListener('click', () => {
+        triggerConfettiBurst();
+        playFestiveChime();
+      });
+    }
 
     // --- 6. Interactive Greeting Card Live Generator ---
     const recipientInput = document.getElementById('recipientName');
