@@ -40,9 +40,9 @@ A high-fidelity static web tribute to **Onam (കേരളോത്സവം)**.
 ## 2. Architectural Subsystems
 
 ```
-+--------------------------------------------------------------------------------+
-|                                Onam 2026 DOM Tree                              |
-+--------------------------------------------------------------------------------+
++-----------------------------------------------------------------------------------------+
+|                                  Onam 2026 DOM Tree                                     |
++-----------------------------------------------------------------------------------------+
      |
      +---> [Hero Section] -----------> [Countdown Clock & Flower Shower CTA]
      |
@@ -58,7 +58,10 @@ A high-fidelity static web tribute to **Onam (കേരളോത്സവം)**.
      |
      +---> [Cultural Gallery] -------> [Kathakali, Pulikali, Snake Boat, Sadya Leaf]
      |
-     +---> [Greeting Card Engine] ---> [Live Customizer, Theme Switcher, Share/Copy]
+     +---> [Ornamental Card Engine] -> [Live Preview, Theme/Aspect/Ornament Selectors]
+     |                                 ├── [DOM Preview with SVG Lotus Filigrees & Seals]
+     |                                 ├── [High-Res HTML5 Canvas 2D Engine (1600x1200)]
+     |                                 └── [PNG File Exporter, WhatsApp & Clipboard API]
      |
      +---> [Web Audio DSP Core] -----> [Procedural Temple Bell & Chime Synthesis]
 ```
@@ -76,7 +79,24 @@ gitGraph
    commit id: "WebAudioChimeDSP"
    commit id: "GreetingCardGenerator"
    commit id: "OnasadyaPlantainLeaf" tag: "v1.2"
+   commit id: "OrnamentalCardPNGExport" tag: "v1.3"
 ```
+
+### Milestone: Ornamental Card Decoration & High-Res PNG Export (`v1.3`)
+- **Ornamental Card Architecture**:
+  - **Kasavu Zari Brocade Borders**: Multi-layered gold metallic gradients, Kasavu geometric diagonal weave hatching, inner hairline border, and dashed accent frame.
+  - **4-Corner Lotus Filigrees**: Intricate SVG vector corner flourishes and canvas procedural paths framing the card content.
+  - **Top Centerpiece**: Brass Nilavilakku (oil lamp) with dynamic glowing flame aura, paired with a curved Marigold (Chendumalli) and Jasmine flower garland swag.
+  - **Athapookkalam Watermark**: Concentric floral mandala with 12-point radial petals positioned at center depth.
+  - **Royal Seal Stamp Medallion**: Embossed circular golden medal (`👑 PONNONAM 2026`) with gold starburst.
+- **Client-Side High-Resolution HTML5 Canvas PNG Engine & Proportional Aspect Ratio Preservation**:
+  - Direct procedural Canvas 2D rendering pipeline (1600x1200 Landscape 4:3, 1400x1400 Square 1:1, 1080x1440 Portrait 9:12 / 3:4) with 0 external rasterization dependencies.
+  - **Proportional Vertical Budgeting**: Replaced static Y-offsets with dynamic vertical space calculations mirroring DOM Flexbox `justify-content: space-between`:
+    $$\text{Middle Center } Y = \text{TopSectionBottom} + \frac{(\text{FooterTop} - \text{TopSectionBottom})}{2}$$
+    $$\text{WishStart } Y = \text{Middle Center } Y - \frac{\text{TextBlockHeight}}{2}$$
+  - Dynamic font measurement, auto text-wrapping across varying widths, and proportional scaling of motifs (`scale = \min(\frac{W}{1600}, \frac{H}{1200})`).
+  - Instant PNG export (`Onam-Greeting-Card-2026-[theme]-[aspect].png`) synchronized with Web Audio bell chimes and Canvas Confetti flower showers.
+- **Site-Wide Ornamental Harmony**: Added subtle gold accents and corner stars to Tradition, Legend, and Timeline cards.
 
 ### Milestone: Onasadya Plantain Leaf Integration (`v1.2`)
 - **Asset Integration**: High-definition, top-down flatlay photo (`onasadya-leaf.jpg`) depicting the complete 26-dish feast on a fresh banana leaf (*Thalavazha Ila*), featuring Kerala Matta rice, Parippu & ghee, Payasam bowls, Avial, Olan, Thoran, Pappadam, and crisp banana chips.
@@ -98,22 +118,24 @@ function playFestiveChime() {
   if (!AudioContext) return;
   const ctx = new AudioContext();
 
-  const frequencies = [587.33, 880, 1174.66]; // D5, A5, D6 harmonic series
+  const frequencies = [523.25, 587.33, 659.25, 783.99, 880.00, 1046.50]; // Mohanam raga series
   frequencies.forEach((freq, idx) => {
-    const osc = ctx.createOscillator();
-    const gain = ctx.createGain();
+    setTimeout(() => {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
 
-    osc.type = 'sine';
-    osc.frequency.setValueAtTime(freq, ctx.currentTime + idx * 0.08);
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(freq, ctx.currentTime);
 
-    gain.gain.setValueAtTime(0.2, ctx.currentTime + idx * 0.08);
-    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + idx * 0.08 + 1.2);
+      gain.gain.setValueAtTime(0.3, ctx.currentTime);
+      gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 1.8);
 
-    osc.connect(gain);
-    gain.connect(ctx.destination);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
 
-    osc.start(ctx.currentTime + idx * 0.08);
-    osc.stop(ctx.currentTime + idx * 0.08 + 1.3);
+      osc.start();
+      osc.stop(ctx.currentTime + 1.8);
+    }, idx * 180);
   });
 }
 ```
@@ -126,5 +148,6 @@ function playFestiveChime() {
 | :--- | :--- | :--- |
 | **First Contentful Paint (FCP)** | `< 0.6s` | Zero heavy frameworks; inline critical CSS; preconnected Google Fonts. |
 | **Interaction to Next Paint (INP)** | `< 50ms` | Direct DOM manipulation for tabs and dish selections with no layout thrashing. |
-| **Memory Footprint** | `< 25MB` | Web Audio contexts auto-closed; offscreen canvas instances dereferenced. |
+| **PNG Render Latency** | `< 120ms` | Direct Canvas 2D blitting at 1600x1200 with vector path caching. |
+| **Memory Footprint** | `< 25MB` | Offscreen canvas elements dereferenced immediately post blob export. |
 | **Asset Size** | Compressed | SVG-based vector decorations + responsive, optimized JPG leaf photography. |

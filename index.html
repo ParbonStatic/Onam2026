@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Onam Tribute — Celebrating Harmony, Prosperity & Culture</title>
   <meta name="title" content="Onam Tribute — Celebrating Harmony, Prosperity & Culture" />
-  <meta name="description" content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
-  <meta name="keywords" content="Onam, Kerala Festival, Mahabali, Athapookkalam, Onasadya, Vallam Kali, Pulikali, Ponn Onam, Kerala Culture" />
+  <meta name="description"
+    content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
+  <meta name="keywords"
+    content="Onam, Kerala Festival, Mahabali, Athapookkalam, Onasadya, Vallam Kali, Pulikali, Ponn Onam, Kerala Culture" />
   <meta name="author" content="Onam Tribute" />
   <meta name="theme-color" content="#701018" />
 
@@ -15,29 +18,35 @@
   <meta property="og:url" content="./" />
   <meta property="og:site_name" content="Onam Tribute — കേരളോത്സവം" />
   <meta property="og:title" content="Onam Tribute — Celebrating Harmony, Prosperity & Culture" />
-  <meta property="og:description" content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
+  <meta property="og:description"
+    content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
   <meta property="og:image" content="og-image.svg" />
   <meta property="og:image:type" content="image/svg+xml" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt" content="Onam Tribute banner featuring traditional Kasavu gold mandala, Athapookkalam, and Nilavilakku lamp" />
+  <meta property="og:image:alt"
+    content="Onam Tribute banner featuring traditional Kasavu gold mandala, Athapookkalam, and Nilavilakku lamp" />
   <meta property="og:locale" content="en_IN" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Onam Tribute — Celebrating Harmony, Prosperity & Culture" />
-  <meta name="twitter:description" content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
+  <meta name="twitter:description"
+    content="A tribute to Onam, the grand harvest festival of Kerala celebrating King Mahabali, Athapookkalam, Onasadya, Vallam Kali, and rich cultural heritage." />
   <meta name="twitter:image" content="og-image.svg" />
-  <meta name="twitter:image:alt" content="Onam Tribute banner with floral Athapookkalam and festive Kerala traditions" />
-  
+  <meta name="twitter:image:alt"
+    content="Onam Tribute banner with floral Athapookkalam and festive Kerala traditions" />
+
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
   <link rel="apple-touch-icon" href="favicon.svg" />
-  
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Gayathri:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Gayathri:wght@700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Rozha+One&display=swap"
+    rel="stylesheet" />
 
   <!-- Canvas Confetti for Flower Shower -->
   <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
@@ -51,7 +60,7 @@
       --gold-light: #F7E7A9;
       --gold-dark: #A27B13;
       --gold-glow: rgba(212, 175, 55, 0.35);
-      
+
       --cream-bg: #FAF9F5;
       --cream-surface: #FFFDF9;
       --cream-card: #FFFFFF;
@@ -75,7 +84,7 @@
       --shadow-md: 0 8px 24px rgba(44, 24, 16, 0.08);
       --shadow-lg: 0 16px 40px rgba(44, 24, 16, 0.12);
       --shadow-gold: 0 10px 30px rgba(212, 175, 55, 0.22);
-      
+
       --radius-sm: 8px;
       --radius-md: 16px;
       --radius-lg: 24px;
@@ -86,19 +95,19 @@
       --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
       --font-malayalam: 'Gayathri', 'Cinzel', serif;
 
-      --kasavu-pattern: repeating-linear-gradient(
-        45deg,
-        #D4AF37,
-        #D4AF37 4px,
-        #E5C558 4px,
-        #E5C558 8px
-      );
+      --kasavu-pattern: repeating-linear-gradient(45deg,
+          #D4AF37,
+          #D4AF37 4px,
+          #E5C558 4px,
+          #E5C558 8px);
     }
 
     /* ==========================================================================
        Reset & Base Styles
        ========================================================================== */
-    *, *::before, *::after {
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
@@ -350,8 +359,13 @@
     }
 
     @keyframes rotateSlow {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .brand-text h1 {
@@ -500,8 +514,14 @@
       background: var(--kasavu-pattern);
       box-shadow: 0 2px 6px rgba(212, 175, 55, 0.3);
     }
-    .hero-kasavu-top { top: 0; }
-    .hero-kasavu-bottom { bottom: 0; }
+
+    .hero-kasavu-top {
+      top: 0;
+    }
+
+    .hero-kasavu-bottom {
+      bottom: 0;
+    }
 
     .hero-grid {
       display: grid;
@@ -620,8 +640,13 @@
     }
 
     @keyframes rotateArt {
-      from { transform: rotate(0deg); }
-      to { transform: rotate(360deg); }
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
     }
 
     .lamp-glow {
@@ -648,8 +673,15 @@
     }
 
     @keyframes lampFlicker {
-      0% { transform: translate(-50%, -50%) scale(0.92); opacity: 0.7; }
-      100% { transform: translate(-50%, -50%) scale(1.18); opacity: 1; }
+      0% {
+        transform: translate(-50%, -50%) scale(0.92);
+        opacity: 0.7;
+      }
+
+      100% {
+        transform: translate(-50%, -50%) scale(1.18);
+        opacity: 1;
+      }
     }
 
     .floating-pill {
@@ -670,12 +702,25 @@
       animation: floatSmooth 4s ease-in-out infinite alternate;
     }
 
-    .pill-1 { top: 8%; left: -5%; }
-    .pill-2 { bottom: 10%; right: -2%; animation-delay: 2s; }
+    .pill-1 {
+      top: 8%;
+      left: -5%;
+    }
+
+    .pill-2 {
+      bottom: 10%;
+      right: -2%;
+      animation-delay: 2s;
+    }
 
     @keyframes floatSmooth {
-      0% { transform: translateY(0px); }
-      100% { transform: translateY(-12px); }
+      0% {
+        transform: translateY(0px);
+      }
+
+      100% {
+        transform: translateY(-12px);
+      }
     }
 
     /* ==========================================================================
@@ -919,7 +964,8 @@
       box-shadow: var(--shadow-sm);
     }
 
-    .sadya-tab-btn.active, .sadya-tab-btn:hover {
+    .sadya-tab-btn.active,
+    .sadya-tab-btn:hover {
       background: linear-gradient(135deg, #ECC856 0%, #D4AF37 50%, #B88E1D 100%);
       color: #3B2405;
       box-shadow: 0 6px 20px rgba(212, 175, 55, 0.4);
@@ -1030,7 +1076,8 @@
       border: 1.5px solid transparent;
     }
 
-    .dish-pill:hover, .dish-pill.active {
+    .dish-pill:hover,
+    .dish-pill.active {
       transform: translateY(-4px) scale(1.04);
       background: #FFFDF0;
       border-color: var(--gold-primary);
@@ -1205,7 +1252,7 @@
     }
 
     /* ==========================================================================
-       Interactive Feature: Festive Onam Greeting Generator
+       Interactive Feature: Festive Onam Greeting Generator & Card Engine
        ========================================================================== */
     .section-wishes {
       padding: 6.5rem 0;
@@ -1225,186 +1272,559 @@
       border-radius: var(--radius-lg);
       border: 1.5px solid var(--gold-light);
       box-shadow: var(--shadow-lg);
-      padding: 2.5rem;
+      padding: 2.2rem;
     }
 
     .form-group {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1.25rem;
     }
 
     .form-label {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       font-weight: 700;
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--charcoal-dark);
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.45rem;
     }
 
-    .form-input, .form-select, .form-textarea {
+    .form-label-hint {
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-soft);
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
       width: 100%;
-      padding: 0.85rem 1.1rem;
+      padding: 0.8rem 1rem;
       border-radius: var(--radius-sm);
       border: 1.5px solid var(--cream-border);
       background: #FAF9F5;
       font-family: var(--font-sans);
-      font-size: 0.95rem;
+      font-size: 0.92rem;
       color: var(--charcoal-dark);
       transition: all 0.25s ease;
     }
 
-    .form-input:focus, .form-select:focus, .form-textarea:focus {
+    .form-textarea {
+      resize: vertical;
+      min-height: 85px;
+      line-height: 1.5;
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
       border-color: var(--gold-primary);
       background: #FFF;
       outline: none;
       box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.2);
     }
 
-    .theme-selector {
+    .theme-selector,
+    .ornament-selector,
+    .aspect-selector {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0.75rem;
-      margin-top: 0.5rem;
+      gap: 0.5rem;
+      margin-top: 0.4rem;
     }
 
-    .theme-btn {
-      padding: 0.6rem;
+    .aspect-selector {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .theme-btn,
+    .ornament-btn,
+    .aspect-btn {
+      padding: 0.55rem 0.4rem;
       border-radius: var(--radius-sm);
-      border: 2px solid transparent;
-      font-size: 0.8rem;
+      border: 1.5px solid var(--cream-border);
+      background: #FFF;
+      font-size: 0.78rem;
       font-weight: 700;
       text-align: center;
       cursor: pointer;
-      transition: all 0.2s;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0.2rem;
     }
 
-    .theme-btn.active {
+    .theme-btn:hover,
+    .ornament-btn:hover,
+    .aspect-btn:hover {
+      border-color: var(--gold-primary);
+      transform: translateY(-2px);
+    }
+
+    .theme-btn.active,
+    .ornament-btn.active,
+    .aspect-btn.active {
       border-color: var(--maroon-deep);
-      transform: scale(1.04);
+      background: #FFFDF4;
+      box-shadow: 0 3px 10px rgba(112, 16, 24, 0.15);
+      transform: scale(1.03);
     }
 
-    .theme-kasavu { background: #FFFDF0; color: #735308; border-color: #D4AF37; }
-    .theme-maroon { background: #701018; color: #FFF; }
-    .theme-leaf { background: #144922; color: #FFF; }
-    .theme-sunset { background: linear-gradient(135deg, #E65100, #FBC02D); color: #FFF; }
+    .theme-kasavu {
+      background: #FFFDF0;
+      color: #735308;
+      border-color: #D4AF37;
+    }
 
-    /* Live Card Preview Box */
+    .theme-maroon {
+      background: #701018;
+      color: #FFF;
+      border-color: #500A10;
+    }
+
+    .theme-leaf {
+      background: #144922;
+      color: #FFF;
+      border-color: #0E3518;
+    }
+
+    .theme-sunset {
+      background: linear-gradient(135deg, #E65100, #FBC02D);
+      color: #FFF;
+      border-color: #C74400;
+    }
+
+    /* Live Card Preview Wrapper */
     .greeting-card-preview-wrapper {
       position: sticky;
-      top: 100px;
+      top: 90px;
     }
 
+    .preview-header-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.75rem;
+    }
+
+    .preview-badge-status {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--leaf-green);
+      background: var(--leaf-bg);
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      border: 1px solid rgba(46, 139, 71, 0.25);
+    }
+
+    /* Base Card Canvas Box */
     .festive-card-canvas-box {
       width: 100%;
-      aspect-ratio: 4 / 3;
       border-radius: var(--radius-lg);
-      padding: 2.5rem;
+      padding: 2.2rem 2.4rem;
       position: relative;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: var(--shadow-lg);
+      box-shadow: 0 16px 45px rgba(44, 24, 16, 0.18), 0 0 0 1px rgba(212, 175, 55, 0.3);
       overflow: hidden;
-      transition: all 0.35s ease;
+      transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-sizing: border-box;
     }
 
-    /* Kasavu Card Theme */
+    /* Aspect Ratio Variants */
+    .festive-card-canvas-box.aspect-landscape {
+      aspect-ratio: 4 / 3;
+      min-height: 420px;
+    }
+
+    .festive-card-canvas-box.aspect-square {
+      aspect-ratio: 1 / 1;
+      min-height: 480px;
+    }
+
+    .festive-card-canvas-box.aspect-portrait {
+      aspect-ratio: 9 / 12;
+      min-height: 520px;
+    }
+
+    /* Card Themes */
     .festive-card-canvas-box.theme-kasavu-style {
-      background: #FFFDF7;
+      background: linear-gradient(145deg, #FFFDF8 0%, #FAF5E6 50%, #F5ECDA 100%);
       color: var(--charcoal-dark);
-      border: 8px solid #EFE4BF;
-      outline: 2px solid var(--gold-primary);
+      border: 10px solid #EADBBA;
+      outline: 2.5px solid var(--gold-primary);
     }
 
-    /* Maroon Card Theme */
     .festive-card-canvas-box.theme-maroon-style {
-      background: linear-gradient(135deg, #5C0B12 0%, #8B1A24 100%);
+      background: radial-gradient(circle at 50% 35%, #8B1A24 0%, #540A10 65%, #340408 100%);
       color: #FFF;
-      border: 8px solid #3A070B;
-      outline: 2px solid var(--gold-primary);
+      border: 10px solid #48080E;
+      outline: 2.5px solid var(--gold-primary);
     }
-    .festive-card-canvas-box.theme-maroon-style .card-blessing { color: #FCEFD2; }
 
-    /* Leaf Card Theme */
+    .festive-card-canvas-box.theme-maroon-style .card-blessing {
+      color: #FDF3E3;
+    }
+
+    .festive-card-canvas-box.theme-maroon-style .card-recipient-name {
+      color: #FFE8A3;
+    }
+
     .festive-card-canvas-box.theme-leaf-style {
-      background: linear-gradient(135deg, #144922 0%, #206E34 100%);
+      background: radial-gradient(circle at 50% 35%, #257C3C 0%, #175227 65%, #0B2C14 100%);
       color: #FFF;
-      border: 8px solid #0B2C14;
-      outline: 2px solid #A2E0AE;
+      border: 10px solid #0D3719;
+      outline: 2.5px solid #A2E0AE;
     }
-    .festive-card-canvas-box.theme-leaf-style .card-blessing { color: #E8F7EA; }
 
-    /* Sunset Card Theme */
+    .festive-card-canvas-box.theme-leaf-style .card-blessing {
+      color: #E8F7EA;
+    }
+
+    .festive-card-canvas-box.theme-leaf-style .card-recipient-name {
+      color: #FFEBA6;
+    }
+
     .festive-card-canvas-box.theme-sunset-style {
-      background: linear-gradient(135deg, #B73D00 0%, #E65100 50%, #F57F17 100%);
+      background: radial-gradient(circle at 50% 30%, #F57F17 0%, #E65100 55%, #8D2500 100%);
       color: #FFF;
-      border: 8px solid #7E2A00;
-      outline: 2px solid #FFE082;
+      border: 10px solid #661D00;
+      outline: 2.5px solid #FFE082;
     }
 
+    .festive-card-canvas-box.theme-sunset-style .card-blessing {
+      color: #FFF8E1;
+    }
+
+    .festive-card-canvas-box.theme-sunset-style .card-recipient-name {
+      color: #FFFDE7;
+    }
+
+    /* Inner Ornate Gold Filigree Border Line */
+    .card-inner-frame {
+      position: absolute;
+      inset: 8px;
+      border: 1.5px solid rgba(212, 175, 55, 0.6);
+      border-radius: calc(var(--radius-lg) - 6px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    .card-inner-frame-dashed {
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(212, 175, 55, 0.4);
+      border-radius: calc(var(--radius-lg) - 10px);
+      pointer-events: none;
+      z-index: 2;
+    }
+
+    /* Four Corner Lotus Filigrees */
     .card-corner-decor {
       position: absolute;
-      width: 32px;
-      height: 32px;
+      width: 42px;
+      height: 42px;
       color: var(--gold-primary);
+      z-index: 3;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.12));
     }
-    .card-top-left { top: 12px; left: 12px; }
-    .card-top-right { top: 12px; right: 12px; transform: rotate(90deg); }
-    .card-bottom-left { bottom: 12px; left: 12px; transform: rotate(-90deg); }
-    .card-bottom-right { bottom: 12px; right: 12px; transform: rotate(180deg); }
 
+    .card-top-left {
+      top: 12px;
+      left: 12px;
+    }
+
+    .card-top-right {
+      top: 12px;
+      right: 12px;
+      transform: scaleX(-1);
+    }
+
+    .card-bottom-left {
+      bottom: 12px;
+      left: 12px;
+      transform: scaleY(-1);
+    }
+
+    .card-bottom-right {
+      bottom: 12px;
+      right: 12px;
+      transform: scale(-1);
+    }
+
+    /* Top Festive Centerpiece: Nilavilakku & Floral Garland */
+    .card-top-crest {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 4;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-garland-svg {
+      width: 100%;
+      max-width: 280px;
+      height: 20px;
+      margin-bottom: -6px;
+    }
+
+    .card-nilavilakku-lamp {
+      width: 44px;
+      height: 48px;
+      position: relative;
+      filter: drop-shadow(0 4px 8px rgba(212, 175, 55, 0.35));
+      animation: gentleLampFlicker 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes gentleLampFlicker {
+      0% {
+        filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.3));
+        transform: scale(1);
+      }
+
+      100% {
+        filter: drop-shadow(0 6px 14px rgba(255, 204, 0, 0.65));
+        transform: scale(1.03);
+      }
+    }
+
+    /* Center Background Athapookkalam Mandala Watermark */
+    .card-mandala-watermark {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 320px;
+      height: 320px;
+      opacity: 0.09;
+      pointer-events: none;
+      z-index: 1;
+      animation: slowRotateWatermark 90s linear infinite;
+    }
+
+    .theme-maroon-style .card-mandala-watermark,
+    .theme-leaf-style .card-mandala-watermark,
+    .theme-sunset-style .card-mandala-watermark {
+      opacity: 0.12;
+    }
+
+    @keyframes slowRotateWatermark {
+      from {
+        transform: translate(-50%, -50%) rotate(0deg);
+      }
+
+      to {
+        transform: translate(-50%, -50%) rotate(360deg);
+      }
+    }
+
+    /* Card Typography & Content */
     .card-header-badge {
       font-family: var(--font-malayalam);
-      font-size: 1.1rem;
+      font-size: 1.15rem;
       font-weight: 700;
       letter-spacing: 1px;
-      color: var(--gold-dark);
+      color: var(--maroon-deep);
       text-align: center;
+      margin-top: 0.2rem;
+      text-shadow: 0 1px 2px rgba(212, 175, 55, 0.2);
     }
-    .festive-card-canvas-box.theme-maroon-style .card-header-badge,
-    .festive-card-canvas-box.theme-leaf-style .card-header-badge,
-    .festive-card-canvas-box.theme-sunset-style .card-header-badge {
-      color: #FFE680;
+
+    .card-sub-header {
+      font-size: 0.72rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-family: var(--font-heading);
+      font-weight: 800;
+      color: var(--gold-dark);
+      margin-top: 2px;
+    }
+
+    .theme-maroon-style .card-header-badge,
+    .theme-leaf-style .card-header-badge,
+    .theme-sunset-style .card-header-badge {
+      color: #FFECA8;
+    }
+
+    .theme-maroon-style .card-sub-header,
+    .theme-leaf-style .card-sub-header,
+    .theme-sunset-style .card-sub-header {
+      color: #FFDE8A;
     }
 
     .card-main-wish {
       text-align: center;
-      margin: 1.5rem 0;
+      margin: 1rem 0;
+      position: relative;
+      z-index: 4;
     }
 
     .card-recipient-name {
       font-family: var(--font-heading);
       font-size: 1.45rem;
       font-weight: 800;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
+      color: var(--maroon-deep);
+      position: relative;
+      display: inline-block;
+    }
+
+    .card-recipient-name::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 15%;
+      right: 15%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold-primary), transparent);
     }
 
     .card-blessing {
-      font-size: 1rem;
-      line-height: 1.6;
-      color: var(--text-muted);
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: var(--charcoal-dark);
+      max-width: 90%;
+      margin: 0.6rem auto 0;
+      font-style: italic;
     }
 
-    .card-sender-signature {
+    /* Card Signature & Royal Seal Medallion */
+    .card-footer-decor {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      border-top: 1px dashed rgba(212, 175, 55, 0.4);
-      padding-top: 0.8rem;
+      border-top: 1px dashed rgba(212, 175, 55, 0.45);
+      padding-top: 0.9rem;
+      position: relative;
+      z-index: 4;
+    }
+
+    .card-sender-signature {
       font-size: 0.9rem;
     }
 
-    .card-sender-signature span strong {
+    .card-sender-signature strong {
       font-family: var(--font-heading);
+      font-size: 0.95rem;
+      color: var(--gold-dark);
+      display: block;
     }
 
-    .card-action-bar {
-      margin-top: 1.2rem;
+    .theme-maroon-style .card-sender-signature strong,
+    .theme-leaf-style .card-sender-signature strong,
+    .theme-sunset-style .card-sender-signature strong {
+      color: #FFE680;
+    }
+
+    .card-royal-seal {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: radial-gradient(circle, #FFE58F 0%, #D4AF37 60%, #99730E 100%);
+      border: 2px solid #FFFDF0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2), inset 0 2px 4px rgba(255, 255, 255, 0.6);
       display: flex;
-      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: #4A3205;
+      font-size: 0.65rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+      line-height: 1;
+      transform: rotate(-8deg);
+      flex-shrink: 0;
     }
 
-    .card-action-bar button {
-      flex: 1;
+    .card-royal-seal span {
+      font-size: 0.9rem;
+      margin-bottom: 1px;
+    }
+
+    /* Action Buttons in Grid */
+    .card-action-bar {
+      margin-top: 1.25rem;
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 0.75rem;
+    }
+
+    .btn-download-png {
+      background: linear-gradient(135deg, #ECC856 0%, #D4AF37 50%, #B88E1D 100%);
+      color: #3B2405;
+      font-weight: 800;
+      padding: 0.85rem 1.1rem;
+      border-radius: var(--radius-sm);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      box-shadow: 0 6px 18px rgba(212, 175, 55, 0.45);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      cursor: pointer;
+      border: none;
+      font-size: 0.9rem;
+    }
+
+    .btn-download-png:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.6);
+      filter: brightness(1.05);
+    }
+
+    .btn-download-png:active {
+      transform: translateY(1px);
+    }
+
+    .btn-download-png.loading {
+      pointer-events: none;
+      opacity: 0.85;
+    }
+
+    /* Site-wide card ornament enhancements */
+    .tradition-card,
+    .legend-card {
+      border: 1.5px solid var(--cream-border);
+      position: relative;
+    }
+
+    .tradition-card::after {
+      content: '✦';
+      position: absolute;
+      top: 10px;
+      right: 14px;
+      color: var(--gold-light);
+      font-size: 0.9rem;
+      transition: color 0.3s ease;
+    }
+
+    .tradition-card:hover::after {
+      color: var(--gold-primary);
+    }
+
+    @media (max-width: 900px) {
+      .wishes-wrapper {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .card-action-bar {
+        grid-template-columns: 1fr;
+      }
+
+      .greeting-card-preview-wrapper {
+        position: relative;
+        top: 0;
+      }
     }
 
     /* ==========================================================================
@@ -1559,19 +1979,36 @@
         text-align: center;
         gap: 3rem;
       }
-      .hero-desc { margin: 0 auto 2rem auto; }
-      .hero-actions { justify-content: center; }
-      .hero-stats { max-width: 500px; margin: 0 auto; }
-      
-      .legend-card { grid-template-columns: 1fr; }
-      .legend-content-col { padding: 2.5rem; }
+
+      .hero-desc {
+        margin: 0 auto 2rem auto;
+      }
+
+      .hero-actions {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        max-width: 500px;
+        margin: 0 auto;
+      }
+
+      .legend-card {
+        grid-template-columns: 1fr;
+      }
+
+      .legend-content-col {
+        padding: 2.5rem;
+      }
 
       .wishes-wrapper {
         grid-template-columns: 1fr;
       }
+
       .greeting-card-preview-wrapper {
         position: static;
       }
+
       .footer-grid {
         grid-template-columns: 1fr;
         gap: 2.5rem;
@@ -1579,22 +2016,55 @@
     }
 
     @media (max-width: 768px) {
-      .nav-links { display: none; }
-      .mobile-menu-btn { display: block; }
-      .mobile-drawer { display: block; }
+      .nav-links {
+        display: none;
+      }
 
-      .timeline-container::before { left: 24px; }
-      .timeline-item { width: 100%; padding-left: 60px; padding-right: 0; text-align: left !important; }
-      .timeline-item:nth-child(odd) { left: 0; }
-      .timeline-item:nth-child(even) { left: 0; }
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .mobile-drawer {
+        display: block;
+      }
+
+      .timeline-container::before {
+        left: 24px;
+      }
+
+      .timeline-item {
+        width: 100%;
+        padding-left: 60px;
+        padding-right: 0;
+        text-align: left !important;
+      }
+
+      .timeline-item:nth-child(odd) {
+        left: 0;
+      }
+
+      .timeline-item:nth-child(even) {
+        left: 0;
+      }
+
       .timeline-item:nth-child(odd) .timeline-dot,
-      .timeline-item:nth-child(even) .timeline-dot { left: 10px; right: auto; }
+      .timeline-item:nth-child(even) .timeline-dot {
+        left: 10px;
+        right: auto;
+      }
 
-      .sadya-info-panel { flex-direction: column; text-align: center; }
-      .sadya-interactive-box { padding: 1.25rem; }
+      .sadya-info-panel {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .sadya-interactive-box {
+        padding: 1.25rem;
+      }
     }
   </style>
 </head>
+
 <body>
 
   <!-- ==========================================================================
@@ -1627,14 +2097,16 @@
       <!-- Actions: Audio Chime & Mobile Toggle -->
       <div class="nav-actions">
         <button id="audioToggleBtn" class="audio-btn" title="Play Traditional Chime" aria-label="Play Festive Chime">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
             <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
             <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
           </svg>
         </button>
         <button id="mobileMenuBtn" class="mobile-menu-btn" aria-label="Toggle Navigation Menu">
-          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
             <line x1="3" y1="12" x2="21" y2="12"></line>
             <line x1="3" y1="6" x2="21" y2="6"></line>
             <line x1="3" y1="18" x2="21" y2="18"></line>
@@ -1662,7 +2134,7 @@
        ========================================================================== -->
   <section class="hero-section" id="hero">
     <div class="hero-kasavu-strip hero-kasavu-top"></div>
-    
+
     <div class="container hero-grid">
       <div class="hero-content">
         <div class="hero-badge">
@@ -1675,12 +2147,14 @@
         </h1>
 
         <p class="hero-desc">
-          Welcoming the legendary, benevolent King Mahabali back to God's Own Country. A timeless ten-day celebration of floral carpets, regal boat races, mouth-watering feasts, and eternal goodwill.
+          Welcoming the legendary, benevolent King Mahabali back to God's Own Country. A timeless ten-day celebration of
+          floral carpets, regal boat races, mouth-watering feasts, and eternal goodwill.
         </p>
 
         <div class="hero-actions">
           <a href="#traditions" class="btn-gold">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+              stroke-linecap="round" stroke-linejoin="round">
               <circle cx="12" cy="12" r="10"></circle>
               <polygon points="10 8 16 12 10 16 10 8"></polygon>
             </svg>
@@ -1713,38 +2187,51 @@
           <!-- Animated Pookkalam SVG -->
           <svg class="pookkalam-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
             <!-- Outer Gold Kasavu Ring -->
-            <circle cx="200" cy="200" r="190" stroke="#D4AF37" stroke-width="6" stroke-dasharray="12 6" opacity="0.85"/>
-            <circle cx="200" cy="200" r="175" fill="#8B1A24" opacity="0.9"/>
-            <circle cx="200" cy="200" r="160" fill="#E65100"/>
-            <circle cx="200" cy="200" r="140" fill="#FBC02D"/>
-            <circle cx="200" cy="200" r="115" fill="#206E34"/>
-            <circle cx="200" cy="200" r="90" fill="#FAF9F5"/>
-            
+            <circle cx="200" cy="200" r="190" stroke="#D4AF37" stroke-width="6" stroke-dasharray="12 6"
+              opacity="0.85" />
+            <circle cx="200" cy="200" r="175" fill="#8B1A24" opacity="0.9" />
+            <circle cx="200" cy="200" r="160" fill="#E65100" />
+            <circle cx="200" cy="200" r="140" fill="#FBC02D" />
+            <circle cx="200" cy="200" r="115" fill="#206E34" />
+            <circle cx="200" cy="200" r="90" fill="#FAF9F5" />
+
             <!-- Radiating Petals Layer 1 -->
             <g transform="translate(200, 200)">
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(30)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(60)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(90)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(120)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(150)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(180)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(210)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(240)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(270)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(300)"/>
-              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" transform="rotate(330)"/>
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(30)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(60)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(90)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(120)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(150)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(180)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(210)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(240)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(270)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(300)" />
+              <path d="M0 -150 C25 -100 25 -100 0 -70 C-25 -100 -25 -100 0 -150 Z" fill="#FFE082"
+                transform="rotate(330)" />
             </g>
-            
+
             <!-- Inner Red Floral Star -->
             <g transform="translate(200, 200)">
-              <polygon points="0,-75 22,-22 75,0 22,22 0,75 -22,22 -75,0 -22,-22" fill="#D32F2F"/>
-              <polygon points="0,-75 22,-22 75,0 22,22 0,75 -22,22 -75,0 -22,-22" fill="#FFA000" transform="rotate(45)"/>
+              <polygon points="0,-75 22,-22 75,0 22,22 0,75 -22,22 -75,0 -22,-22" fill="#D32F2F" />
+              <polygon points="0,-75 22,-22 75,0 22,22 0,75 -22,22 -75,0 -22,-22" fill="#FFA000"
+                transform="rotate(45)" />
             </g>
 
             <!-- Center Core -->
-            <circle cx="200" cy="200" r="36" fill="#D4AF37"/>
-            <circle cx="200" cy="200" r="28" fill="#FAF9F5"/>
+            <circle cx="200" cy="200" r="36" fill="#D4AF37" />
+            <circle cx="200" cy="200" r="28" fill="#FAF9F5" />
           </svg>
 
           <!-- Golden Nilavilakku (Traditional Brass Lamp) Center -->
@@ -1752,17 +2239,20 @@
           <div class="center-lamp">
             <svg width="68" height="68" viewBox="0 0 24 24" fill="none">
               <!-- Flame -->
-              <path d="M12 2C10 5 9 7 9 9C9 10.66 10.34 12 12 12C13.66 12 15 10.66 15 9C15 7 14 5 12 2Z" fill="#FFA000"/>
-              <path d="M12 4C11 6 10.5 7.5 10.5 8.5C10.5 9.33 11.17 10 12 10C12.83 10 13.5 9.33 13.5 8.5C13.5 7.5 13 6 12 4Z" fill="#FFF59D"/>
+              <path d="M12 2C10 5 9 7 9 9C9 10.66 10.34 12 12 12C13.66 12 15 10.66 15 9C15 7 14 5 12 2Z"
+                fill="#FFA000" />
+              <path
+                d="M12 4C11 6 10.5 7.5 10.5 8.5C10.5 9.33 11.17 10 12 10C12.83 10 13.5 9.33 13.5 8.5C13.5 7.5 13 6 12 4Z"
+                fill="#FFF59D" />
               <!-- Lamp Top Bowl -->
-              <ellipse cx="12" cy="13" rx="7" ry="2.5" fill="#D4AF37"/>
-              <ellipse cx="12" cy="12.5" rx="6" ry="1.8" fill="#F7E7A9"/>
+              <ellipse cx="12" cy="13" rx="7" ry="2.5" fill="#D4AF37" />
+              <ellipse cx="12" cy="12.5" rx="6" ry="1.8" fill="#F7E7A9" />
               <!-- Stem -->
-              <path d="M11 14H13V18H11Z" fill="#B88E1D"/>
-              <circle cx="12" cy="16" r="2" fill="#D4AF37"/>
+              <path d="M11 14H13V18H11Z" fill="#B88E1D" />
+              <circle cx="12" cy="16" r="2" fill="#D4AF37" />
               <!-- Base -->
-              <path d="M7 21C7 19.5 9 18 12 18C15 18 17 19.5 17 21H7Z" fill="#D4AF37"/>
-              <rect x="6" y="21" width="12" height="2" rx="1" fill="#A27B13"/>
+              <path d="M7 21C7 19.5 9 18 12 18C15 18 17 19.5 17 21H7Z" fill="#D4AF37" />
+              <rect x="6" y="21" width="12" height="2" rx="1" fill="#A27B13" />
             </svg>
           </div>
 
@@ -1788,14 +2278,15 @@
       <div class="text-center">
         <div class="section-tag">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
           </svg>
           Ancient Folklore
         </div>
         <h2 class="section-title">The Legend of <span>King Mahabali</span></h2>
         <div class="kasavu-divider"></div>
         <p class="section-subtitle">
-          An inspiring tale of equality, unshakeable devotion, humility, and the immortal love between a benevolent monarch and his devoted subjects.
+          An inspiring tale of equality, unshakeable devotion, humility, and the immortal love between a benevolent
+          monarch and his devoted subjects.
         </p>
       </div>
 
@@ -1804,10 +2295,11 @@
         <div class="legend-visual-col">
           <div>
             <div class="legend-folk-quote">
-              "മാവേലി നാടു വാണീടും കാലം<br/>
+              "മാവേലി നാടു വാണീടും കാലം<br />
               മാനുഷരെല്ലാരും ഒന്നുപോലെ..."
               <div class="quote-translation">
-                "When Maveli ruled the land, all human beings lived as equals, free from falsehood, greed, and suffering."
+                "When Maveli ruled the land, all human beings lived as equals, free from falsehood, greed, and
+                suffering."
               </div>
             </div>
           </div>
@@ -1817,7 +2309,8 @@
               The Golden Reign (സുവർണ്ണ കാലഘട്ടം)
             </h3>
             <p style="font-size: 0.95rem; color: #F7E7A9; line-height: 1.6;">
-              Under Mahabali's kingdom, truth reigned supreme. There was neither poverty nor sorrow, setting the golden standard of governance in Kerala's collective memory.
+              Under Mahabali's kingdom, truth reigned supreme. There was neither poverty nor sorrow, setting the golden
+              standard of governance in Kerala's collective memory.
             </p>
           </div>
         </div>
@@ -1829,7 +2322,8 @@
               <div class="legend-step-num">1</div>
               <div>
                 <h4>The Asura King’s Golden Kingdom</h4>
-                <p>King Mahabali was renowned for righteousness and boundless generosity. Under his rule, people prospered without discrimination or deceit.</p>
+                <p>King Mahabali was renowned for righteousness and boundless generosity. Under his rule, people
+                  prospered without discrimination or deceit.</p>
               </div>
             </div>
 
@@ -1837,7 +2331,8 @@
               <div class="legend-step-num">2</div>
               <div>
                 <h4>The Arrival of Vamana</h4>
-                <p>Lord Vishnu took the form of Vamana, a modest dwarf Brahmin, asking the generous King for just three paces of land measured by his feet.</p>
+                <p>Lord Vishnu took the form of Vamana, a modest dwarf Brahmin, asking the generous King for just three
+                  paces of land measured by his feet.</p>
               </div>
             </div>
 
@@ -1845,7 +2340,8 @@
               <div class="legend-step-num">3</div>
               <div>
                 <h4>The Cosmic Measurement & Sacrifice</h4>
-                <p>Vamana grew into the cosmic Trivikrama—measuring the earth in one step and the heavens in the second. With no land left for the third step, Mahabali humbly offered his own head.</p>
+                <p>Vamana grew into the cosmic Trivikrama—measuring the earth in one step and the heavens in the second.
+                  With no land left for the third step, Mahabali humbly offered his own head.</p>
               </div>
             </div>
 
@@ -1853,7 +2349,8 @@
               <div class="legend-step-num">4</div>
               <div>
                 <h4>The Eternal Boon (തിരുവോണം)</h4>
-                <p>Impressed by his selfless sacrifice, Lord Vishnu granted Mahabali the boon to visit his beloved land and people once every year—celebrated eternally as Thiruvonam.</p>
+                <p>Impressed by his selfless sacrifice, Lord Vishnu granted Mahabali the boon to visit his beloved land
+                  and people once every year—celebrated eternally as Thiruvonam.</p>
               </div>
             </div>
           </div>
@@ -1871,14 +2368,15 @@
       <div class="text-center">
         <div class="section-tag">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
           </svg>
           Festive Heritage
         </div>
         <h2 class="section-title">The Vibrant <span>Traditions of Onam</span></h2>
         <div class="kasavu-divider"></div>
         <p class="section-subtitle">
-          From intricate floral rangolis to roaring snake boat races on serene backwaters, discover the rituals that bring Kerala to life.
+          From intricate floral rangolis to roaring snake boat races on serene backwaters, discover the rituals that
+          bring Kerala to life.
         </p>
       </div>
 
@@ -1889,7 +2387,8 @@
           <span class="tradition-tagline">Floral Carpet Art</span>
           <h3>Athapookkalam</h3>
           <p>
-            Intricate floral rangolis hand-arranged with ten varieties of fresh petals like Chethi, Chembarathi, and Shankhupushpam, growing in layers each day from Atham to Thiruvonam.
+            Intricate floral rangolis hand-arranged with ten varieties of fresh petals like Chethi, Chembarathi, and
+            Shankhupushpam, growing in layers each day from Atham to Thiruvonam.
           </p>
           <div class="tradition-badge">✦ Symbol of Welcome & Joy</div>
         </div>
@@ -1900,7 +2399,8 @@
           <span class="tradition-tagline">The Royal Banquet</span>
           <h3>Onasadya</h3>
           <p>
-            A sumptuous nine-course vegetarian feast featuring up to 26 authentic delicacies served ceremoniously on a fresh plantain leaf with red matta rice and aromatic payasam.
+            A sumptuous nine-course vegetarian feast featuring up to 26 authentic delicacies served ceremoniously on a
+            fresh plantain leaf with red matta rice and aromatic payasam.
           </p>
           <div class="tradition-badge">✦ "Kanam Vittum Onam Unnanum"</div>
         </div>
@@ -1911,7 +2411,8 @@
           <span class="tradition-tagline">Snake Boat Races</span>
           <h3>Vallam Kali</h3>
           <p>
-            Spectacular boat pageants where hundreds of oarsmen row majestic 100-foot Chundan Vallams to the thunderous, rhythmic chants of <em>Vanchipattu</em> along the Pamba River.
+            Spectacular boat pageants where hundreds of oarsmen row majestic 100-foot Chundan Vallams to the thunderous,
+            rhythmic chants of <em>Vanchipattu</em> along the Pamba River.
           </p>
           <div class="tradition-badge">✦ Nehru Trophy & Aranmula</div>
         </div>
@@ -1922,7 +2423,8 @@
           <span class="tradition-tagline">The Tiger Dance</span>
           <h3>Pulikali</h3>
           <p>
-            A 200-year-old folk spectacle where performers painted meticulously as ferocious tigers and hunters dance through the streets of Thrissur to the beats of <em>Chenda</em> and <em>Thakil</em>.
+            A 200-year-old folk spectacle where performers painted meticulously as ferocious tigers and hunters dance
+            through the streets of Thrissur to the beats of <em>Chenda</em> and <em>Thakil</em>.
           </p>
           <div class="tradition-badge">✦ Thrissur Swaraj Round</div>
         </div>
@@ -1933,7 +2435,8 @@
           <span class="tradition-tagline">Graceful Folk Dance</span>
           <h3>Thiruvathirakali</h3>
           <p>
-            An elegant group dance performed by women draped in traditional Kasavu sarees, moving gracefully in circular formations around a brass Nilavilakku to festive folk tunes.
+            An elegant group dance performed by women draped in traditional Kasavu sarees, moving gracefully in circular
+            formations around a brass Nilavilakku to festive folk tunes.
           </p>
           <div class="tradition-badge">✦ Feminine Grace & Harmony</div>
         </div>
@@ -1944,7 +2447,8 @@
           <span class="tradition-tagline">Traditional Handlooms</span>
           <h3>Onakkodi & Kasavu</h3>
           <p>
-            Gifting brand-new clothes (<em>Onakkodi</em>) is customary. Women wear pristine off-white <em>Set Mundu</em> with golden zari borders, and men wear crisp cream <em>Mundu</em>.
+            Gifting brand-new clothes (<em>Onakkodi</em>) is customary. Women wear pristine off-white <em>Set Mundu</em>
+            with golden zari borders, and men wear crisp cream <em>Mundu</em>.
           </p>
           <div class="tradition-badge">✦ Balaramapuram Weaves</div>
         </div>
@@ -1968,7 +2472,8 @@
         <h2 class="section-title">The Grand <span>Onasadya Leaf</span></h2>
         <div class="kasavu-divider"></div>
         <p class="section-subtitle">
-          Every item in an authentic Kerala Sadya has a dedicated spot and ritual purpose on the tender plantain leaf. Experience the grand feast visual below or click through each dish to explore its heritage!
+          Every item in an authentic Kerala Sadya has a dedicated spot and ritual purpose on the tender plantain leaf.
+          Experience the grand feast visual below or click through each dish to explore its heritage!
         </p>
 
         <!-- View Mode Switcher -->
@@ -1985,13 +2490,16 @@
       <div class="sadya-interactive-box">
         <!-- Tab 1: Photorealistic Banana Leaf Feast View -->
         <div id="sadyaPhotoViewContainer" class="sadya-photo-view">
-          <img src="onasadya-leaf.jpg" alt="Authentic Kerala Onasadya served on a fresh green banana leaf" id="sadyaMainLeafImg" />
+          <img src="onasadya-leaf.jpg" alt="Authentic Kerala Onasadya served on a fresh green banana leaf"
+            id="sadyaMainLeafImg" />
           <div class="sadya-photo-caption">
             <div>
               <h5>Thalavazha Ila Onasadya</h5>
-              <p>Kerala Matta rice, Parippu & ghee, Payasam, Avial, Olan, Thoran, Pappadam, Chips & authentic condiments.</p>
+              <p>Kerala Matta rice, Parippu & ghee, Payasam, Avial, Olan, Thoran, Pappadam, Chips & authentic
+                condiments.</p>
             </div>
-            <button class="btn-gold" id="sadyaFeastCelebrateBtn" type="button" style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
+            <button class="btn-gold" id="sadyaFeastCelebrateBtn" type="button"
+              style="padding: 0.6rem 1.4rem; font-size: 0.85rem;">
               <span>🎉</span> Celebrate Feast
             </button>
           </div>
@@ -2000,52 +2508,63 @@
         <!-- Tab 2: The Interactive Dish Guide Container -->
         <div id="sadyaGuideViewContainer" class="banana-leaf-container" style="display: none;">
           <div class="dishes-grid" id="dishesGrid">
-            <div class="dish-pill active" data-dish="rice" data-icon="🍚" data-title="Kerala Matta Rice & Neyy-Parippu" data-desc="The heart of the feast. Steaming, nutty indigenous Kerala red Matta rice centered on the leaf, crowned with thick cooked yellow lentils (Parippu) and pure melted golden ghee.">
+            <div class="dish-pill active" data-dish="rice" data-icon="🍚" data-title="Kerala Matta Rice & Neyy-Parippu"
+              data-desc="The heart of the feast. Steaming, nutty indigenous Kerala red Matta rice centered on the leaf, crowned with thick cooked yellow lentils (Parippu) and pure melted golden ghee.">
               <span class="dish-icon">🍚</span>
               <span class="dish-name">Matta Rice & Ghee</span>
             </div>
 
-            <div class="dish-pill" data-dish="payasam" data-icon="🥣" data-title="Ada Pradhaman & Palada Payasam" data-desc="The crowning glory of Onasadya. Slow-simmered rice ada delicacies prepared in rich jaggery, thick coconut milk, cow milk, ghee, crunchy roasted cashews, and aromatic green cardamom.">
+            <div class="dish-pill" data-dish="payasam" data-icon="🥣" data-title="Ada Pradhaman & Palada Payasam"
+              data-desc="The crowning glory of Onasadya. Slow-simmered rice ada delicacies prepared in rich jaggery, thick coconut milk, cow milk, ghee, crunchy roasted cashews, and aromatic green cardamom.">
               <span class="dish-icon">🥣</span>
               <span class="dish-name">Payasam</span>
             </div>
 
-            <div class="dish-pill" data-dish="avial" data-icon="🥗" data-title="Avial (Medley of 13 Vegetables)" data-desc="A thick, fragrant blend of 13 native garden vegetables gently cooked with coarsely ground coconut, green chilies, cumin seeds, raw mango, and finished with cold-pressed coconut oil and curry leaves.">
+            <div class="dish-pill" data-dish="avial" data-icon="🥗" data-title="Avial (Medley of 13 Vegetables)"
+              data-desc="A thick, fragrant blend of 13 native garden vegetables gently cooked with coarsely ground coconut, green chilies, cumin seeds, raw mango, and finished with cold-pressed coconut oil and curry leaves.">
               <span class="dish-icon">🥗</span>
               <span class="dish-name">Avial</span>
             </div>
 
-            <div class="dish-pill" data-dish="sambar" data-icon="🍲" data-title="Varutharacha Kerala Sambar" data-desc="A rich lentil and vegetable stew slow-cooked with freshly roasted whole spices, grated coconut paste, tamarind pulp, and aromatic mustard-curry leaf tempering.">
+            <div class="dish-pill" data-dish="sambar" data-icon="🍲" data-title="Varutharacha Kerala Sambar"
+              data-desc="A rich lentil and vegetable stew slow-cooked with freshly roasted whole spices, grated coconut paste, tamarind pulp, and aromatic mustard-curry leaf tempering.">
               <span class="dish-icon">🍲</span>
               <span class="dish-name">Sambar</span>
             </div>
 
-            <div class="dish-pill" data-dish="olan" data-icon="🥥" data-title="Olan (Ash Gourd in Coconut Milk)" data-desc="A soothing, delicate preparation of white pumpkin (Kumbalanga) and red cowpeas gently simmered in velvety coconut milk and seasoned with fresh green chilies and curry leaves.">
+            <div class="dish-pill" data-dish="olan" data-icon="🥥" data-title="Olan (Ash Gourd in Coconut Milk)"
+              data-desc="A soothing, delicate preparation of white pumpkin (Kumbalanga) and red cowpeas gently simmered in velvety coconut milk and seasoned with fresh green chilies and curry leaves.">
               <span class="dish-icon">🥥</span>
               <span class="dish-name">Olan</span>
             </div>
 
-            <div class="dish-pill" data-dish="injipuli" data-icon="🫚" data-title="Injipuli / Puli Inji (Ginger Tamarind Nectar)" data-desc="A dark, tangy, and fiery condiment made from organic jaggery, crushed ginger, green chilies, and tamarind. Considered equal to a hundred curries (Nooru Karyangal) for aiding feast digestion.">
+            <div class="dish-pill" data-dish="injipuli" data-icon="🫚"
+              data-title="Injipuli / Puli Inji (Ginger Tamarind Nectar)"
+              data-desc="A dark, tangy, and fiery condiment made from organic jaggery, crushed ginger, green chilies, and tamarind. Considered equal to a hundred curries (Nooru Karyangal) for aiding feast digestion.">
               <span class="dish-icon">🫚</span>
               <span class="dish-name">Injipuli</span>
             </div>
 
-            <div class="dish-pill" data-dish="thoran" data-icon="🥬" data-title="Kerala Vegetable Thoran" data-desc="A nutritious dry stir-fry of finely chopped green vegetables tossed with freshly grated coconut, shallots, mustard seeds, and crisp curry leaves.">
+            <div class="dish-pill" data-dish="thoran" data-icon="🥬" data-title="Kerala Vegetable Thoran"
+              data-desc="A nutritious dry stir-fry of finely chopped green vegetables tossed with freshly grated coconut, shallots, mustard seeds, and crisp curry leaves.">
               <span class="dish-icon">🥬</span>
               <span class="dish-name">Thoran</span>
             </div>
 
-            <div class="dish-pill" data-dish="chips" data-icon="🍌" data-title="Upperi & Sharkara Varatti" data-desc="Crispy raw plantain chips fried golden in pure coconut oil alongside thick banana chunks coated in sweet jaggery syrup, dried ginger (Chukku), and powdered cumin.">
+            <div class="dish-pill" data-dish="chips" data-icon="🍌" data-title="Upperi & Sharkara Varatti"
+              data-desc="Crispy raw plantain chips fried golden in pure coconut oil alongside thick banana chunks coated in sweet jaggery syrup, dried ginger (Chukku), and powdered cumin.">
               <span class="dish-icon">🍌</span>
               <span class="dish-name">Upperi Chips</span>
             </div>
 
-            <div class="dish-pill" data-dish="pappadam" data-icon="🫓" data-title="Kerala Pappadam" data-desc="Fluffy, round, crispy fried lentil wafers that are joyfully crushed over the rice, dal (Parippu), and ghee to add the signature festive crunch.">
+            <div class="dish-pill" data-dish="pappadam" data-icon="🫓" data-title="Kerala Pappadam"
+              data-desc="Fluffy, round, crispy fried lentil wafers that are joyfully crushed over the rice, dal (Parippu), and ghee to add the signature festive crunch.">
               <span class="dish-icon">🫓</span>
               <span class="dish-name">Pappadam</span>
             </div>
 
-            <div class="dish-pill" data-dish="pachadi" data-icon="🍍" data-title="Pineapple Pachadi & Beetroot Kichadi" data-desc="Sweet and tangy spiced yogurt-based curries made with cooked pineapple or beetroot, ground mustard seeds, and freshly grated coconut.">
+            <div class="dish-pill" data-dish="pachadi" data-icon="🍍" data-title="Pineapple Pachadi & Beetroot Kichadi"
+              data-desc="Sweet and tangy spiced yogurt-based curries made with cooked pineapple or beetroot, ground mustard seeds, and freshly grated coconut.">
               <span class="dish-icon">🍍</span>
               <span class="dish-name">Pachadi & Kichadi</span>
             </div>
@@ -2056,7 +2575,8 @@
         <div class="sadya-info-panel">
           <div class="sadya-info-text">
             <h4 id="dishDetailTitle">Kerala Matta Rice & Neyy-Parippu</h4>
-            <p id="dishDetailDesc">The heart of the feast. Steaming, nutty indigenous Kerala red Matta rice centered on the leaf, crowned with thick cooked yellow lentils (Parippu) and pure melted golden ghee.</p>
+            <p id="dishDetailDesc">The heart of the feast. Steaming, nutty indigenous Kerala red Matta rice centered on
+              the leaf, crowned with thick cooked yellow lentils (Parippu) and pure melted golden ghee.</p>
           </div>
           <button id="sadyaCelebrateBtn" class="btn-gold" style="flex-shrink: 0;">
             <span>😋</span> Savor the Feast
@@ -2084,7 +2604,8 @@
         <h2 class="section-title">The 10 Sacred <span>Days of Onam</span></h2>
         <div class="kasavu-divider"></div>
         <p class="section-subtitle">
-          Beginning from the Atham asterism in the Malayalam month of Chingam, each day adds a distinct floral layer and festive ritual leading to Thiruvonam.
+          Beginning from the Atham asterism in the Malayalam month of Chingam, each day adds a distinct floral layer and
+          festive ritual leading to Thiruvonam.
         </p>
       </div>
 
@@ -2096,7 +2617,8 @@
             <span class="day-tag">Day 1</span>
             <span class="malayalam-sub">അത്തം (Atham)</span>
             <h4>Inception of the Pookkalam</h4>
-            <p>Festivities kick off with the Athachamayam procession in Thripunithura. The first ring of yellow flowers (Thumba) is laid on the courtyard.</p>
+            <p>Festivities kick off with the Athachamayam procession in Thripunithura. The first ring of yellow flowers
+              (Thumba) is laid on the courtyard.</p>
           </div>
         </div>
 
@@ -2107,7 +2629,8 @@
             <span class="day-tag">Day 2</span>
             <span class="malayalam-sub">ചിത്തിര (Chithira)</span>
             <h4>Cleaning & Second Floral Ring</h4>
-            <p>Homes are cleaned and whitewashed. A second floral layer of contrasting orange and yellow petals is added to the Athapookkalam.</p>
+            <p>Homes are cleaned and whitewashed. A second floral layer of contrasting orange and yellow petals is added
+              to the Athapookkalam.</p>
           </div>
         </div>
 
@@ -2118,7 +2641,8 @@
             <span class="day-tag">Day 3</span>
             <span class="malayalam-sub">ചോതി (Chodhi)</span>
             <h4>Onakkodi Shopping Begins</h4>
-            <p>Markets flood with excitement as families begin purchasing new clothes (Onakkodi) and jewelry for friends and relatives.</p>
+            <p>Markets flood with excitement as families begin purchasing new clothes (Onakkodi) and jewelry for friends
+              and relatives.</p>
           </div>
         </div>
 
@@ -2129,7 +2653,8 @@
             <span class="day-tag">Day 4</span>
             <span class="malayalam-sub">വിശാഖം (Vishakam)</span>
             <h4>Harvest Market & Competitions</h4>
-            <p>Considered one of the most auspicious days. Preparations for the grand feast begin with harvesting fresh vegetables and rice grains.</p>
+            <p>Considered one of the most auspicious days. Preparations for the grand feast begin with harvesting fresh
+              vegetables and rice grains.</p>
           </div>
         </div>
 
@@ -2140,7 +2665,8 @@
             <span class="day-tag">Day 5</span>
             <span class="malayalam-sub">അനിഴം (Anizham)</span>
             <h4>Aranmula Boat Race Day</h4>
-            <p>The legendary Aranmula Uthrattathi Vallam Kali commences on the holy Pamba River with grand rhythmic boat pageants.</p>
+            <p>The legendary Aranmula Uthrattathi Vallam Kali commences on the holy Pamba River with grand rhythmic boat
+              pageants.</p>
           </div>
         </div>
 
@@ -2151,7 +2677,8 @@
             <span class="day-tag">Day 6</span>
             <span class="malayalam-sub">തൃക്കേട്ട (Thrikketa)</span>
             <h4>Homecoming of Loved Ones</h4>
-            <p>Schools and offices close. Family members traveling from far and wide arrive back in their ancestral Kerala homes (Tharavadu).</p>
+            <p>Schools and offices close. Family members traveling from far and wide arrive back in their ancestral
+              Kerala homes (Tharavadu).</p>
           </div>
         </div>
 
@@ -2162,7 +2689,8 @@
             <span class="day-tag">Day 7</span>
             <span class="malayalam-sub">മൂലം (Moolam)</span>
             <h4>Sadya Rehearsals & Dances</h4>
-            <p>Small traditional Sadyas are served in temples. Folk dances like Pulikali and Kaikottikali perform in village squares.</p>
+            <p>Small traditional Sadyas are served in temples. Folk dances like Pulikali and Kaikottikali perform in
+              village squares.</p>
           </div>
         </div>
 
@@ -2173,7 +2701,8 @@
             <span class="day-tag">Day 8</span>
             <span class="malayalam-sub">പൂരാടം (Pooradam)</span>
             <h4>Installation of Onathappan</h4>
-            <p>Pyramid-like clay idols representing Lord Vamana and King Mahabali (called <em>Onathappan</em>) are installed and anointed in homes.</p>
+            <p>Pyramid-like clay idols representing Lord Vamana and King Mahabali (called <em>Onathappan</em>) are
+              installed and anointed in homes.</p>
           </div>
         </div>
 
@@ -2184,7 +2713,8 @@
             <span class="day-tag">Day 9</span>
             <span class="malayalam-sub">ഉത്രാടം (Uthradam)</span>
             <h4>First Onam (ഒന്നാം ഓണം)</h4>
-            <p>Known as Onam Eve. The culmination of bustling shopping (Uthrada Pachil). Spirits peak as Mahabali's entry is imminent.</p>
+            <p>Known as Onam Eve. The culmination of bustling shopping (Uthrada Pachil). Spirits peak as Mahabali's
+              entry is imminent.</p>
           </div>
         </div>
 
@@ -2193,9 +2723,11 @@
           <div class="timeline-dot"></div>
           <div class="timeline-card">
             <span class="day-tag" style="background: var(--gold-primary); color: #3A070B;">Grand Finale</span>
-            <span class="malayalam-sub" style="color: var(--maroon-deep); font-size: 1.25rem;">തിരുവോണം (Thiruvonam)</span>
+            <span class="malayalam-sub" style="color: var(--maroon-deep); font-size: 1.25rem;">തിരുവോണം
+              (Thiruvonam)</span>
             <h4>The Auspicious Homecoming</h4>
-            <p>King Mahabali visits every household. Families don fresh Onakkodi, savor the 26-dish Onasadya, light brass lamps, and rejoice in supreme harmony.</p>
+            <p>King Mahabali visits every household. Families don fresh Onakkodi, savor the 26-dish Onasadya, light
+              brass lamps, and rejoice in supreme harmony.</p>
           </div>
         </div>
       </div>
@@ -2229,32 +2761,38 @@
           <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <linearGradient id="waterGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#0277BD"/>
-                <stop offset="100%" stop-color="#01579B"/>
+                <stop offset="0%" stop-color="#0277BD" />
+                <stop offset="100%" stop-color="#01579B" />
               </linearGradient>
               <linearGradient id="sunsetGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#FF7043"/>
-                <stop offset="100%" stop-color="#FFE082"/>
+                <stop offset="0%" stop-color="#FF7043" />
+                <stop offset="100%" stop-color="#FFE082" />
               </linearGradient>
             </defs>
-            <rect width="400" height="300" fill="url(#sunsetGrad)"/>
+            <rect width="400" height="300" fill="url(#sunsetGrad)" />
             <!-- Sun -->
-            <circle cx="200" cy="110" r="50" fill="#FFF59D" opacity="0.9"/>
+            <circle cx="200" cy="110" r="50" fill="#FFF59D" opacity="0.9" />
             <!-- Water -->
-            <rect y="160" width="400" height="140" fill="url(#waterGrad)"/>
+            <rect y="160" width="400" height="140" fill="url(#waterGrad)" />
             <!-- Coconut Trees in background -->
-            <path d="M40 160 Q60 100 90 90 Q80 120 70 160" stroke="#1B5E20" stroke-width="3" fill="none"/>
-            <path d="M350 160 Q330 90 300 80 Q310 120 320 160" stroke="#1B5E20" stroke-width="3" fill="none"/>
+            <path d="M40 160 Q60 100 90 90 Q80 120 70 160" stroke="#1B5E20" stroke-width="3" fill="none" />
+            <path d="M350 160 Q330 90 300 80 Q310 120 320 160" stroke="#1B5E20" stroke-width="3" fill="none" />
             <!-- Snake Boat Silhouette -->
-            <path d="M30 200 C80 205 280 205 370 180 C365 195 280 220 50 215 Z" fill="#3E2723"/>
-            <path d="M365 180 Q380 150 385 130 Q380 145 370 175" stroke="#D4AF37" stroke-width="4" fill="none"/>
+            <path d="M30 200 C80 205 280 205 370 180 C365 195 280 220 50 215 Z" fill="#3E2723" />
+            <path d="M365 180 Q380 150 385 130 Q380 145 370 175" stroke="#D4AF37" stroke-width="4" fill="none" />
             <!-- Oarsmen silhouettes -->
-            <circle cx="90" cy="195" r="4" fill="#FFE082"/><line x1="90" y1="199" x2="85" y2="215" stroke="#D4AF37" stroke-width="2"/>
-            <circle cx="130" cy="195" r="4" fill="#FFE082"/><line x1="130" y1="199" x2="125" y2="215" stroke="#D4AF37" stroke-width="2"/>
-            <circle cx="170" cy="195" r="4" fill="#FFE082"/><line x1="170" y1="199" x2="165" y2="215" stroke="#D4AF37" stroke-width="2"/>
-            <circle cx="210" cy="195" r="4" fill="#FFE082"/><line x1="210" y1="199" x2="205" y2="215" stroke="#D4AF37" stroke-width="2"/>
-            <circle cx="250" cy="195" r="4" fill="#FFE082"/><line x1="250" y1="199" x2="245" y2="215" stroke="#D4AF37" stroke-width="2"/>
-            <circle cx="290" cy="195" r="4" fill="#FFE082"/><line x1="290" y1="199" x2="285" y2="215" stroke="#D4AF37" stroke-width="2"/>
+            <circle cx="90" cy="195" r="4" fill="#FFE082" />
+            <line x1="90" y1="199" x2="85" y2="215" stroke="#D4AF37" stroke-width="2" />
+            <circle cx="130" cy="195" r="4" fill="#FFE082" />
+            <line x1="130" y1="199" x2="125" y2="215" stroke="#D4AF37" stroke-width="2" />
+            <circle cx="170" cy="195" r="4" fill="#FFE082" />
+            <line x1="170" y1="199" x2="165" y2="215" stroke="#D4AF37" stroke-width="2" />
+            <circle cx="210" cy="195" r="4" fill="#FFE082" />
+            <line x1="210" y1="199" x2="205" y2="215" stroke="#D4AF37" stroke-width="2" />
+            <circle cx="250" cy="195" r="4" fill="#FFE082" />
+            <line x1="250" y1="199" x2="245" y2="215" stroke="#D4AF37" stroke-width="2" />
+            <circle cx="290" cy="195" r="4" fill="#FFE082" />
+            <line x1="290" y1="199" x2="285" y2="215" stroke="#D4AF37" stroke-width="2" />
           </svg>
           <div class="gallery-overlay">
             <h4>Chundan Vallam</h4>
@@ -2265,20 +2803,20 @@
         <!-- Item 2: Kathakali -->
         <div class="gallery-item" onclick="triggerConfettiBurst()">
           <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#1A0D08"/>
+            <rect width="400" height="300" fill="#1A0D08" />
             <!-- Kathakali Crown (Kireedam) -->
-            <path d="M160 80 L200 20 L240 80 Z" fill="#D4AF37"/>
-            <circle cx="200" cy="70" r="40" fill="#C62828" stroke="#D4AF37" stroke-width="4"/>
-            <circle cx="200" cy="70" r="30" fill="#2E7D32"/>
+            <path d="M160 80 L200 20 L240 80 Z" fill="#D4AF37" />
+            <circle cx="200" cy="70" r="40" fill="#C62828" stroke="#D4AF37" stroke-width="4" />
+            <circle cx="200" cy="70" r="30" fill="#2E7D32" />
             <!-- Face (Paccha Vesham) -->
-            <path d="M160 100 Q200 80 240 100 L230 180 Q200 210 170 180 Z" fill="#2E7D32"/>
+            <path d="M160 100 Q200 80 240 100 L230 180 Q200 210 170 180 Z" fill="#2E7D32" />
             <!-- Chutti (White frame border) -->
-            <path d="M155 105 Q200 220 245 105" stroke="#FFFFFF" stroke-width="6" fill="none"/>
+            <path d="M155 105 Q200 220 245 105" stroke="#FFFFFF" stroke-width="6" fill="none" />
             <!-- Eyes & Makeup -->
-            <ellipse cx="180" cy="130" rx="10" ry="4" fill="#000"/>
-            <ellipse cx="220" cy="130" rx="10" ry="4" fill="#000"/>
-            <path d="M185 165 Q200 175 215 165" stroke="#C62828" stroke-width="4" fill="none"/>
-            <circle cx="200" cy="115" r="5" fill="#D4AF37"/>
+            <ellipse cx="180" cy="130" rx="10" ry="4" fill="#000" />
+            <ellipse cx="220" cy="130" rx="10" ry="4" fill="#000" />
+            <path d="M185 165 Q200 175 215 165" stroke="#C62828" stroke-width="4" fill="none" />
+            <circle cx="200" cy="115" r="5" fill="#D4AF37" />
           </svg>
           <div class="gallery-overlay">
             <h4>Kathakali Paccha</h4>
@@ -2289,24 +2827,24 @@
         <!-- Item 3: Pulikali -->
         <div class="gallery-item" onclick="triggerConfettiBurst()">
           <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#2E1C0C"/>
+            <rect width="400" height="300" fill="#2E1C0C" />
             <!-- Tiger Mask / Body Art Motif -->
-            <circle cx="200" cy="150" r="85" fill="#FFA000" stroke="#D4AF37" stroke-width="4"/>
+            <circle cx="200" cy="150" r="85" fill="#FFA000" stroke="#D4AF37" stroke-width="4" />
             <!-- Stripes -->
-            <path d="M130 130 Q160 140 140 170" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-            <path d="M270 130 Q240 140 260 170" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-            <path d="M150 90 Q180 120 160 140" stroke="#000" stroke-width="8" stroke-linecap="round"/>
-            <path d="M250 90 Q220 120 240 140" stroke="#000" stroke-width="8" stroke-linecap="round"/>
+            <path d="M130 130 Q160 140 140 170" stroke="#000" stroke-width="8" stroke-linecap="round" />
+            <path d="M270 130 Q240 140 260 170" stroke="#000" stroke-width="8" stroke-linecap="round" />
+            <path d="M150 90 Q180 120 160 140" stroke="#000" stroke-width="8" stroke-linecap="round" />
+            <path d="M250 90 Q220 120 240 140" stroke="#000" stroke-width="8" stroke-linecap="round" />
             <!-- Tiger Eyes -->
-            <circle cx="170" cy="140" r="14" fill="#FFF"/>
-            <circle cx="170" cy="140" r="7" fill="#000"/>
-            <circle cx="230" cy="140" r="14" fill="#FFF"/>
-            <circle cx="230" cy="140" r="7" fill="#000"/>
+            <circle cx="170" cy="140" r="14" fill="#FFF" />
+            <circle cx="170" cy="140" r="7" fill="#000" />
+            <circle cx="230" cy="140" r="14" fill="#FFF" />
+            <circle cx="230" cy="140" r="7" fill="#000" />
             <!-- Snout & Fangs -->
-            <path d="M185 170 L215 170 L200 190 Z" fill="#000"/>
-            <path d="M175 195 Q200 215 225 195" stroke="#C62828" stroke-width="6" fill="none"/>
-            <polygon points="180,195 185,210 190,195" fill="#FFF"/>
-            <polygon points="210,195 215,210 220,195" fill="#FFF"/>
+            <path d="M185 170 L215 170 L200 190 Z" fill="#000" />
+            <path d="M175 195 Q200 215 225 195" stroke="#C62828" stroke-width="6" fill="none" />
+            <polygon points="180,195 185,210 190,195" fill="#FFF" />
+            <polygon points="210,195 215,210 220,195" fill="#FFF" />
           </svg>
           <div class="gallery-overlay">
             <h4>Pulikali Tiger Spirit</h4>
@@ -2317,18 +2855,20 @@
         <!-- Item 4: Nilavilakku Light -->
         <div class="gallery-item" onclick="triggerConfettiBurst()">
           <svg class="gallery-svg-art" viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect width="400" height="300" fill="#1C140F"/>
+            <rect width="400" height="300" fill="#1C140F" />
             <!-- Glowing Lamp Ambiance -->
-            <circle cx="200" cy="130" r="90" fill="#FFA000" opacity="0.15"/>
-            <circle cx="200" cy="130" r="60" fill="#FFD54F" opacity="0.25"/>
+            <circle cx="200" cy="130" r="90" fill="#FFA000" opacity="0.15" />
+            <circle cx="200" cy="130" r="60" fill="#FFD54F" opacity="0.25" />
             <!-- Lamp SVG -->
-            <path d="M200 70 C190 90 185 105 185 115 C185 125 192 132 200 132 C208 132 215 125 215 115 C215 105 210 90 200 70 Z" fill="#FFF59D"/>
-            <ellipse cx="200" cy="140" rx="45" ry="12" fill="#D4AF37"/>
-            <ellipse cx="200" cy="137" rx="38" ry="9" fill="#FFF9C4"/>
-            <path d="M194 145 H206 V190 H194 Z" fill="#B88E1D"/>
-            <ellipse cx="200" cy="170" rx="14" ry="6" fill="#D4AF37"/>
-            <path d="M165 240 C165 210 185 190 200 190 C215 190 235 210 235 240 H165 Z" fill="#D4AF37"/>
-            <rect x="155" y="240" width="90" height="10" rx="3" fill="#A27B13"/>
+            <path
+              d="M200 70 C190 90 185 105 185 115 C185 125 192 132 200 132 C208 132 215 125 215 115 C215 105 210 90 200 70 Z"
+              fill="#FFF59D" />
+            <ellipse cx="200" cy="140" rx="45" ry="12" fill="#D4AF37" />
+            <ellipse cx="200" cy="137" rx="38" ry="9" fill="#FFF9C4" />
+            <path d="M194 145 H206 V190 H194 Z" fill="#B88E1D" />
+            <ellipse cx="200" cy="170" rx="14" ry="6" fill="#D4AF37" />
+            <path d="M165 240 C165 210 185 190 200 190 C215 190 235 210 235 240 H165 Z" fill="#D4AF37" />
+            <rect x="155" y="240" width="90" height="10" rx="3" fill="#A27B13" />
           </svg>
           <div class="gallery-overlay">
             <h4>Nilavilakku Grace</h4>
@@ -2338,7 +2878,8 @@
 
         <!-- Item 5: Grand Onasadya Leaf -->
         <div class="gallery-item" onclick="triggerConfettiBurst()">
-          <img src="onasadya-leaf.jpg" alt="Traditional Kerala Onasadya served on a fresh banana leaf" class="gallery-svg-art" style="object-fit: cover;" />
+          <img src="onasadya-leaf.jpg" alt="Traditional Kerala Onasadya served on a fresh banana leaf"
+            class="gallery-svg-art" style="object-fit: cover;" />
           <div class="gallery-overlay">
             <h4>Grand Onasadya Leaf</h4>
             <p>The 26-dish harvest feast served in sacred order on a plantain leaf.</p>
@@ -2349,7 +2890,7 @@
   </section>
 
   <!-- ==========================================================================
-       Interactive Feature: Festive Onam Greeting Card Generator
+       Interactive Feature: Festive Onam Greeting Card Generator & PNG Engine
        ========================================================================== -->
   <section class="section-wishes" id="wishes">
     <div class="container">
@@ -2364,7 +2905,8 @@
         <h2 class="section-title">Personalized <span>Onam Wish Generator</span></h2>
         <div class="kasavu-divider"></div>
         <p class="section-subtitle">
-          Craft an elegant, personalized festive greeting card to share warm Onam blessings with your family, friends, and colleagues worldwide.
+          Craft an elegant, personalized festive greeting card to share warm Onam blessings with your family, friends,
+          and colleagues worldwide.
         </p>
       </div>
 
@@ -2373,27 +2915,61 @@
         <div class="generator-form-card">
           <form id="greetingForm" onsubmit="return false;">
             <div class="form-group">
-              <label class="form-label" for="recipientName">Recipient Name / Family</label>
-              <input type="text" id="recipientName" class="form-input" placeholder="e.g. Rahul & Ananya" value="Dear Friends & Family" />
+              <label class="form-label" for="recipientName">
+                <span>Recipient Name / Family</span>
+                <span class="form-label-hint">Who is this for?</span>
+              </label>
+              <input type="text" id="recipientName" class="form-input" placeholder="e.g. Rahul & Ananya"
+                value="Dear Friends & Family" />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="senderName">Your Name</label>
-              <input type="text" id="senderName" class="form-input" placeholder="e.g. Vignesh & Family" value="With Love, Dev & Family" />
+              <label class="form-label" for="senderName">
+                <span>Your Name / Family</span>
+                <span class="form-label-hint">Sender signature</span>
+              </label>
+              <input type="text" id="senderName" class="form-input" placeholder="e.g. Vignesh & Family"
+                value="With Love, Dev & Family" />
             </div>
 
             <div class="form-group">
-              <label class="form-label" for="greetingTemplate">Select Wish Template</label>
+              <label class="form-label" for="greetingTemplate">
+                <span>Preset Blessing Template</span>
+                <span class="form-label-hint">Choose or edit below</span>
+              </label>
               <select id="greetingTemplate" class="form-select">
-                <option value="May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness, and good health to your home this Onam!">Traditional English Blessing</option>
-                <option value="ഐശ്വര്യവും സമൃദ്ധിയും നിറഞ്ഞ നല്ലൊരു പൊന്നോണം ആശംസിക്കുന്നു! Happy Onam to you and your loved ones!">Bilingual Malayalam & English</option>
-                <option value="May King Mahabali bless your days with supreme harmony, immense success, and joyful family gatherings. Happy Thiruvonam!">Prosperity & Harmony Theme</option>
-                <option value="Wishing you a joyous harvest season filled with laughter, grand feasts, and cherished memories. Have a splendid Onam!">Warm Harvest Celebration</option>
+                <option
+                  value="May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness, and good health to your home this Onam!">
+                  Traditional English Blessing</option>
+                <option
+                  value="ഐശ്വര്യവും സമൃദ്ധിയും നിറഞ്ഞ നല്ലൊരു പൊന്നോണം ആശംസിക്കുന്നു! Happy Onam to you and your loved ones!">
+                  Bilingual Malayalam & English</option>
+                <option
+                  value="May King Mahabali bless your home with supreme harmony, immense success, and joyful family gatherings. Happy Thiruvonam!">
+                  Prosperity & Harmony Theme</option>
+                <option
+                  value="Wishing you a joyous harvest season filled with laughter, grand feasts, and cherished memories. Have a splendid Ponn Onam!">
+                  Warm Harvest Celebration</option>
+                <option
+                  value="തുമ്പപ്പൂവും പൂവിളിയും നിറഞ്ഞ ഈ പൊന്നോണ നാളിൽ എല്ലാവിധ സന്തോഷവും ഐശ്വര്യവും നേരുന്നു! Happy Onam!">
+                  Pure Malayalam Traditional Wish</option>
               </select>
             </div>
 
             <div class="form-group">
-              <label class="form-label">Card Theme Style</label>
+              <label class="form-label" for="customBlessing">
+                <span>Custom Message Text</span>
+                <span class="form-label-hint">Live editable message</span>
+              </label>
+              <textarea id="customBlessing" class="form-textarea" rows="3"
+                placeholder="Type your personal festive greeting here...">May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness, and good health to your home this Onam!</textarea>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span>Card Theme Palette</span>
+                <span class="form-label-hint">Color mood</span>
+              </label>
               <div class="theme-selector">
                 <button type="button" class="theme-btn theme-kasavu active" data-theme="kasavu">Kasavu</button>
                 <button type="button" class="theme-btn theme-maroon" data-theme="maroon">Maroon</button>
@@ -2402,7 +2978,46 @@
               </div>
             </div>
 
-            <div class="form-group" style="margin-top: 1.8rem;">
+            <div class="form-group">
+              <label class="form-label">
+                <span>Ornamentation Style</span>
+                <span class="form-label-hint">Border & Motifs</span>
+              </label>
+              <div class="ornament-selector">
+                <button type="button" class="ornament-btn active" data-ornament="royal">
+                  <span>👑</span> Royal Kasavu
+                </button>
+                <button type="button" class="ornament-btn" data-ornament="temple">
+                  <span>🪔</span> Temple Arch
+                </button>
+                <button type="button" class="ornament-btn" data-ornament="floral">
+                  <span>🌺</span> Pookkalam
+                </button>
+                <button type="button" class="ornament-btn" data-ornament="heritage">
+                  <span>🌴</span> Heritage
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">
+                <span>Card Format / Aspect</span>
+                <span class="form-label-hint">Dimensions</span>
+              </label>
+              <div class="aspect-selector">
+                <button type="button" class="aspect-btn active" data-aspect="landscape">
+                  <span>🖼️</span> Landscape 4:3
+                </button>
+                <button type="button" class="aspect-btn" data-aspect="square">
+                  <span>🔲</span> Square 1:1
+                </button>
+                <button type="button" class="aspect-btn" data-aspect="portrait">
+                  <span>📱</span> Portrait 9:12
+                </button>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-top: 1.5rem;">
               <button type="button" id="triggerShowerCardBtn" class="btn-gold" style="width: 100%;">
                 <span>🌸</span> Send Flower Shower & Preview
               </button>
@@ -2412,26 +3027,143 @@
 
         <!-- Live Visual Greeting Card Preview -->
         <div class="greeting-card-preview-wrapper">
-          <div id="cardCanvasBox" class="festive-card-canvas-box theme-kasavu-style">
-            <!-- Corner Golden Filigrees -->
-            <svg class="card-corner-decor card-top-left" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
-            </svg>
-            <svg class="card-corner-decor card-top-right" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
-            </svg>
-            <svg class="card-corner-decor card-bottom-left" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
-            </svg>
-            <svg class="card-corner-decor card-bottom-right" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M2 2h8v2H4v6H2V2zm18 0h-8v2h6v6h2V2z"/>
+          <div class="preview-header-bar">
+            <span class="preview-badge-status">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
+                <circle cx="12" cy="12" r="10"></circle>
+              </svg>
+              Live High-Res Preview
+            </span>
+            <span style="font-size: 0.8rem; color: var(--text-soft); font-weight: 600;">
+              Export Ready • PNG
+            </span>
+          </div>
+
+          <div id="cardCanvasBox" class="festive-card-canvas-box theme-kasavu-style aspect-landscape">
+            <!-- Inner Golden Frames -->
+            <div class="card-inner-frame"></div>
+            <div class="card-inner-frame-dashed"></div>
+
+            <!-- 4 Ornate Corner Lotus Filigrees -->
+            <svg class="card-corner-decor card-top-left" viewBox="0 0 50 50" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H26C26 16 16 26 4 26V4Z" stroke="currentColor" stroke-width="2.5" fill="none" />
+              <path d="M4 4L22 22" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="10" cy="10" r="3" fill="currentColor" />
+              <path d="M26 4C26 12 36 20 46 20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <path d="M4 26C12 26 20 36 20 46" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <circle cx="28" cy="12" r="2" fill="currentColor" />
+              <circle cx="12" cy="28" r="2" fill="currentColor" />
+              <path d="M2 2L14 2L2 14Z" fill="currentColor" />
             </svg>
 
-            <!-- Card Header -->
-            <div class="card-header-badge">
-              <span>✦ ഹൃദയം നിറഞ്ഞ ഓണാശംസകൾ ✦</span>
-              <div style="font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; font-family: var(--font-heading); margin-top: 2px;">
-                Happy Onam Wishes
+            <svg class="card-corner-decor card-top-right" viewBox="0 0 50 50" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H26C26 16 16 26 4 26V4Z" stroke="currentColor" stroke-width="2.5" fill="none" />
+              <path d="M4 4L22 22" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="10" cy="10" r="3" fill="currentColor" />
+              <path d="M26 4C26 12 36 20 46 20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <path d="M4 26C12 26 20 36 20 46" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <circle cx="28" cy="12" r="2" fill="currentColor" />
+              <circle cx="12" cy="28" r="2" fill="currentColor" />
+              <path d="M2 2L14 2L2 14Z" fill="currentColor" />
+            </svg>
+
+            <svg class="card-corner-decor card-bottom-left" viewBox="0 0 50 50" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H26C26 16 16 26 4 26V4Z" stroke="currentColor" stroke-width="2.5" fill="none" />
+              <path d="M4 4L22 22" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="10" cy="10" r="3" fill="currentColor" />
+              <path d="M26 4C26 12 36 20 46 20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <path d="M4 26C12 26 20 36 20 46" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <circle cx="28" cy="12" r="2" fill="currentColor" />
+              <circle cx="12" cy="28" r="2" fill="currentColor" />
+              <path d="M2 2L14 2L2 14Z" fill="currentColor" />
+            </svg>
+
+            <svg class="card-corner-decor card-bottom-right" viewBox="0 0 50 50" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M4 4H26C26 16 16 26 4 26V4Z" stroke="currentColor" stroke-width="2.5" fill="none" />
+              <path d="M4 4L22 22" stroke="currentColor" stroke-width="1.8" />
+              <circle cx="10" cy="10" r="3" fill="currentColor" />
+              <path d="M26 4C26 12 36 20 46 20" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <path d="M4 26C12 26 20 36 20 46" stroke="currentColor" stroke-width="1.5" stroke-dasharray="2 2" />
+              <circle cx="28" cy="12" r="2" fill="currentColor" />
+              <circle cx="12" cy="28" r="2" fill="currentColor" />
+              <path d="M2 2L14 2L2 14Z" fill="currentColor" />
+            </svg>
+
+            <!-- Center Athapookkalam Concentric Mandala Watermark -->
+            <svg class="card-mandala-watermark" viewBox="0 0 200 200" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <circle cx="100" cy="100" r="90" stroke="currentColor" stroke-width="2" />
+              <circle cx="100" cy="100" r="75" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 4" />
+              <circle cx="100" cy="100" r="60" stroke="currentColor" stroke-width="2" />
+              <circle cx="100" cy="100" r="45" stroke="currentColor" stroke-width="1.5" />
+              <circle cx="100" cy="100" r="30" stroke="currentColor" stroke-width="2" />
+              <circle cx="100" cy="100" r="12" fill="currentColor" opacity="0.3" />
+              <!-- Mandala Petals -->
+              <path d="M100 10 L107 40 L100 45 L93 40 Z" fill="currentColor" />
+              <path d="M100 190 L107 160 L100 155 L93 160 Z" fill="currentColor" />
+              <path d="M10 100 L40 107 L45 100 L40 93 Z" fill="currentColor" />
+              <path d="M190 100 L160 107 L155 100 L160 93 Z" fill="currentColor" />
+              <path d="M36 36 L62 55 L58 62 L51 58 Z" fill="currentColor" />
+              <path d="M164 164 L138 145 L142 138 L149 142 Z" fill="currentColor" />
+              <path d="M164 36 L145 62 L138 58 L142 51 Z" fill="currentColor" />
+              <path d="M36 164 L55 138 L62 142 L58 149 Z" fill="currentColor" />
+            </svg>
+
+            <!-- Top Centerpiece: Nilavilakku & Auspicious Banner -->
+            <div class="card-top-crest">
+              <!-- Hanging Floral Garland Swag -->
+              <svg class="card-garland-svg" viewBox="0 0 280 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 4 Q70 18 140 4 Q210 18 270 4" stroke="#D4AF37" stroke-width="1.5" fill="none" />
+                <!-- Marigold flowers along curve -->
+                <circle cx="35" cy="10" r="4.5" fill="#FF9800" stroke="#FFE082" stroke-width="1" />
+                <circle cx="70" cy="12.5" r="4.5" fill="#FBC02D" stroke="#FFE082" stroke-width="1" />
+                <circle cx="105" cy="10" r="4.5" fill="#E65100" stroke="#FFE082" stroke-width="1" />
+                <circle cx="140" cy="4" r="5" fill="#FFB300" stroke="#FFE082" stroke-width="1" />
+                <circle cx="175" cy="10" r="4.5" fill="#E65100" stroke="#FFE082" stroke-width="1" />
+                <circle cx="210" cy="12.5" r="4.5" fill="#FBC02D" stroke="#FFE082" stroke-width="1" />
+                <circle cx="245" cy="10" r="4.5" fill="#FF9800" stroke="#FFE082" stroke-width="1" />
+              </svg>
+
+              <!-- Glowing Nilavilakku Brass Lamp -->
+              <svg class="card-nilavilakku-lamp" viewBox="0 0 44 48" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <radialGradient id="cardFlameGlow" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF9C4" />
+                    <stop offset="50%" stop-color="#FFD54F" />
+                    <stop offset="100%" stop-color="#FF6F00" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <!-- Flame Glow Aura -->
+                <circle cx="22" cy="12" r="11" fill="url(#cardFlameGlow)" />
+                <!-- Flame -->
+                <path
+                  d="M22 4 C20 8 18 12 18 14 C18 16.5 19.8 18 22 18 C24.2 18 26 16.5 26 14 C26 12 24 8 22 4 Z"
+                  fill="#FFF59D" />
+                <path
+                  d="M22 8 C21 10 20 12 20 13.5 C20 15 20.8 16 22 16 C23.2 16 24 15 24 13.5 C24 12 23 10 22 8 Z"
+                  fill="#FF9800" />
+                <!-- Lamp Upper Bowl -->
+                <ellipse cx="22" cy="19" rx="14" ry="4.5" fill="#D4AF37" />
+                <ellipse cx="22" cy="18" rx="12" ry="3.5" fill="#FFE082" />
+                <!-- Lamp Stem -->
+                <path d="M20 22 H24 V34 H20 Z" fill="#B88E1D" />
+                <ellipse cx="22" cy="28" rx="5" ry="2" fill="#D4AF37" />
+                <!-- Lamp Base -->
+                <path d="M12 42 C12 36 17 34 22 34 C27 34 32 36 32 42 H12 Z" fill="#D4AF37" />
+                <rect x="10" y="42" width="24" height="3" rx="1.5" fill="#99730E" />
+              </svg>
+
+              <!-- Header Calligraphy -->
+              <div class="card-header-badge">
+                ✦ ഹൃദയം നിറഞ്ഞ ഓണാശംസകൾ ✦
+              </div>
+              <div class="card-sub-header">
+                Happy Onam • Ponnonam 2026
               </div>
             </div>
 
@@ -2439,31 +3171,54 @@
             <div class="card-main-wish">
               <h3 id="previewRecipient" class="card-recipient-name">Dear Friends & Family,</h3>
               <p id="previewBlessing" class="card-blessing">
-                May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness, and good health to your home this Onam!
+                "May the vibrant colors of Athapookkalam and sweetness of Payasam bring boundless prosperity, happiness,
+                and good health to your home this Onam!"
               </p>
             </div>
 
-            <!-- Card Signature -->
-            <div class="card-sender-signature">
-              <span id="previewSender">With Warm Regards, <strong>Dev & Family</strong></span>
-              <span style="font-size: 1.2rem;">🪔</span>
+            <!-- Card Footer: Signature & Royal Seal Medallion -->
+            <div class="card-footer-decor">
+              <div class="card-sender-signature">
+                <span>With Warm Regards,</span>
+                <strong id="previewSender">Dev & Family</strong>
+              </div>
+
+              <!-- Royal Seal Medallion -->
+              <div class="card-royal-seal" title="Authentic Onam 2026 Festive Tribute Seal">
+                <span>👑</span>
+                <div>ONAM</div>
+                <div style="font-size: 0.52rem; opacity: 0.85;">2026</div>
+              </div>
             </div>
           </div>
 
-          <!-- Card Action Buttons -->
+          <!-- Card Action Buttons with PNG Download Option -->
           <div class="card-action-bar">
-            <button id="copyWishBtn" class="btn-outline" style="padding: 0.8rem 1.2rem; font-size: 0.9rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <button id="downloadCardPngBtn" class="btn-download-png">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                <polyline points="7 10 12 15 17 10"></polyline>
+                <line x1="12" y1="15" x2="12" y2="3"></line>
+              </svg>
+              <span id="downloadBtnText">Download Card (PNG)</span>
+            </button>
+
+            <button id="copyWishBtn" class="btn-outline" style="padding: 0.8rem 1rem; font-size: 0.88rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                 <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
                 <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
               </svg>
-              <span id="copyBtnText">Copy Wish Text</span>
+              <span id="copyBtnText">Copy Text</span>
             </button>
-            <button id="shareWhatsappBtn" class="btn-gold" style="padding: 0.8rem 1.2rem; font-size: 0.9rem;">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+
+            <button id="shareWhatsappBtn" class="btn-gold" style="padding: 0.8rem 1rem; font-size: 0.88rem;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                  d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                </path>
               </svg>
-              Share via WhatsApp
+              WhatsApp
             </button>
           </div>
         </div>
@@ -2480,7 +3235,8 @@
         <div class="footer-brand">
           <h3>Onam Tribute</h3>
           <p>
-            Dedicated to preserving and celebrating the enduring spirit of King Mahabali, unity, equality, and Kerala’s cultural heritage for generations to come.
+            Dedicated to preserving and celebrating the enduring spirit of King Mahabali, unity, equality, and Kerala’s
+            cultural heritage for generations to come.
           </p>
           <div style="margin-top: 1.2rem; font-size: 1.1rem; color: var(--gold-light);">
             ഓണാശംസകൾ • Happy Onam
@@ -2568,7 +3324,7 @@
           setTimeout(() => {
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
-            
+
             osc.type = 'sine';
             osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
 
@@ -2598,7 +3354,7 @@
       if (typeof confetti === 'function') {
         // Gold, Maroon, Jasmine White, Saffron Orange, Leaf Green petals
         const festiveColors = ['#D4AF37', '#8B1A24', '#FAF9F5', '#FF9800', '#2E7D32', '#FBC02D'];
-        
+
         confetti({
           particleCount: 70,
           spread: 80,
@@ -2689,84 +3445,570 @@
       });
     }
 
-    // --- 6. Interactive Greeting Card Live Generator ---
+    // --- 6. Interactive Greeting Card Live Generator & High-Res PNG Engine ---
     const recipientInput = document.getElementById('recipientName');
     const senderInput = document.getElementById('senderName');
     const greetingTemplate = document.getElementById('greetingTemplate');
+    const customBlessingInput = document.getElementById('customBlessing');
     const previewRecipient = document.getElementById('previewRecipient');
     const previewBlessing = document.getElementById('previewBlessing');
     const previewSender = document.getElementById('previewSender');
     const cardCanvasBox = document.getElementById('cardCanvasBox');
+    
     const themeButtons = document.querySelectorAll('.theme-btn');
+    const ornamentButtons = document.querySelectorAll('.ornament-btn');
+    const aspectButtons = document.querySelectorAll('.aspect-btn');
+    
     const triggerShowerCardBtn = document.getElementById('triggerShowerCardBtn');
     const copyWishBtn = document.getElementById('copyWishBtn');
     const copyBtnText = document.getElementById('copyBtnText');
     const shareWhatsappBtn = document.getElementById('shareWhatsappBtn');
+    const downloadCardPngBtn = document.getElementById('downloadCardPngBtn');
+    const downloadBtnText = document.getElementById('downloadBtnText');
+
+    let currentTheme = 'kasavu';
+    let currentOrnament = 'royal';
+    let currentAspect = 'landscape';
 
     function updateCardPreview() {
-      const recipient = recipientInput.value.trim() || 'Dear Friends & Family';
-      const sender = senderInput.value.trim() || 'With Best Wishes';
-      const blessing = greetingTemplate.value;
+      const recipient = (recipientInput ? recipientInput.value.trim() : '') || 'Dear Friends & Family';
+      const sender = (senderInput ? senderInput.value.trim() : '') || 'Dev & Family';
+      const blessing = (customBlessingInput ? customBlessingInput.value.trim() : '') || (greetingTemplate ? greetingTemplate.value : '');
 
-      previewRecipient.textContent = `${recipient},`;
-      previewBlessing.textContent = blessing;
-      previewSender.innerHTML = `Warm Regards, <strong>${sender}</strong>`;
+      if (previewRecipient) previewRecipient.textContent = `${recipient},`;
+      if (previewBlessing) previewBlessing.textContent = `"${blessing}"`;
+      if (previewSender) previewSender.textContent = sender;
+
+      // Apply classes to card preview box
+      if (cardCanvasBox) {
+        cardCanvasBox.className = `festive-card-canvas-box theme-${currentTheme}-style aspect-${currentAspect}`;
+      }
     }
 
-    recipientInput.addEventListener('input', updateCardPreview);
-    senderInput.addEventListener('input', updateCardPreview);
-    greetingTemplate.addEventListener('change', updateCardPreview);
+    if (recipientInput) recipientInput.addEventListener('input', updateCardPreview);
+    if (senderInput) senderInput.addEventListener('input', updateCardPreview);
+    
+    if (greetingTemplate) {
+      greetingTemplate.addEventListener('change', () => {
+        if (customBlessingInput) {
+          customBlessingInput.value = greetingTemplate.value;
+        }
+        updateCardPreview();
+      });
+    }
 
-    // Theme Switcher for Greeting Card
+    if (customBlessingInput) {
+      customBlessingInput.addEventListener('input', updateCardPreview);
+    }
+
+    // Theme Switcher
     themeButtons.forEach(btn => {
       btn.addEventListener('click', () => {
         themeButtons.forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-
-        const theme = btn.getAttribute('data-theme');
-        cardCanvasBox.className = 'festive-card-canvas-box';
-
-        if (theme === 'kasavu') cardCanvasBox.classList.add('theme-kasavu-style');
-        else if (theme === 'maroon') cardCanvasBox.classList.add('theme-maroon-style');
-        else if (theme === 'leaf') cardCanvasBox.classList.add('theme-leaf-style');
-        else if (theme === 'sunset') cardCanvasBox.classList.add('theme-sunset-style');
+        currentTheme = btn.getAttribute('data-theme') || 'kasavu';
+        updateCardPreview();
       });
     });
 
-    triggerShowerCardBtn.addEventListener('click', () => {
-      updateCardPreview();
-      triggerConfettiBurst();
-      playFestiveChime();
+    // Ornament Style Switcher
+    ornamentButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        ornamentButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentOrnament = btn.getAttribute('data-ornament') || 'royal';
+        updateCardPreview();
+      });
     });
+
+    // Aspect Ratio Switcher
+    aspectButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        aspectButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentAspect = btn.getAttribute('data-aspect') || 'landscape';
+        updateCardPreview();
+      });
+    });
+
+    if (triggerShowerCardBtn) {
+      triggerShowerCardBtn.addEventListener('click', () => {
+        updateCardPreview();
+        triggerConfettiBurst();
+        playFestiveChime();
+      });
+    }
 
     // Copy Wish Text
-    copyWishBtn.addEventListener('click', () => {
-      const recipient = recipientInput.value.trim() || 'Dear Friends & Family';
-      const sender = senderInput.value.trim() || 'With Warm Regards';
-      const blessing = greetingTemplate.value;
+    if (copyWishBtn) {
+      copyWishBtn.addEventListener('click', () => {
+        const recipient = (recipientInput ? recipientInput.value.trim() : '') || 'Dear Friends & Family';
+        const sender = (senderInput ? senderInput.value.trim() : '') || 'Dev & Family';
+        const blessing = (customBlessingInput ? customBlessingInput.value.trim() : '') || (greetingTemplate ? greetingTemplate.value : '');
 
-      const fullMessage = `🌸 *Happy Onam Wishes* 🌸\n\n${recipient},\n${blessing}\n\nWarm Regards,\n*${sender}*\n\n✨ Wishing you harmony, prosperity & joy!`;
+        const fullMessage = `🌸 *Happy Onam Wishes* 🌸\n\n${recipient},\n"${blessing}"\n\nWith Warm Regards,\n*${sender}*\n\n✨ Celebrating Onam 2026 with joy, harmony & prosperity!`;
 
-      navigator.clipboard.writeText(fullMessage).then(() => {
-        copyBtnText.textContent = 'Copied to Clipboard! ✓';
-        setTimeout(() => {
-          copyBtnText.textContent = 'Copy Wish Text';
-        }, 2500);
-      }).catch(() => {
-        alert('Copied wish text!');
+        navigator.clipboard.writeText(fullMessage).then(() => {
+          copyBtnText.textContent = 'Copied! ✓';
+          setTimeout(() => {
+            copyBtnText.textContent = 'Copy Text';
+          }, 2500);
+        }).catch(() => {
+          alert('Copied wish text!');
+        });
       });
-    });
+    }
 
     // Share via WhatsApp
-    shareWhatsappBtn.addEventListener('click', () => {
-      const recipient = recipientInput.value.trim() || 'Dear Friends & Family';
-      const sender = senderInput.value.trim() || 'With Warm Regards';
-      const blessing = greetingTemplate.value;
+    if (shareWhatsappBtn) {
+      shareWhatsappBtn.addEventListener('click', () => {
+        const recipient = (recipientInput ? recipientInput.value.trim() : '') || 'Dear Friends & Family';
+        const sender = (senderInput ? senderInput.value.trim() : '') || 'Dev & Family';
+        const blessing = (customBlessingInput ? customBlessingInput.value.trim() : '') || (greetingTemplate ? greetingTemplate.value : '');
 
-      const fullMessage = `🌸 *Happy Onam!* 🌸\n\n${recipient},\n${blessing}\n\nWarm Regards,\n*${sender}*\n\nCelebrate Onam Tribute: ${window.location.href}`;
-      const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullMessage)}`;
-      window.open(whatsappUrl, '_blank');
-    });
+        const fullMessage = `🌸 *Happy Onam! (ഓണാശംസകൾ)* 🌸\n\n${recipient},\n"${blessing}"\n\nWith Warm Regards,\n*${sender}*\n\nCelebrate Onam Tribute: ${window.location.href}`;
+        const whatsappUrl = `https://api.whatsapp.com/send?text=${encodeURIComponent(fullMessage)}`;
+        window.open(whatsappUrl, '_blank');
+      });
+    }
+
+    // =========================================================================
+    // High-Resolution HTML5 Canvas PNG Generator Engine (Aspect Ratio Preserved)
+    // =========================================================================
+    function renderAndDownloadCardPNG() {
+      if (downloadCardPngBtn) {
+        downloadCardPngBtn.classList.add('loading');
+        downloadBtnText.textContent = 'Rendering High-Res...';
+      }
+
+      // Determine canvas resolution based precisely on selected aspect ratio
+      let width = 1600;
+      let height = 1200; // Landscape 4:3 default
+
+      if (currentAspect === 'square') {
+        width = 1400;
+        height = 1400; // Square 1:1
+      } else if (currentAspect === 'portrait') {
+        width = 1080;
+        height = 1440; // Portrait 9:12 (3:4)
+      }
+
+      const canvas = document.createElement('canvas');
+      canvas.width = width;
+      canvas.height = height;
+      const ctx = canvas.getContext('2d');
+
+      const recipient = (recipientInput ? recipientInput.value.trim() : '') || 'Dear Friends & Family';
+      const sender = (senderInput ? senderInput.value.trim() : '') || 'Dev & Family';
+      const blessing = (customBlessingInput ? customBlessingInput.value.trim() : '') || (greetingTemplate ? greetingTemplate.value : '');
+
+      // Proportional scale factor relative to reference 1600x1200
+      const scale = Math.min(width / 1600, height / 1200);
+
+      // 1. Draw Background Gradient
+      let bgGrad;
+      if (currentTheme === 'kasavu') {
+        bgGrad = ctx.createLinearGradient(0, 0, width, height);
+        bgGrad.addColorStop(0, '#FFFDF7');
+        bgGrad.addColorStop(0.5, '#FAF4E4');
+        bgGrad.addColorStop(1, '#F3E9D2');
+      } else if (currentTheme === 'maroon') {
+        bgGrad = ctx.createRadialGradient(width / 2, height * 0.35, 80 * scale, width / 2, height / 2, Math.max(width, height) * 0.7);
+        bgGrad.addColorStop(0, '#8B1A24');
+        bgGrad.addColorStop(0.6, '#540A10');
+        bgGrad.addColorStop(1, '#340408');
+      } else if (currentTheme === 'leaf') {
+        bgGrad = ctx.createRadialGradient(width / 2, height * 0.35, 80 * scale, width / 2, height / 2, Math.max(width, height) * 0.7);
+        bgGrad.addColorStop(0, '#257C3C');
+        bgGrad.addColorStop(0.6, '#175227');
+        bgGrad.addColorStop(1, '#0B2C14');
+      } else {
+        // sunset
+        bgGrad = ctx.createRadialGradient(width / 2, height * 0.3, 80 * scale, width / 2, height / 2, Math.max(width, height) * 0.7);
+        bgGrad.addColorStop(0, '#F57F17');
+        bgGrad.addColorStop(0.55, '#E65100');
+        bgGrad.addColorStop(1, '#8D2500');
+      }
+
+      ctx.fillStyle = bgGrad;
+      ctx.fillRect(0, 0, width, height);
+
+      // 2. Outer Kasavu Gold Brocade Border
+      const borderWidth = Math.round(34 * scale);
+      const goldGrad = ctx.createLinearGradient(0, 0, width, height);
+      goldGrad.addColorStop(0, '#F7E7A9');
+      goldGrad.addColorStop(0.25, '#D4AF37');
+      goldGrad.addColorStop(0.5, '#FFEAA7');
+      goldGrad.addColorStop(0.75, '#A27B13');
+      goldGrad.addColorStop(1, '#D4AF37');
+
+      ctx.lineWidth = borderWidth;
+      ctx.strokeStyle = goldGrad;
+      ctx.strokeRect(borderWidth / 2, borderWidth / 2, width - borderWidth, height - borderWidth);
+
+      // Kasavu Zari Geometric Diagonal Weave on Border
+      ctx.save();
+      ctx.strokeStyle = 'rgba(255, 255, 255, 0.35)';
+      ctx.lineWidth = Math.max(1.5, 2 * scale);
+      for (let i = -width; i < width + height; i += 24 * scale) {
+        ctx.beginPath();
+        ctx.moveTo(i, 0);
+        ctx.lineTo(i + height, height);
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Redraw crisp inner and outer border trim
+      ctx.strokeStyle = '#8C670B';
+      ctx.lineWidth = Math.max(2, 3 * scale);
+      ctx.strokeRect(borderWidth, borderWidth, width - borderWidth * 2, height - borderWidth * 2);
+
+      // Inner Golden Filigree Hairline
+      const innerMargin = Math.round(52 * scale);
+      ctx.strokeStyle = '#D4AF37';
+      ctx.lineWidth = Math.max(1.8, 2.5 * scale);
+      ctx.strokeRect(innerMargin, innerMargin, width - innerMargin * 2, height - innerMargin * 2);
+
+      // Dashed subtle line
+      ctx.setLineDash([8 * scale, 8 * scale]);
+      ctx.strokeStyle = 'rgba(212, 175, 55, 0.6)';
+      ctx.lineWidth = Math.max(1, 1.5 * scale);
+      ctx.strokeRect(innerMargin + 10 * scale, innerMargin + 10 * scale, width - (innerMargin + 10 * scale) * 2, height - (innerMargin + 10 * scale) * 2);
+      ctx.setLineDash([]);
+
+      // 3. Draw Four Ornate Corner Lotus Filigrees
+      function drawCornerFiligree(cx, cy, scaleX, scaleY) {
+        ctx.save();
+        ctx.translate(cx, cy);
+        ctx.scale(scaleX * scale, scaleY * scale);
+        ctx.strokeStyle = '#D4AF37';
+        ctx.fillStyle = '#D4AF37';
+        ctx.lineWidth = 3;
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(55, 0);
+        ctx.bezierCurveTo(55, 32, 32, 55, 0, 55);
+        ctx.closePath();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.lineTo(46, 46);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(20, 20, 5.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.arc(42, 12, 3.5, 0, Math.PI * 2);
+        ctx.arc(12, 42, 3.5, 0, Math.PI * 2);
+        ctx.fill();
+
+        ctx.restore();
+      }
+
+      drawCornerFiligree(innerMargin + 14 * scale, innerMargin + 14 * scale, 1, 1);
+      drawCornerFiligree(width - innerMargin - 14 * scale, innerMargin + 14 * scale, -1, 1);
+      drawCornerFiligree(innerMargin + 14 * scale, height - innerMargin - 14 * scale, 1, -1);
+      drawCornerFiligree(width - innerMargin - 14 * scale, height - innerMargin - 14 * scale, -1, -1);
+
+      // =======================================================================
+      // PROPORTIONAL VERTICAL SPACE BUDGETING (Mirrors Flexbox space-between)
+      // =======================================================================
+      const topPadding = innerMargin + Math.round(28 * (height / 1200));
+      const bottomPadding = innerMargin + Math.round(30 * (height / 1200));
+      const footerH = Math.round(95 * scale);
+      const footerY = height - bottomPadding - footerH;
+
+      // Top Section Y Positions
+      const garlandY = topPadding;
+      const lampY = garlandY + Math.round(48 * scale);
+      const headerY = lampY + Math.round(68 * scale);
+      const subHeaderY = headerY + Math.round(28 * scale);
+      const topSectionBottom = subHeaderY + Math.round(20 * scale);
+
+      // 4. Top Centerpiece: Hanging Marigold Garland & Nilavilakku Brass Lamp
+      ctx.save();
+      ctx.strokeStyle = '#D4AF37';
+      ctx.lineWidth = Math.max(1.8, 2.5 * scale);
+      const garlandWidth = Math.min(width * 0.44, 300 * scale);
+      
+      ctx.beginPath();
+      ctx.moveTo(width / 2 - garlandWidth, garlandY + 8 * scale);
+      ctx.quadraticCurveTo(width / 2 - garlandWidth / 2, garlandY + 36 * scale, width / 2, garlandY + 8 * scale);
+      ctx.quadraticCurveTo(width / 2 + garlandWidth / 2, garlandY + 36 * scale, width / 2 + garlandWidth, garlandY + 8 * scale);
+      ctx.stroke();
+
+      // Marigold flowers
+      const flowerColors = ['#FF9800', '#FBC02D', '#E65100', '#FFB300', '#F57F17'];
+      const flowerCount = 9;
+      for (let i = 0; i < flowerCount; i++) {
+        const t = i / (flowerCount - 1);
+        const fx = (width / 2 - garlandWidth) + t * (garlandWidth * 2);
+        const fy = garlandY + 12 * scale + Math.sin(t * Math.PI) * (20 * scale);
+        ctx.beginPath();
+        ctx.arc(fx, fy, 7.5 * scale, 0, Math.PI * 2);
+        ctx.fillStyle = flowerColors[i % flowerColors.length];
+        ctx.fill();
+        ctx.strokeStyle = '#FFF';
+        ctx.lineWidth = 1.2 * scale;
+        ctx.stroke();
+      }
+      ctx.restore();
+
+      // Nilavilakku Brass Lamp
+      ctx.save();
+      const flameAuraRadius = 34 * scale;
+      const flameAura = ctx.createRadialGradient(width / 2, lampY, 4 * scale, width / 2, lampY, flameAuraRadius);
+      flameAura.addColorStop(0, 'rgba(255, 249, 196, 0.95)');
+      flameAura.addColorStop(0.5, 'rgba(255, 213, 79, 0.65)');
+      flameAura.addColorStop(1, 'rgba(255, 111, 0, 0)');
+      ctx.fillStyle = flameAura;
+      ctx.beginPath();
+      ctx.arc(width / 2, lampY, flameAuraRadius, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Golden Flame
+      ctx.beginPath();
+      ctx.moveTo(width / 2, lampY - 24 * scale);
+      ctx.bezierCurveTo(width / 2 - 12 * scale, lampY - 4 * scale, width / 2 - 7 * scale, lampY + 10 * scale, width / 2, lampY + 10 * scale);
+      ctx.bezierCurveTo(width / 2 + 7 * scale, lampY + 10 * scale, width / 2 + 12 * scale, lampY - 4 * scale, width / 2, lampY - 24 * scale);
+      ctx.fillStyle = '#FFF59D';
+      ctx.fill();
+      
+      ctx.beginPath();
+      ctx.moveTo(width / 2, lampY - 12 * scale);
+      ctx.bezierCurveTo(width / 2 - 6 * scale, lampY - 2 * scale, width / 2 - 3 * scale, lampY + 6 * scale, width / 2, lampY + 6 * scale);
+      ctx.bezierCurveTo(width / 2 + 3 * scale, lampY + 6 * scale, width / 2 + 6 * scale, lampY - 2 * scale, width / 2, lampY - 12 * scale);
+      ctx.fillStyle = '#FF9800';
+      ctx.fill();
+
+      // Brass Bowl & Base
+      ctx.fillStyle = '#D4AF37';
+      ctx.strokeStyle = '#99730E';
+      ctx.lineWidth = Math.max(1.5, 2 * scale);
+      ctx.beginPath();
+      ctx.ellipse(width / 2, lampY + 16 * scale, 26 * scale, 7 * scale, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.rect(width / 2 - 5 * scale, lampY + 21 * scale, 10 * scale, 20 * scale);
+      ctx.fill();
+      ctx.stroke();
+
+      ctx.beginPath();
+      ctx.ellipse(width / 2, lampY + 46 * scale, 32 * scale, 10 * scale, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.stroke();
+      ctx.restore();
+
+      // Top Calligraphy & Title Header
+      ctx.save();
+      ctx.textAlign = 'center';
+      
+      const headerColor = (currentTheme === 'kasavu') ? '#701018' : '#FFECA8';
+      const subHeaderColor = (currentTheme === 'kasavu') ? '#A27B13' : '#FFDE8A';
+      const bodyColor = (currentTheme === 'kasavu') ? '#2C1810' : '#FFFDF7';
+      const recipientColor = (currentTheme === 'kasavu') ? '#701018' : '#FFE8A3';
+
+      ctx.fillStyle = headerColor;
+      ctx.font = `bold ${Math.round(34 * scale)}px "Gayathri", "Cinzel", serif`;
+      ctx.fillText('✦ ഹൃദയം നിറഞ്ഞ ഓണാശംസകൾ ✦', width / 2, headerY);
+
+      ctx.fillStyle = subHeaderColor;
+      ctx.font = `800 ${Math.round(18 * scale)}px "Cinzel", serif`;
+      ctx.fillText('HAPPY ONAM • PONNONAM 2026', width / 2, subHeaderY);
+      ctx.restore();
+
+      // =======================================================================
+      // 5. Middle Wish Section (Calculated for Perfect Vertical Centering)
+      // =======================================================================
+      const availableMiddleHeight = (footerY - 30 * scale) - topSectionBottom;
+      const middleCenterY = topSectionBottom + (availableMiddleHeight / 2);
+
+      // 6. Central Athapookkalam Concentric Mandala Watermark
+      ctx.save();
+      ctx.translate(width / 2, middleCenterY);
+      ctx.strokeStyle = (currentTheme === 'kasavu') ? 'rgba(212, 175, 55, 0.13)' : 'rgba(255, 235, 150, 0.16)';
+      ctx.fillStyle = (currentTheme === 'kasavu') ? 'rgba(212, 175, 55, 0.08)' : 'rgba(255, 235, 150, 0.10)';
+
+      const mandalaRadius = Math.min(width, height) * 0.32;
+      for (let r = 45 * scale; r <= mandalaRadius; r += 40 * scale) {
+        ctx.beginPath();
+        ctx.arc(0, 0, r, 0, Math.PI * 2);
+        ctx.lineWidth = (r % (80 * scale) < 10) ? (2.5 * scale) : (1.5 * scale);
+        ctx.stroke();
+      }
+
+      // 12-pointed radial star petals
+      const petals = 12;
+      for (let p = 0; p < petals; p++) {
+        const angle = (p * Math.PI * 2) / petals;
+        ctx.save();
+        ctx.rotate(angle);
+        ctx.beginPath();
+        ctx.moveTo(0, mandalaRadius * 0.3);
+        ctx.lineTo(mandalaRadius * 0.12, mandalaRadius * 0.7);
+        ctx.lineTo(0, mandalaRadius);
+        ctx.lineTo(-mandalaRadius * 0.12, mandalaRadius * 0.7);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fill();
+        ctx.restore();
+      }
+      ctx.restore();
+
+      // Measure & Wrap Blessing Text
+      ctx.save();
+      ctx.textAlign = 'center';
+      const blessingFontSize = Math.round(27 * scale);
+      const lineHeight = Math.round(42 * scale);
+      ctx.font = `italic ${blessingFontSize}px "Plus Jakarta Sans", system-ui, sans-serif`;
+      
+      const maxTextWidth = width * 0.74;
+      const words = `“${blessing}”`.split(' ');
+      let currentLine = '';
+      const lines = [];
+
+      for (let n = 0; n < words.length; n++) {
+        const testLine = currentLine + words[n] + ' ';
+        const metrics = ctx.measureText(testLine);
+        if (metrics.width > maxTextWidth && n > 0) {
+          lines.push(currentLine);
+          currentLine = words[n] + ' ';
+        } else {
+          currentLine = testLine;
+        }
+      }
+      lines.push(currentLine);
+
+      const recipientFontSize = Math.round(40 * scale);
+      const totalWishHeight = recipientFontSize + (20 * scale) + (lines.length * lineHeight);
+      const wishStartY = middleCenterY - (totalWishHeight / 2);
+
+      // Draw Recipient Name with underline flourish
+      const recipientY = wishStartY + recipientFontSize;
+      ctx.fillStyle = recipientColor;
+      ctx.font = `bold ${recipientFontSize}px "Cinzel", "Rozha One", serif`;
+      ctx.fillText(`${recipient},`, width / 2, recipientY);
+
+      const underlineWidth = Math.min(width * 0.4, 340 * scale);
+      const underlineGrad = ctx.createLinearGradient(width / 2 - underlineWidth / 2, 0, width / 2 + underlineWidth / 2, 0);
+      underlineGrad.addColorStop(0, 'transparent');
+      underlineGrad.addColorStop(0.5, '#D4AF37');
+      underlineGrad.addColorStop(1, 'transparent');
+      ctx.fillStyle = underlineGrad;
+      ctx.fillRect(width / 2 - underlineWidth / 2, recipientY + 10 * scale, underlineWidth, 3 * scale);
+
+      // Draw Blessing Text Lines
+      ctx.fillStyle = bodyColor;
+      ctx.font = `italic ${blessingFontSize}px "Plus Jakarta Sans", system-ui, sans-serif`;
+      const textStartY = recipientY + Math.round(44 * scale);
+      lines.forEach((line, i) => {
+        ctx.fillText(line.trim(), width / 2, textStartY + (i * lineHeight));
+      });
+      ctx.restore();
+
+      // =======================================================================
+      // 7. Footer: Sender Signature & Royal Seal Medallion
+      // =======================================================================
+      // Dashed divider line
+      ctx.save();
+      ctx.setLineDash([8 * scale, 8 * scale]);
+      ctx.strokeStyle = 'rgba(212, 175, 55, 0.7)';
+      ctx.lineWidth = Math.max(1.5, 2 * scale);
+      ctx.beginPath();
+      ctx.moveTo(innerMargin + 40 * scale, footerY - 24 * scale);
+      ctx.lineTo(width - innerMargin - 40 * scale, footerY - 24 * scale);
+      ctx.stroke();
+      ctx.restore();
+
+      // Signature text
+      ctx.save();
+      ctx.textAlign = 'left';
+      ctx.fillStyle = (currentTheme === 'kasavu') ? '#5C5449' : '#F2EDE2';
+      ctx.font = `500 ${Math.round(22 * scale)}px "Plus Jakarta Sans", sans-serif`;
+      ctx.fillText('With Warm Regards,', innerMargin + 48 * scale, footerY + 12 * scale);
+
+      ctx.fillStyle = (currentTheme === 'kasavu') ? '#701018' : '#FFE8A3';
+      ctx.font = `bold ${Math.round(30 * scale)}px "Cinzel", serif`;
+      ctx.fillText(sender, innerMargin + 48 * scale, footerY + 46 * scale);
+      ctx.restore();
+
+      // Royal Seal Stamp Medallion at Bottom Right
+      const sealRadius = Math.round(46 * scale);
+      const sealX = width - innerMargin - sealRadius - 40 * scale;
+      const sealY = footerY + 22 * scale;
+
+      ctx.save();
+      ctx.translate(sealX, sealY);
+      ctx.rotate(-0.12);
+
+      const sealGrad = ctx.createRadialGradient(0, 0, 8 * scale, 0, 0, sealRadius);
+      sealGrad.addColorStop(0, '#FFF59D');
+      sealGrad.addColorStop(0.65, '#D4AF37');
+      sealGrad.addColorStop(1, '#8C670B');
+
+      ctx.beginPath();
+      ctx.arc(0, 0, sealRadius, 0, Math.PI * 2);
+      ctx.fillStyle = sealGrad;
+      ctx.fill();
+      ctx.lineWidth = Math.max(2.5, 3.5 * scale);
+      ctx.strokeStyle = '#FFFDF0';
+      ctx.stroke();
+
+      // Inner seal circle
+      ctx.beginPath();
+      ctx.arc(0, 0, sealRadius - 6 * scale, 0, Math.PI * 2);
+      ctx.setLineDash([4 * scale, 4 * scale]);
+      ctx.strokeStyle = 'rgba(74, 50, 5, 0.6)';
+      ctx.lineWidth = Math.max(1, 1.5 * scale);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.textAlign = 'center';
+      ctx.fillStyle = '#3E2723';
+      ctx.font = `bold ${Math.round(18 * scale)}px system-ui, sans-serif`;
+      ctx.fillText('👑', 0, -10 * scale);
+      ctx.font = `bold ${Math.round(13 * scale)}px "Cinzel", serif`;
+      ctx.fillText('ONAM', 0, 8 * scale);
+      ctx.font = `800 ${Math.round(10 * scale)}px "Cinzel", serif`;
+      ctx.fillText('2026', 0, 22 * scale);
+      ctx.restore();
+
+      // =======================================================================
+      // 8. PNG Export & Celebration
+      // =======================================================================
+      canvas.toBlob((blob) => {
+        if (!blob) return;
+        const link = document.createElement('a');
+        link.download = `Onam-Greeting-Card-2026-${currentTheme}-${currentAspect}.png`;
+        link.href = URL.createObjectURL(blob);
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(link.href);
+
+        // Trigger celebratory chime and confetti!
+        playFestiveChime();
+        triggerConfettiBurst();
+
+        if (downloadCardPngBtn) {
+          downloadCardPngBtn.classList.remove('loading');
+          downloadBtnText.textContent = '✓ Card Downloaded!';
+          setTimeout(() => {
+            downloadBtnText.textContent = 'Download Card (PNG)';
+          }, 3000);
+        }
+      }, 'image/png');
+    }
+
+    if (downloadCardPngBtn) {
+      downloadCardPngBtn.addEventListener('click', renderAndDownloadCardPNG);
+    }
 
     // --- 7. Smooth Scroll and Reveal on Scroll ---
     const observerOptions = {
@@ -2792,4 +4034,5 @@
     });
   </script>
 </body>
+
 </html>
