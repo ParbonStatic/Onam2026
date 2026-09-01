@@ -80,9 +80,14 @@ gitGraph
    commit id: "GreetingCardGenerator"
    commit id: "OnasadyaPlantainLeaf" tag: "v1.2"
    commit id: "OrnamentalCardPNGExport" tag: "v1.3"
+   commit id: "OpenGraphLinkedInFix" tag: "v1.4"
 ```
 
-### Milestone: Ornamental Card Decoration & High-Res PNG Export (`v1.3`)
+### Milestone: Open Graph Social Preview & LinkedIn Inspector Optimization (`v1.4`)
+- **LinkedIn & Social Crawler Compatibility Architecture**:
+  - **Raster Image Asset Generation**: Replaced SVG format (which LinkedIn Post Inspector and WhatsApp crawlers reject) with high-fidelity 1200×675 raster assets (`og-image.jpg` and `og-image.png`) featuring Kasavu gold aesthetics, Nilavilakku lamp, Kathakali paccha, Athapookkalam, and Onasadya feast.
+  - **Absolute HTTPS Canonical & OG URIs**: Replaced relative `./` and local paths with absolute `https://parbonstatic.github.io/Onam2026/` across `og:url`, `og:image`, `og:image:secure_url`, and `twitter:url`.
+  - **Extended Open Graph Taxonomy**: Explicitly specified `og:image:type` (`image/jpeg`), dimensions (`1200x675`), `og:image:alt`, `<link rel="canonical">`, and Twitter large image card metadata for seamless previews on LinkedIn, Twitter/X, Facebook, WhatsApp, and Discord.
 - **Ornamental Card Architecture**:
   - **Kasavu Zari Brocade Borders**: Multi-layered gold metallic gradients, Kasavu geometric diagonal weave hatching, inner hairline border, and dashed accent frame.
   - **4-Corner Lotus Filigrees**: Intricate SVG vector corner flourishes and canvas procedural paths framing the card content.

@@ -26,6 +26,8 @@ A tribute web experience dedicated to **Onam**, the harvest festival of Kerala. 
    - Interactive day-by-day journey outlining rituals from *Atham*, *Chithira*, *Chodhi*, *Vishakam*, *Anizham*, *Thriketa*, *Moolam*, *Pooradam*, *Uthradam* (First Onam) to *Thiruvonam* (Main Feast Day).
 6. **🎵 Procedural Audio & Confetti Flower Showers**:
    - Synthesized temple chimes & bell harmonics via Web Audio API (Mohanam raga pentatonic scale), accompanied by petal-particle showers using Canvas Confetti.
+7. **🌐 Social Sharing & Open Graph Link Preview Optimization (`v1.4`)**:
+   - Fully compliant Open Graph, LinkedIn Post Inspector, and Twitter Card metadata with canonical URLs, secure URLs, and a high-resolution 1200×675 raster share banner (`og-image.jpg` / `og-image.png`).
 
 ---
 
